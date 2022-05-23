@@ -2,7 +2,7 @@
 Projekat ta kraj godine iz programiranja, tema fizičke simulacije.
 Patch 1.0: (22.5)
 -Dodate osnovne funkcije programa za SH(za jedno,dva,tri i cetiri tela).
--Dodati parcijalni isetci SR.
+-Dodate parcijalne celine SR.
 -Napravljena osnovna klasifikacija programa (SH,SR,DK,MK i INFO).
 -Ubacen glavni klasifikacioni meni.
 -Ispravljene mnoge greske pri unosu podataka.
