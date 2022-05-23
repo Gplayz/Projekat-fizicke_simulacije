@@ -55,14 +55,17 @@ void ubrzanjeSH42();
 void silaSH42();
 void koeficijent_trenjaSH42();
 void sila_zatezanjaSH42();
-void predjeni_putSHSR();
-void vreme();
-void brzina();
+void predjeni_putSHSR(float a);
+void vremeSHSR(float a);
+void brzinaSHSR(float a);
 void unosDE();
 void main()
 {
-char u[4],r,str1[]="SR",str2[]="MK",str3[]="SH",str4[]="DE",str5[]="INFO";
-int i1,i2,i3,i4,i5;
+char u[4],r,str1[]="SR",str2[]="MK",str3[]="SH",str4[]="DE",str5[]="INFO",strg[]="DA",strgg[]="NE";
+int i1,i2,i3,i4,i5,g1,g2;
+float g=0;
+do
+{
 a:
 printf("Za strmu ravan unesite 'SR'.\nZa matematicko klatno unesite 'MK'.\nZa delovanje sile na telo na horizontalnoj podlozi unesite 'SH'.\nZa doplerov efekat unesite 'DE'.\nZa vise informacija unesite 'INFO'.\n");
 scanf("%s",&u);
@@ -96,6 +99,17 @@ if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0)
     printf("Greska u unosu parametra, ponovite unos.\n");
     goto a;
 }
+y:
+printf("Ako zelite da ponovo pokrenete program unesite 'DA', u suprotnom 'NE'.\n");
+scanf("%s", &u);
+g1=strcmp(u,strg);
+g2=strcmp(u,strgg);
+if(g1!=0&&g2!=0)
+{
+printf("Greska u unosu, ponovite unos.\n");
+goto y;
+}
+}while(g1==0);
 }
 void info()
 {
@@ -144,6 +158,8 @@ void masaSR()
 void ubrzanjeSR()
 {
 float a,m,mi,alfa;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu tela.\n");
 scanf("%f", &m);
@@ -176,6 +192,42 @@ if(a<0)
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}  
 }
 
 void ugao_ravniSR()
@@ -186,6 +238,8 @@ void ugao_ravniSR()
 void koeficijent_trenjaSR()
 {
 float a,m,mi,alfa;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu tela.\n");
 scanf("%f", &m);
@@ -218,6 +272,42 @@ if(mi<0||mi>1)
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}  
 }
 void unosMK()
 {
@@ -295,6 +385,8 @@ char u[2],str1[]="M",str2[]="A",str3[]="F",str4[]="MI";
 void masaSH()
 {
 float a,m,mi,f;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
@@ -326,11 +418,49 @@ if(m<0)
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}  
 }
 
 void ubrzanjeSH()
 {
 float a,m,mi,f;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu tela.\n");
 scanf("%f", &m);
@@ -362,11 +492,49 @@ if(a<0)
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}  
 }
 
 void silaSH()
 {
 float a,m,mi,f;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu tela.\n");
 scanf("%f", &m);
@@ -398,11 +566,49 @@ if(f<0)
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}  
 }
 
 void koeficijent_trenjaSH()
 {
 float a,m,mi,f;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu tela.\n");
 scanf("%f", &m);
@@ -434,6 +640,42 @@ if(mi<0||mi>1)
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}  
 }
 
 void unosSH2()
@@ -532,6 +774,8 @@ if(i1==0)
 void masaSH21()
 {
 float a,m,mi,f,T;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
@@ -572,11 +816,49 @@ if(T<0)
     goto b;
 }    
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}  
 }
 
 void ubrzanjeSH21()
 {
 float a,m,mi,f,T;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu tela.\n");
 scanf("%f", &m);
@@ -617,11 +899,49 @@ if(T<0)
     goto b;
 }    
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}  
 } 
 
 void silaSH21()
 {
 float a,m,mi,f,T;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu tela.\n");
 scanf("%f", &m);
@@ -662,11 +982,49 @@ if(T<0)
     goto b;
 }    
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}  
 }
 
 void koeficijent_trenjaSH21()
 {
 float a,m,mi,f,T;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu tela.\n");
 scanf("%f", &m);
@@ -707,11 +1065,49 @@ if(T<0)
     goto b;
 }    
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}  
 }
 
 void sila_zatezanjaSH21()
 {
 float a,m,mi,f,T;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu tela.\n");
 scanf("%f", &m);
@@ -753,11 +1149,49 @@ if(T<0)
     goto b;
 }    
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}  
 }
 
 void masaSH221()
 {
 float a,m1,m2,mi,f,T;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite intezitet sile koja deluje na telo.\n");
 scanf("%f", &f);
@@ -806,11 +1240,49 @@ if(T<0)
     goto b;
 }    
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}  
 }
 
 void masaSH222()
 {
 float a,m1,m2,mi,f,T;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite intezitet sile koja deluje na telo.\n");
 scanf("%f", &f);
@@ -859,11 +1331,49 @@ if(T<0)
     goto b;
 }    
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}  
 }
 
 void ubrzanjeSH22()
 {
 float a,m1,m2,mi,f,T;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu prvog tela tela.\n");
 scanf("%f", &m1);
@@ -912,11 +1422,49 @@ if(T<0)
     goto b;
 }    
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}  
 }
 
 void silaSH22()
 {
 float a,m1,m2,mi,f,T;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu prvog tela tela.\n");
 scanf("%f", &m1);
@@ -965,11 +1513,49 @@ if(T<0)
     goto b;
 }    
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}  
 }
 
 void koeficijent_trenjaSH22()
 {
 float a,m1,m2,mi,f,T;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu prvog tela tela.\n");
 scanf("%f", &m1);
@@ -1018,11 +1604,49 @@ if(T<0)
     goto b;
 }    
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}  
 } 
 
 void sila_zatezanjaSH22()
 {
 float a,m1,m2,mi,f,T;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu prvog tela tela.\n");
 scanf("%f", &m1);
@@ -1072,6 +1696,42 @@ if(T<0)
     goto b;
 }    
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}  
 }
 
 void unosSH3()
@@ -1175,6 +1835,8 @@ if(i1==0)
 void masaSH31()
 {
 float a,m,mi,f,T1,T2;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
@@ -1224,11 +1886,49 @@ if(T2<0)
     goto b;
 }    
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}  
 }
 
 void ubrzanjeSH31()
 {
 float a,m,mi,f,T1,T2;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu tela.\n");
 scanf("%f", &m);
@@ -1278,11 +1978,49 @@ if(T2<0)
     goto b;
 }    
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}  
 }
 
 void silaSH31()
 {
 float a,m,mi,f,T1,T2;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
@@ -1332,11 +2070,49 @@ if(T2<0)
     goto b;
 }    
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}  
 }
 
 void koeficijent_trenjaSH31()
 {
 float a,m,mi,f,T1,T2;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
@@ -1386,11 +2162,49 @@ if(T2<0)
     goto b;
 }    
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}  
 }
 
 void sila_zatezanjaSH31()
 {
 float a,m,mi,f,T1,T2;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
@@ -1441,11 +2255,49 @@ if(T2<0)
     goto b;
 }    
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}  
 }
 
 void masaSH321()
 {
 float a,m1,m2,m3,mi,f,T1,T2,T3;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu drugog tela.\n");
 scanf("%f", &m2);
@@ -1508,12 +2360,50 @@ if(T2<0)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
-}  
+}
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}    
 }
 
 void masaSH322()
 {
 float a,m1,m2,m3,mi,f,T1,T2,T3;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu prvog tela.\n");
 scanf("%f", &m1);
@@ -1576,12 +2466,50 @@ if(T2<0)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
-}  
+}
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}    
 }
 
 void masaSH323()
 {
 float a,m1,m2,m3,mi,f,T1,T2,T3;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu prvog tela.\n");
 scanf("%f", &m1);
@@ -1644,12 +2572,50 @@ if(T2<0)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
-}  
+}
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}    
 }
 
 void ubrzanjeSH32()
 {
 float a,m1,m2,m3,mi,f,T1,T2;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu prvog tela.\n");
 scanf("%f", &m1);
@@ -1712,12 +2678,50 @@ if(T2<0)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
-}  
+}
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}    
 }
 
 void silaSH32()
 {
 float a,m1,m2,m3,mi,f,T1,T2;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu prvog tela.\n");
 scanf("%f", &m1);
@@ -1780,12 +2784,50 @@ if(T2<0)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
-}  
+}
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}    
 }
 
 void koeficijent_trenjaSH32()
 {
 float a,m1,m2,m3,mi,f,T1,T2;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu prvog tela.\n");
 scanf("%f", &m1);
@@ -1848,12 +2890,50 @@ if(T2<0)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
-}  
+}
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}    
 }
 
 void sila_zatezanjaSH32()
 {
 float a,m1,m2,m3,mi,f,T1,T2;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu prvog tela.\n");
 scanf("%f", &m1);
@@ -1917,7 +2997,43 @@ if(T2<0)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
-}  
+}
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}    
 }
 
 void unosSH4()
@@ -2026,6 +3142,8 @@ if(i1==0)
 void masaSH41()
 {
 float a,m,mi,f,T1,T2,T3;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
@@ -2079,12 +3197,50 @@ if(T3<0)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
-}    
+} 
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}   
 }
 
 void ubrzanjeSH41()
 {
 float a,m,mi,f,T1,T2,T3;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu tela.\n");
 scanf("%f", &m);
@@ -2138,12 +3294,50 @@ if(T3<0)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
-}    
+}  
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}  
 }
 
 void silaSH41()
 {
 float a,m,mi,f,T1,T2,T3;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
@@ -2198,11 +3392,49 @@ if(T3<0)
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
 }    
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}
 }
 
 void koeficijent_trenjaSH41()
 {
 float a,m,mi,f,T1,T2,T3;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
@@ -2257,11 +3489,49 @@ if(T3<0)
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
 }    
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}
 }
 
 void sila_zatezanjaSH41()
 {
 float a,m,mi,f,T1,T2,T3;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
@@ -2316,12 +3586,50 @@ if(T3<0)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
-}    
+}   
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+} 
 }
 
 void masaSH421()
 {
 float a,m1,m2,m3,m4,mi,f,T1,T2,T3;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu drugog tela.\n");
 scanf("%f", &m2);
@@ -2400,11 +3708,49 @@ if(T3<0)
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}
 }
 
 void masaSH422()
 {
 float a,m1,m2,m3,m4,mi,f,T1,T2,T3;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu prvog tela.\n");
 scanf("%f", &m1);
@@ -2483,11 +3829,49 @@ if(T3<0)
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}
 }
 
 void masaSH423()
 {
 float a,m1,m2,m3,m4,mi,f,T1,T2,T3;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu prvog tela.\n");
 scanf("%f", &m1);
@@ -2566,11 +3950,49 @@ if(T3<0)
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}
 }
 
 void masaSH424()
 {
 float a,m1,m2,m3,m4,mi,f,T1,T2,T3;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu prvog tela.\n");
 scanf("%f", &m1);
@@ -2649,11 +4071,49 @@ if(T3<0)
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}
 }
 
 void ubrzanjeSH42()
 {
 float a,m1,m2,m3,m4,mi,f,T1,T2,T3;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu prvog tela.\n");
 scanf("%f", &m1);
@@ -2732,11 +4192,49 @@ if(T3<0)
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}
 }
 
 void silaSH42()
 {
 float a,m1,m2,m3,m4,mi,f,T1,T2,T3;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu prvog tela.\n");
 scanf("%f", &m1);
@@ -2815,11 +4313,49 @@ if(T3<0)
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}
 }
 
 void koeficijent_trenjaSH42()
 {
 float a,m1,m2,m3,m4,mi,f,T1,T2,T3;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu prvog tela.\n");
 scanf("%f", &m1);
@@ -2898,11 +4434,49 @@ if(T3<0)
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}
 }
 
 void sila_zatezanjaSH42()
 {
 float a,m1,m2,m3,m4,mi,f,T1,T2,T3;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
 b:
 printf("Unesite masu prvog tela.\n");
 scanf("%f", &m1);
@@ -2982,12 +4556,48 @@ if(T3<0)
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
 }
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
 }
-/*
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}
+}
+
 void predjeni_putSHSR(float a)
 {
-a:
 float s,t,v;
+a:
 printf("Unesite vreme kretanja.\n");
 scanf("%f", &t);
 if(t<0)
@@ -3009,13 +4619,13 @@ if(v<0)
     printf("Greska u unosu parametara, ponovite unos.\n");
     goto a;
 }    
+1;
 }
-
 
 void vremeSHSR(float a)
 {
-a:
 float s,t,v;
+a:
 printf("Unesite predjeni put tela.\n");
 scanf("%f", &s);
 if(s<0)
@@ -3023,7 +4633,7 @@ if(s<0)
     printf("Predjeni put ne moze biti negativan, ponovite unos.\n");
     goto a;
 }
-t=(a*t*t)/2;
+t=sqrt((2*s)/a);
 printf("Vreme iznosi %f sekundi.\n",t);
 if(t<0)
 {
@@ -3038,11 +4648,26 @@ if(v<0)
     goto a;
 }    
 }
-*/
 
-void brzinaSHSR()
+void brzinaSHSR(float a)
 {
 
+float t,v;
+b:
+printf("Unesite vreme kretanja.\n");
+scanf("%f", &t);
+if(t<0)
+{
+    printf("Vreme ne moze biti negativno, ponovite unos.\n");
+    goto b;
+}
+v=a*t;
+printf("Brzina posle %f sekundi iznosi:%f.\n",t,v);
+if(v<0)
+{
+    printf("Greska u unosu parametara, ponovite unos.\n");
+    goto b;
+}
 }
 
 void unosDE()
