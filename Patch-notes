@@ -1,0 +1,14 @@
+# Projekat-fizicke_simulacije
+Projekat ta kraj godine iz programiranja, tema fizičke simulacije.
+Patch 1.0: (22.5)
+-Dodate osnovne funkcije programa za SH(za jedno,dva,tri i cetiri tela).
+-Dodate parcijalne celine SR.
+-Napravljena osnovna klasifikacija programa (SH,SR,DK,MK i INFO).
+-Ubacen glavni klasifikacioni meni.
+-Ispravljene mnoge greske pri unosu podataka.
+-3051 linija koda.
+Patch 2.0: (23.5)
+-Dodate funkcije za izracunavanje predjenog puta,vremena i brzine za SH i SR.
+-Dodata mogucnost ponavljanja programa posle izvrsetka zadatka.
+-Ispravljene manje pravopisne greske.
+-4676 linija koda.
