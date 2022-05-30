@@ -4,8 +4,16 @@
 #include <string.h>
 float radian=57.32,pi=3.14,g=9.81;
 void info();
+void infoSR();
+void infoMK();
+void infoSH();
+void infoDE();
+void infoCR();
 void unosSR();
 void masaSR();
+void MAmasaSR();
+void FPmasaSR();
+void FTRmasaSR();
 void ubrzanjeSR();
 void ugao_ravniSR();
 void koeficijent_trenjaSR();
@@ -113,6 +121,65 @@ goto y;
 }
 void info()
 {
+char u[2],str1[]="SR",str2[]="MK",str3[]="SH",str4[]="DE",str5[]="CR";
+int i1,i2,i3,i4,i5;
+a:
+printf("Unesite 'SR' za podatke o strmoj ravni.\nUnesite 'MK' za podatke o matematickom klatnu.\nUnesite 'SH' za podatke o delovanju sile na telo na horizontalnoj podlozi.\nUnesite 'DE' za podatke o doplerovom efektu.\nUnesite 'CR' za podatke o autoru programa.\n");
+scanf("%s", &u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoSR();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoMK();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoSH();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+infoDE();
+}
+i5=strcmp(u,str5);
+if(i5==0)
+{
+infoCR();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0)
+{
+    printf("Greska u unosu parametra, ponovite unos.\n");
+    goto a;
+}
+}
+
+void infoSR()
+{
+
+}
+
+void infoMK()
+{
+
+}
+
+void infoSH()
+{
+
+}
+
+void infoDE()
+{
+
+}
+
+void infoCR()
+{
 
 }
 
@@ -152,9 +219,280 @@ void unosSR()
 
 void masaSR()
 {
-
+float a, mi, ftr, alfa, m;
+char u[3],str1[]="MA",str2[]="FP",str3[]="FTR";
+int i1,i2,i3;
+a:
+printf("Ako vam je potrebna masa tela, a imate m*ax unesite 'MA'.\nAko vam je potrebna masa tela, a imate paralelnu silu unesite 'FP'.\nAko vam je potrebna masa tela, a imate FTR unesite 'FTR'.\n");
+scanf("%s", &u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+MAmasaSR();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+FPmasaSR();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+FTRmasaSR();
+}
+if(i1!=0&&i2!=0&&i3!=0)
+{
+printf("Greska u unosu parametra, ponovite unos.\n");
+goto a;
+}
 }
 
+void MAmasaSR()
+{
+float a,m,mi,alfa,ma;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
+b:
+printf("Unesite ubrzanje tela.\n");
+scanf("%f", &a);
+if(0>a)
+{
+printf("Ubrzanje ne moze biti negativno. Ponovite unos.\n");
+goto b;
+}
+e:
+printf("Unesite m*ax tela.\n");
+scanf("%f",&ma);
+if(ma<0)
+{
+printf("m*ax ne moze biti negativno, ponovite unos.\n");
+goto e;
+}
+c:
+printf("Unesite koeficijent trenja od 0 do 1(0 znaci da nema trenja).\n");
+scanf("%f", &mi);
+if(mi<0||mi>1)
+{
+    printf("Greska u unosu koeficijenta trenja, ponovite unos.\n");
+goto c;
+}
+d:
+printf("Unesite ugao ravni(moze biti 30,45 i 60 stepeni).\n");
+scanf("%f", &alfa);
+if(alfa!=45&&alfa!=60&&alfa!=30)
+{
+    printf("Greska u unosu ugla ravni, ponovite unos.\n");
+goto d;
+}
+alfa=alfa/radian;
+m=ma/a;
+printf("Masa iznosi: %f\n", m);
+if(m<0)
+{
+    printf("Neispravan unos nekog parametra ponovite unos.\n");
+    goto b;
+}
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}  
+}
+void FPmasaSR()
+{
+float a,m,mi,alfa,fp;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
+b:
+printf("Unesite ubrzanje tela.\n");
+scanf("%f", &a);
+if(0>a)
+{
+printf("Ubrzanje ne moze biti negativno. Ponovite unos.\n");
+goto b;
+}
+e:
+printf("Unesite paralelnu silu tela.\n");
+scanf("%f",&fp);
+if(fp<0)
+{
+printf("FP ne moze biti negativno, ponovite unos.\n");
+goto e;
+}
+c:
+printf("Unesite koeficijent trenja od 0 do 1(0 znaci da nema trenja).\n");
+scanf("%f", &mi);
+if(mi<0||mi>1)
+{
+    printf("Greska u unosu koeficijenta trenja, ponovite unos.\n");
+goto c;
+}
+d:
+printf("Unesite ugao ravni(moze biti 30,45 i 60 stepeni).\n");
+scanf("%f", &alfa);
+if(alfa!=45&&alfa!=60&&alfa!=30)
+{
+    printf("Greska u unosu ugla ravni, ponovite unos.\n");
+goto d;
+}
+alfa=alfa/radian;
+m=fp/(g*sin(alfa));
+printf("Masa iznosi: %f\n", m);
+if(m<0)
+{
+    printf("Neispravan unos nekog parametra ponovite unos.\n");
+    goto b;
+}
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}  
+}
+void FTRmasaSR()
+{
+float a,m,mi,alfa,ftr;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
+b:
+printf("Unesite ubrzanje tela.\n");
+scanf("%f", &a);
+if(0>a)
+{
+printf("Ubrzanje ne moze biti negativno. Ponovite unos.\n");
+goto b;
+}
+e:
+printf("Unesite silu trenja.\n");
+scanf("%f",&ftr);
+if(ftr<0)
+{
+printf("FP ne moze biti negativno, ponovite unos.\n");
+goto e;
+}
+c:
+printf("Unesite koeficijent trenja od 0 do 1(0 znaci da nema trenja).\n");
+scanf("%f", &mi);
+if(mi<0||mi>1)
+{
+    printf("Greska u unosu koeficijenta trenja, ponovite unos.\n");
+goto c;
+}
+d:
+printf("Unesite ugao ravni(moze biti 30,45 i 60 stepeni).\n");
+scanf("%f", &alfa);
+if(alfa!=45&&alfa!=60&&alfa!=30)
+{
+    printf("Greska u unosu ugla ravni, ponovite unos.\n");
+goto d;
+}
+alfa=alfa/radian;
+m=ftr/(mi*g*cos(alfa));
+printf("Masa iznosi: %f\n", m);
+if(m<0)
+{
+    printf("Neispravan unos nekog parametra ponovite unos.\n");
+    goto b;
+}
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}
+}
 void ubrzanjeSR()
 {
 float a,m,mi,alfa;
@@ -186,7 +524,7 @@ goto d;
 }
 alfa=alfa/radian;
 a=g*(sin(alfa)-mi*cos(alfa));
-printf("Ubraznje iznosi: %f", a);
+printf("Ubraznje iznosi: %f\n", a);
 if(a<0)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
