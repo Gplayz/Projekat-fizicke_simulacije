@@ -279,9 +279,9 @@ if(mi<0||mi>1)
 goto c;
 }
 d:
-printf("Unesite ugao ravni(moze biti 30,45 i 60 stepeni).\n");
+printf("Unesite ugao ravni.\n");
 scanf("%f", &alfa);
-if(alfa<0||alfa>90)
+if(alfa<0||alfa>89)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto d;
@@ -365,9 +365,9 @@ if(mi<0||mi>1)
 goto c;
 }
 d:
-printf("Unesite ugao ravni(moze biti 30,45 i 60 stepeni).\n");
+printf("Unesite ugao ravni.\n");
 scanf("%f", &alfa);
-if(alfa<0||alfa>90)
+if(alfa<0||alfa>89)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto d;
@@ -451,9 +451,9 @@ if(mi<0||mi>1)
 goto c;
 }
 d:
-printf("Unesite ugao ravni(moze biti 30,45 i 60 stepeni).\n");
+printf("Unesite ugao ravni.\n");
 scanf("%f", &alfa);
-if(alfa<0||alfa>90)
+if(alfa<0||alfa>89)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto d;
@@ -529,9 +529,9 @@ if(mi<0||mi>1)
 goto c;
 }
 d:
-printf("Unesite ugao ravni(moze biti 30,45 i 60 stepeni).\n");
+printf("Unesite ugao ravni.\n");
 scanf("%f", &alfa);
-if(alfa<0||alfa>90)
+if(alfa<0||alfa>89)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto d;
@@ -651,7 +651,7 @@ goto l;
 sin=fp/(m*g);
 alfa=asin(sin)*radian;
 printf("Ugao ravni iznosi: %f\n", alfa);
-if(alfa<0||alfa>90)
+if(alfa<0||alfa>89)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
@@ -738,7 +738,7 @@ goto l;
 cos=n/(m*g);
 alfa=acos(cos)*radian;
 printf("Ugao ravni iznosi: %f\n", alfa);
-if(alfa<0||alfa>90)
+if(alfa<0||alfa>89)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
@@ -806,12 +806,16 @@ if(a<=0)
 goto c;
 }
 d:
-printf("Unesite ugao ravni(moze biti 30,45 i 60 stepeni).\n");
+printf("Unesite ugao ravni.\n");
 scanf("%f", &alfa);
-if(alfa!=45&&alfa!=60&&alfa!=30)
+if(alfa<0||alfa>89)
 {
-    printf("Greska u unosu ugla ravni, ponovite unos.\n");
-goto d;
+    printf("Neispravan unos nekog parametra ponovite unos.\n");
+    goto d;
+}
+if(alfa==0)
+{
+    printf("Zamolio bih vas da koristite SH za izracunjavanja bez ugla ravni.\n");
 }
 alfa=alfa/radian;
 mi=(g*sin(alfa)-a)/(g*cos(alfa));
