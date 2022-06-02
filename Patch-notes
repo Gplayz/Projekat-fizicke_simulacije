@@ -16,3 +16,7 @@ Patch 3.0 (30.5)
 -Dodata tri nacina za izracunavanje mase tela na strmoj ravni.
 -Dodata nova klasifikacija funkcija odseka info.
 -5014 linija koda.
+Patch 4.0 (2.6)
+-Zavrsena funkcija strme ravni.
+-Dodata mogucnost koristcenja bilo kog ugla.
+-5225 linija koda.
