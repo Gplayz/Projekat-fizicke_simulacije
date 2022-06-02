@@ -16,6 +16,8 @@ void FPmasaSR();
 void FTRmasaSR();
 void ubrzanjeSR();
 void ugao_ravniSR();
+void ugao_ravniSRFP();
+void ugao_ravniSRN();
 void koeficijent_trenjaSR();
 void unosMK();
 void unosSH();
@@ -279,10 +281,14 @@ goto c;
 d:
 printf("Unesite ugao ravni(moze biti 30,45 i 60 stepeni).\n");
 scanf("%f", &alfa);
-if(alfa!=45&&alfa!=60&&alfa!=30)
+if(alfa<0||alfa>90)
 {
-    printf("Greska u unosu ugla ravni, ponovite unos.\n");
-goto d;
+    printf("Neispravan unos nekog parametra ponovite unos.\n");
+    goto d;
+}
+if(alfa==0)
+{
+    printf("Zamolio bih vas da koristite SH za izracunjavanja bez ugla ravni.\n");
 }
 alfa=alfa/radian;
 m=ma/a;
@@ -361,10 +367,14 @@ goto c;
 d:
 printf("Unesite ugao ravni(moze biti 30,45 i 60 stepeni).\n");
 scanf("%f", &alfa);
-if(alfa!=45&&alfa!=60&&alfa!=30)
+if(alfa<0||alfa>90)
 {
-    printf("Greska u unosu ugla ravni, ponovite unos.\n");
-goto d;
+    printf("Neispravan unos nekog parametra ponovite unos.\n");
+    goto d;
+}
+if(alfa==0)
+{
+    printf("Zamolio bih vas da koristite SH za izracunjavanja bez ugla ravni.\n");
 }
 alfa=alfa/radian;
 m=fp/(g*sin(alfa));
@@ -443,10 +453,14 @@ goto c;
 d:
 printf("Unesite ugao ravni(moze biti 30,45 i 60 stepeni).\n");
 scanf("%f", &alfa);
-if(alfa!=45&&alfa!=60&&alfa!=30)
+if(alfa<0||alfa>90)
 {
-    printf("Greska u unosu ugla ravni, ponovite unos.\n");
-goto d;
+    printf("Neispravan unos nekog parametra ponovite unos.\n");
+    goto d;
+}
+if(alfa==0)
+{
+    printf("Zamolio bih vas da koristite SH za izracunjavanja bez ugla ravni.\n");
 }
 alfa=alfa/radian;
 m=ftr/(mi*g*cos(alfa));
@@ -517,10 +531,14 @@ goto c;
 d:
 printf("Unesite ugao ravni(moze biti 30,45 i 60 stepeni).\n");
 scanf("%f", &alfa);
-if(alfa!=45&&alfa!=60&&alfa!=30)
+if(alfa<0||alfa>90)
 {
-    printf("Greska u unosu ugla ravni, ponovite unos.\n");
-goto d;
+    printf("Neispravan unos nekog parametra ponovite unos.\n");
+    goto d;
+}
+if(alfa==0)
+{
+    printf("Zamolio bih vas da koristite SH za izracunjavanja bez ugla ravni.\n");
 }
 alfa=alfa/radian;
 a=g*(sin(alfa)-mi*cos(alfa));
@@ -570,9 +588,202 @@ brzinaSHSR(a);
 
 void ugao_ravniSR()
 {
-
+float a, mi, ftr, alfa, m;
+char u[2],str1[]="FP",str2[]="N";
+int i1,i2,i3;
+a:
+printf("Ako vam je potreban ugao ravni, a imate paralelnu silu unesite 'FP'.\nAko vam je potreban ugao ravni, a imate silu reakcije podloge unesite 'N'.\n");
+scanf("%s", &u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+ugao_ravniSRFP();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+ugao_ravniSRN();
+}
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu parametra, ponovite unos.\n");
+goto a;
+}
 }
 
+void ugao_ravniSRFP()
+{
+float a,m,mi,alfa,sin,fp;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
+b:
+printf("Unesite masu tela.\n");
+scanf("%f", &m);
+if(0>=m)
+{
+printf("Masa ne moze biti negativna. Ponovite unos.\n");
+goto b;
+}
+c:
+printf("Unesite koeficijent trenja od 0 do 1(0 znaci da nema trenja).\n");
+scanf("%f", &mi);
+if(mi<0||mi>1)
+{
+    printf("Greska u unosu koeficijenta trenja, ponovite unos.\n");
+goto c;
+}
+d:
+printf("Unesite ubrzanje.\n");
+scanf("%f", &a);
+if(a<0)
+{
+    printf("Greska u unosu ubrzanja, ponovite unos.\n");
+goto d;
+}
+l:
+printf("Unesite paralelnu silu.\n");
+scanf("%f", &fp);
+if(fp<0)
+{
+printf("Paralelna sila ne moze biti negativna, ponovite unos.\n");
+goto l;
+}
+sin=fp/(m*g);
+alfa=asin(sin)*radian;
+printf("Ugao ravni iznosi: %f\n", alfa);
+if(alfa<0||alfa>90)
+{
+    printf("Neispravan unos nekog parametra ponovite unos.\n");
+    goto b;
+}
+if(alfa==0)
+{
+    printf("Zamolio bih vas da koristite SH za izracunjavanja bez ugla ravni.\n");
+}
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}
+}
+
+void ugao_ravniSRN()
+{
+float a,m,mi,alfa,cos,n;
+char u[2],str[]="DA",str1[]="NE",str2[]="S",str3[]="T",str4[]="V";
+float i,i1,i2,i3,i4;
+b:
+printf("Unesite masu tela.\n");
+scanf("%f", &m);
+if(0>=m)
+{
+printf("Masa ne moze biti negativna. Ponovite unos.\n");
+goto b;
+}
+c:
+printf("Unesite koeficijent trenja od 0 do 1(0 znaci da nema trenja).\n");
+scanf("%f", &mi);
+if(mi<0||mi>1)
+{
+    printf("Greska u unosu koeficijenta trenja, ponovite unos.\n");
+goto c;
+}
+d:
+printf("Unesite ubrzanje.\n");
+scanf("%f", &a);
+if(a<0)
+{
+    printf("Greska u unosu ubrzanja, ponovite unos.\n");
+goto d;
+}
+l:
+printf("Unesite horizontalnu silu.\n");
+scanf("%f", &n);
+if(n<0)
+{
+printf("Paralelna sila ne moze biti negativna, ponovite unos.\n");
+goto l;
+}
+cos=n/(m*g);
+alfa=acos(cos)*radian;
+printf("Ugao ravni iznosi: %f\n", alfa);
+if(alfa<0||alfa>90)
+{
+    printf("Neispravan unos nekog parametra ponovite unos.\n");
+    goto b;
+}
+if(alfa==0)
+{
+    printf("Zamolio bih vas da koristite SH za izracunjavanja bez ugla ravni.\n");
+}
+q:
+printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
+scanf("%s", &u);
+i=strcmp(u,str);
+i1=strcmp(u,str1);
+if(i!=0&&i1!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto q;
+}
+if(i==0)
+{
+t:
+printf("Ako vam je potreban predjeni put i brzina unesite 'S'\nAko vam je potrebno vreme i brzina unesite 'T'\nAko vam je potrebna samo brzina unesite 'V'\n");
+scanf("%s", &u);
+i2=strcmp(u,str2);
+i3=strcmp(u,str3);
+i4=strcmp(u,str4);
+if(i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto t;
+}
+if(i2==0)
+{
+predjeni_putSHSR(a);   
+}
+if(i3==0)
+{
+vremeSHSR(a);
+}
+if(i4==0)
+{
+brzinaSHSR(a);
+}
+}
+}
 void koeficijent_trenjaSR()
 {
 float a,m,mi,alfa;
