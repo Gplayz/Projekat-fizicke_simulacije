@@ -9,6 +9,14 @@ void infoMK();
 void infoSH();
 void infoDE();
 void infoCR();
+void VIP();
+void VIPSH();
+void VIPSR();
+void VIPKP();
+void VIPKPI();
+void VIPKPPR();
+void VIPKPFO();
+void VIPKPTZ();
 void unosSR();
 void masaSR();
 void MAmasaSR();
@@ -123,8 +131,8 @@ goto y;
 }
 void info()
 {
-char u[2],str1[]="SR",str2[]="MK",str3[]="SH",str4[]="DE",str5[]="CR";
-int i1,i2,i3,i4,i5;
+char u[3],str1[]="SR",str2[]="MK",str3[]="SH",str4[]="DE",str5[]="CR",str6[]="VIP";
+int i1,i2,i3,i4,i5,i6;
 a:
 printf("Unesite 'SR' za podatke o strmoj ravni.\nUnesite 'MK' za podatke o matematickom klatnu.\nUnesite 'SH' za podatke o delovanju sile na telo na horizontalnoj podlozi.\nUnesite 'DE' za podatke o doplerovom efektu.\nUnesite 'CR' za podatke o autoru programa.\n");
 scanf("%s", &u);
@@ -153,7 +161,12 @@ if(i5==0)
 {
 infoCR();
 }
-if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0)
+i6=strcmp(u,str6);
+if(i6==0)
+{
+VIP();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0&&i6!=0)
 {
     printf("Greska u unosu parametra, ponovite unos.\n");
     goto a;
@@ -183,6 +196,113 @@ void infoDE()
 void infoCR()
 {
 
+}
+void VIP()
+{
+char u[3],str1[]="SH",str2[]="SR",str3[]="KP",str4[]="KPI";
+int i1,i2,i3,i4;
+a:
+printf("Unesite 'SH' za custom tekst zadatka ove oblasti.\nUnesite 'SR' za custom tekst zadatka ove oblasti.\nUnesite 'KP' za zadatak o kolonizovanju planeta.\nUnesite 'KPI' za informacije o kolonizovanju planeta.\n");
+scanf("%s", &u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+VIPSH();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+VIPSR();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+VIPKP();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+VIPKPI();
+}
+    if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
+{
+    printf("Greska u unosu parametra, ponovite unos.\n");
+    goto a;
+}
+}
+
+void VIPSH()
+{
+printf("Natprirodna sila deluje na kock(e)u i salje je ka piramidi Rtanj.\na)Izracunaj masu kocke.\nb)Izracunaj ubrzanje kocke.\nc)Izracunaj natprirodnu silu koja deluje na kocku.\nd)Izracunaj koeficijent trenja kocke sa podlogom.\n*Napomena:Tekst je namenjen osnovno za jedno telo, ali se mogu koristiti i opcije sa vise tela koja mogu biti istih ili razlicitih masa.Takodje opcija sa vise tela dobija opciju izracunavanja sile zatezanja.*\n");
+}
+
+void VIPSR()
+{
+printf("Dusan izbacuje ves masinu iz kuce. Dosetio se da preko stepenista stavi daske koje je nasao i tako spusti ves masinu. Pomozite Dusanu da nadje:\na)Masu ves masine.\nb)Ubrzanje ves masine pri spustanju niz daske.\nc)Koeficijent trenja izmedju daske i ves masine.\nd)Ugao u odnosu na stepeniste pri pustanju ves masine.\n*)Silu koja je potrebna da se polomi kost Dusanu ako doceka ves masinu(samo za takmicare)(nazalost nemoguce napraviti u programu).\n");
+}
+
+void VIPKP()
+{
+float gp,gama,m,r;
+int i1,i2;
+/*gama=0.0000000000667;*/
+gama=6.67*pow(10,-11);
+printf("Unesite masu planete i stepen broja mase(10 na x).\n");
+scanf("%f%d",&m,&i1);
+m=m*pow(10,i1);
+printf("Unesite poluprecnik planete i stepen broja poluprecnika(10 na x)\n");
+scanf("%f%d",&r,&i2);
+r=r*pow(10,i2);
+gp=gama*(m/(r*r));
+printf("Gravitacija planete iznosi:%f.\n",gp);
+if(gp<0)
+{
+printf("Gravitacija planete ne moze biti negativna.\n");
+}
+}
+
+void VIPKPI()
+{
+char u[2],str1[]="PR",str2[]="FO",str3[]="TZ";
+int i1,i2,i3;
+a:
+printf("Unesite 'PR' za primere podataka za kolonizovanje planeta.\nUnesite 'FO' za ispis formula potrebnih za izracunavanje gravitacije planete.\nUnesite 'TZ' za tekst zadatka.\n");
+scanf("%s", &u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+VIPKPPR();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+VIPKPFO();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+VIPKPTZ();
+}
+if(i1!=0&&i2!=0&&i3!=0)
+{
+printf("Greksa u unosu parametara, ponovite unos.\n");
+goto a;
+}
+}
+
+void VIPKPPR()
+{
+printf("Primer 1:\nZa vrednost mase planete uzmite->5.97*10^24 kg\nZa vrednost poluprecnika planete uzmite->6.37*10^6 m\nGravitacija planete sa datim vrednostima iznosi 9.81344 m/s^2 i predstavlja gravitaciju zemlje.\nPrimer 2:\nZa vrednost mase planete uzmite->6.4171*10^23 kg\nZa vrednost poluprecnika planete uzmite->3.3962*10^6 m\nGravitacija planete sa datim vrednostima iznosi 3.71089 m/s^2 i predstavlja gravitaciju marsa(odakle je odeljenje 1/4).\n");
+}
+
+void VIPKPFO()
+{
+printf("Za izracunavanje gravitacije planeta koriscena je formula:\ng=gama*(m/r^2)\nGama-predstavlja konstantu gravitacije i iznosi:\n6.67*10^-11 N*m^2/kg^2\nm-predstavlja masu planete.\nr-predstavlja poluprecnik planete.\n");
+}
+
+void VIPKPTZ()
+{
+printf("Elon Mask je unajmio odeljenje 1/4 da radi za njegovu kompaniju 'SpaceX'. Posto mu je receno da odlicno poznaju fiziku zatrazio je od njih da izracunaju gravitaciju na novo pronadjenim planetama.\n");
 }
 
 void unosSR()
