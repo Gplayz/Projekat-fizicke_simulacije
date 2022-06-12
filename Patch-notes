@@ -20,3 +20,6 @@ Patch 4.0 (2.6)
 -Zavrsena funkcija strme ravni.
 -Dodata mogucnost koristcenja bilo kog ugla.
 -5229 linija koda.
+Patch 5.0 (8.6)
+-Zavrsen tajan odeljak o kome ce se vise izneti na prikazu prezentacije.
+-5349 linija koda.
