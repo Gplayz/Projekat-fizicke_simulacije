@@ -131,10 +131,10 @@ goto y;
 }
 void info()
 {
-char u[3],str1[]="SR",str2[]="MK",str3[]="SH",str4[]="DE",str5[]="CR",str6[]="VIP";
-int i1,i2,i3,i4,i5,i6;
+char u[3],str1[]="SR",str2[]="MK",str3[]="SH",str4[]="DE",str5[]="CR",str6[]="VIP",str7[]="NZ";
+int i1,i2,i3,i4,i5,i6,i7;
 a:
-printf("Unesite 'SR' za podatke o strmoj ravni.\nUnesite 'MK' za podatke o matematickom klatnu.\nUnesite 'SH' za podatke o delovanju sile na telo na horizontalnoj podlozi.\nUnesite 'DE' za podatke o doplerovom efektu.\nUnesite 'CR' za podatke o autoru programa.\n");
+printf("Unesite 'SR' za podatke o strmoj ravni.\nUnesite 'MK' za podatke o matematickom klatnu.\nUnesite 'SH' za podatke o delovanju sile na telo na horizontalnoj podlozi.\nUnesite 'DE' za podatke o doplerovom efektu.\nUnesite 'CR' za podatke o autoru programa.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
 scanf("%s", &u);
 i1=strcmp(u,str1);
 if(i1==0)
@@ -166,7 +166,12 @@ if(i6==0)
 {
 VIP();
 }
-if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0&&i6!=0)
+i7=strcmp(u,str7);
+if(i7==0)
+{
+main();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0&&i6!=0&&i7!=0)
 {
     printf("Greska u unosu parametra, ponovite unos.\n");
     goto a;
@@ -199,10 +204,10 @@ void infoCR()
 }
 void VIP()
 {
-char u[3],str1[]="SH",str2[]="SR",str3[]="KP",str4[]="KPI";
-int i1,i2,i3,i4;
+char u[3],str1[]="SH",str2[]="SR",str3[]="KP",str4[]="KPI",str5[]="NZ";
+int i1,i2,i3,i4,i5;
 a:
-printf("Unesite 'SH' za custom tekst zadatka ove oblasti.\nUnesite 'SR' za custom tekst zadatka ove oblasti.\nUnesite 'KP' za zadatak o kolonizovanju planeta.\nUnesite 'KPI' za informacije o kolonizovanju planeta.\n");
+printf("Unesite 'SH' za custom tekst zadatka ove oblasti.\nUnesite 'SR' za custom tekst zadatka ove oblasti.\nUnesite 'KP' za zadatak o kolonizovanju planeta.\nUnesite 'KPI' za informacije o kolonizovanju planeta.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
 scanf("%s", &u);
 i1=strcmp(u,str1);
 if(i1==0)
@@ -224,7 +229,12 @@ if(i4==0)
 {
 VIPKPI();
 }
-    if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
+i5=strcmp(u,str5);
+if(i5==0)
+{
+info();
+}
+    if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0)
 {
     printf("Greska u unosu parametra, ponovite unos.\n");
     goto a;
@@ -263,10 +273,10 @@ printf("Gravitacija planete ne moze biti negativna.\n");
 
 void VIPKPI()
 {
-char u[2],str1[]="PR",str2[]="FO",str3[]="TZ";
-int i1,i2,i3;
+char u[2],str1[]="PR",str2[]="FO",str3[]="TZ",str4[]="NZ";
+int i1,i2,i3,i4;
 a:
-printf("Unesite 'PR' za primere podataka za kolonizovanje planeta.\nUnesite 'FO' za ispis formula potrebnih za izracunavanje gravitacije planete.\nUnesite 'TZ' za tekst zadatka.\n");
+printf("Unesite 'PR' za primere podataka za kolonizovanje planeta.\nUnesite 'FO' za ispis formula potrebnih za izracunavanje gravitacije planete.\nUnesite 'TZ' za tekst zadatka.\nnUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
 scanf("%s", &u);
 i1=strcmp(u,str1);
 if(i1==0)
@@ -282,6 +292,11 @@ i3=strcmp(u,str3);
 if(i3==0)
 {
 VIPKPTZ();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+VIP();
 }
 if(i1!=0&&i2!=0&&i3!=0)
 {
@@ -307,10 +322,10 @@ printf("Elon Mask je unajmio odeljenje 1/4 da radi za njegovu kompaniju 'SpaceX'
 
 void unosSR()
 {
-    char u[2],str1[]="M",str2[]="A",str3[]="U",str4[]="MI";
-    int i1,i2,i3,i4;
+    char u[2],str1[]="M",str2[]="A",str3[]="U",str4[]="MI",str5[]="NZ";
+    int i1,i2,i3,i4,i5;
     a:
-    printf("Ako vam je potrebna masa unesite 'M'.\nAko vam je potrebno ubrzanje unesite 'A'.\nAko vam je potreban ugao ravni unesite 'U'.\nAko vam je potreban koeficijent trenja unesite 'MI'.\n");
+    printf("Ako vam je potrebna masa unesite 'M'.\nAko vam je potrebno ubrzanje unesite 'A'.\nAko vam je potreban ugao ravni unesite 'U'.\nAko vam je potreban koeficijent trenja unesite 'MI'.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
     scanf("%s", &u);
     i1=strcmp(u,str1);
     if(i1==0)
@@ -332,7 +347,12 @@ void unosSR()
     {
     koeficijent_trenjaSR();
     }
-    if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
+    i5=strcmp(u,str5);
+    if(i5==0)
+    {
+    main();
+    }
+    if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0)
 {
     printf("Greska u unosu parametra, ponovite unos.\n");
     goto a;
@@ -989,10 +1009,10 @@ void unosMK()
 
 void unosSH()
 {
-char u[6],str1[]="JEDAN",str2[]="DVA",str3[]="TRI",str4[]="CETIRI";
-int i1,i2,i3,i4;
+char u[6],str1[]="JEDAN",str2[]="DVA",str3[]="TRI",str4[]="CETIRI",str5[]="NZ";
+int i1,i2,i3,i4,i5;
     a:
-    printf("Ako imate jedno telo unesite 'JEDAN'.\nAko imate dva tela unesite 'DVA'.\nAko imate tri tela unesite 'TRI'.\nAko imate cetiri tela unesite 'CETIRI'.\n");
+    printf("Ako imate jedno telo unesite 'JEDAN'.\nAko imate dva tela unesite 'DVA'.\nAko imate tri tela unesite 'TRI'.\nAko imate cetiri tela unesite 'CETIRI'.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
     scanf("%s", &u);
     i1=strcmp(u,str1);
     if(i1==0)
@@ -1014,7 +1034,12 @@ int i1,i2,i3,i4;
     {
     unosSH4();
     }
-    if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
+    i5=strcmp(u,str5);
+    if(i5==0)
+    {
+    main();
+    }
+    if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0)
 {
     printf("Greska u unosu parametra, ponovite unos.\n");
     goto a;
@@ -1023,10 +1048,10 @@ int i1,i2,i3,i4;
 
 void unosSH1()
 {
-char u[2],str1[]="M",str2[]="A",str3[]="F",str4[]="MI";
-    int i1,i2,i3,i4;
+char u[2],str1[]="M",str2[]="A",str3[]="F",str4[]="MI",str5[]="NZ";
+    int i1,i2,i3,i4,i5;
     a:
-    printf("Ako vam je potrebna masa unesite 'M'.\nAko vam je potrebno ubrzanje unesite 'A'.\nAko vam je potrebna sila unesite 'F'.\nAko vam je potreban koeficijent trenja unesite 'MI'.\n");
+    printf("Ako vam je potrebna masa unesite 'M'.\nAko vam je potrebno ubrzanje unesite 'A'.\nAko vam je potrebna sila unesite 'F'.\nAko vam je potreban koeficijent trenja unesite 'MI'.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
     scanf("%s", &u);
     i1=strcmp(u,str1);
     if(i1==0)
@@ -1048,7 +1073,12 @@ char u[2],str1[]="M",str2[]="A",str3[]="F",str4[]="MI";
     {
     koeficijent_trenjaSH();
     }
-    if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
+    i5=strcmp(u,str5);
+    if(i5==0)
+    {
+    unosSH();
+    }
+    if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0)
 {
     printf("Greska u unosu parametra, ponovite unos.\n");
     goto a;
@@ -1353,11 +1383,16 @@ brzinaSHSR(a);
 
 void unosSH2()
 {
-char u[2],str[]="DA",str1[]="M",str2[]="A",str3[]="F",str4[]="MI",str5[]="T",str6[]="M1",str7[]="M2",str99[]="NE";
-int i,i1,i2,i3,i4,i5,i6,i99;
+char u[2],str[]="DA",str1[]="M",str2[]="A",str3[]="F",str4[]="MI",str5[]="T",str6[]="M1",str7[]="M2",str99[]="NE",str8[]="NZ";
+int i,i1,i2,i3,i4,i5,i6,i99,i7;
 a:
-printf("Ako su mase oba tela jednake, unesite 'DA' u suprotnom 'NE'.\n");
+printf("Ako su mase oba tela jednake, unesite 'DA' u suprotnom 'NE'.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
 scanf("%s", &u);
+i7=strcmp(u,str8);
+if(i7==0)
+{
+unosSH();
+}
 i=strcmp(u,str);
 i99=strcmp(u,str99);
 if(i!=0&&i99!=0)
@@ -1395,7 +1430,7 @@ if(i1==0)
     {
     sila_zatezanjaSH21();
     }
-    if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0)
+    if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0&&i7!=0)
 {
     printf("Greska u unosu parametra, ponovite unos.\n");
     goto b;
@@ -1436,7 +1471,7 @@ if(i1==0)
     {
     sila_zatezanjaSH22();
     }
-    if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0&&i6!=0)
+    if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0&&i6!=0&&i7!=0)
 {
     printf("Greska u unosu parametra, ponovite unos.\n");
     goto c;
@@ -2409,11 +2444,16 @@ brzinaSHSR(a);
 
 void unosSH3()
 {
-char u[2],str[]="DA",str1[]="M",str2[]="A",str3[]="F",str4[]="MI",str5[]="T",str6[]="M1",str7[]="M2",str8[]="M3",str99[]="NE";
-int i,i1,i2,i3,i4,i5,i6,i7,i99;
+char u[2],str[]="DA",str1[]="M",str2[]="A",str3[]="F",str4[]="MI",str5[]="T",str6[]="M1",str7[]="M2",str8[]="M3",str99[]="NE",str9[]="NZ";
+int i,i1,i2,i3,i4,i5,i6,i7,i99,i8;
 a:
-printf("Ako su mase svih tela jednake, unesite 'DA' u suprotnom 'NE'.\n");
+printf("Ako su mase svih tela jednake, unesite 'DA' u suprotnom 'NE'.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
 scanf("%s", &u);
+i8=strcmp(u,str9);
+if(i8==0)
+{
+unosSH();
+}
 i=strcmp(u,str);
 i99=strcmp(u,str99);
 if(i!=0&&i99!=0)
@@ -2451,7 +2491,7 @@ if(i1==0)
     {
     sila_zatezanjaSH31();
     }
-    if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0)
+    if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0&&i8!=0)
 {
     printf("Greska u unosu parametra, ponovite unos.\n");
     goto b;
@@ -2497,7 +2537,7 @@ if(i1==0)
     {
     sila_zatezanjaSH32();
     }
-    if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0&&i6!=0&&i7!=0)
+    if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0&&i6!=0&&i7!=0&&i8!=0)
 {
     printf("Greska u unosu parametra, ponovite unos.\n");
     goto c;
@@ -3711,11 +3751,16 @@ brzinaSHSR(a);
 
 void unosSH4()
 {
-char u[2],str[]="DA",str1[]="M",str2[]="A",str3[]="F",str4[]="MI",str5[]="T",str6[]="M1",str7[]="M2",str8[]="M3",str9[]="M4",str99[]="NE";
-int i,i1,i2,i3,i4,i5,i6,i7,i8,i99;
+char u[2],str[]="DA",str1[]="M",str2[]="A",str3[]="F",str4[]="MI",str5[]="T",str6[]="M1",str7[]="M2",str8[]="M3",str9[]="M4",str99[]="NE",str10[]="NZ";
+int i,i1,i2,i3,i4,i5,i6,i7,i8,i99,i9;
 a:
-printf("Ako su mase svih tela jednake, unesite 'DA' u suprotnom 'NE'.\n");
+printf("Ako su mase svih tela jednake, unesite 'DA' u suprotnom 'NE'.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
 scanf("%s", &u);
+i9=strcmp(u,str10);
+if(i9==0)
+{
+unosSH();
+}
 i=strcmp(u,str);
 i99=strcmp(u,str99);
 if(i!=0&&i99!=0)
@@ -3753,7 +3798,7 @@ if(i1==0)
     {
     sila_zatezanjaSH41();
     }
-    if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0)
+    if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0&&i9!=0)
 {
     printf("Greska u unosu parametra, ponovite unos.\n");
     goto b;
@@ -3804,7 +3849,7 @@ if(i1==0)
     {
     sila_zatezanjaSH42();
     }
-    if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0&&i6!=0&&i7!=0&&i8!=0)
+    if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0&&i6!=0&&i7!=0&&i8!=0&&i9!=0)
 {
     printf("Greska u unosu parametra, ponovite unos.\n");
     goto c;
