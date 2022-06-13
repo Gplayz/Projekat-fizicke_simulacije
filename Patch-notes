@@ -23,3 +23,6 @@ Patch 4.0 (2.6)
 Patch 5.0 (8.6)
 -Zavrsen tajan odeljak o kome ce se vise izneti na prikazu prezentacije.
 -5349 linija koda.
+Patch 6.0 (12.6)
+-Dodata mogucnost 'povratka koraka'.
+-5394 linija koda.
