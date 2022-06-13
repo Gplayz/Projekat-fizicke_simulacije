@@ -7,6 +7,41 @@ void info();
 void infoSR();
 void infoMK();
 void infoSH();
+void infoSH1();
+void infoSH1TZ();
+void infoSH1FO();
+void infoSH1FOM();
+void infoSH1FOA();
+void infoSH1FOF();
+void infoSH1FOMI();
+void infoSH1PR();
+void infoSH2();
+void infoSH21();
+void infoSH21TZ();
+void infoSH21FO();
+void infoSH21PR();
+void infoSH22();
+void infoSH22TZ();
+void infoSH22FO();
+void infoSH22PR();
+void infoSH3();
+void infoSH31();
+void infoSH31TZ();
+void infoSH31FO();
+void infoSH31PR();
+void infoSH32();
+void infoSH32TZ();
+void infoSH32FO();
+void infoSH32PR();
+void infoSH4();
+void infoSH41();
+void infoSH41TZ();
+void infoSH41FO();
+void infoSH41PR();
+void infoSH42();
+void infoSH42TZ();
+void infoSH42FO();
+void infoSH42PR();
 void infoDE();
 void infoCR();
 void VIP();
@@ -190,6 +225,523 @@ void infoMK()
 
 void infoSH()
 {
+char u[6],str1[]="JEDAN",str2[]="DVA",str3[]="TRI",str4[]="CETIRI",str5[]="NZ";
+int i1,i2,i3,i4,i5;
+a:
+printf("Unesite 'JEDAN' ako su Vam potrebne informacije o delovanju sila jednog tela.\nUnesite 'DVA' ako su Vam potrebne informacije o delovanju sila dva tela koja su medjusobno povezana.\nUnesite 'TRI' ako su Vam potrebne informacije o delovanju sila tri tela koja su medjusobno povezana.\nUnesite 'CETIRI' ako su Vam potrebne informacije o delovanju sila cetiri tela koja su medjusobno povezana.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s",u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoSH1();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoSH2();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoSH3();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+infoSH4();
+}
+i5=strcmp(u,str5);
+if(i5==0)
+{
+info();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0)
+{
+    printf("Greska u unosu parametra, ponovite unos.\n");
+    goto a;
+}
+}
+
+void infoSH1()
+{
+char u[2],str1[]="TZ",str2[]="FO",str3[]="PR",str4[]="NZ";
+int i1,i2,i3,i4;
+a:
+printf("Unesite 'TZ' za ispis teksta zadatka.\nUnesite 'FO' za ispis formula koje se koriste u zadatku.\nUnesite 'PR' za primere promenjivih.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s",u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoSH1TZ();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoSH1FO();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoSH1PR();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+infoSH();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
+{
+    printf("Greska u unosu parametra, ponovite unos.\n");
+    goto a;
+}
+}
+
+void infoSH1TZ()
+{
+printf("Silom F se deluje na telo koje se nalazi na horizontalnoj podlozi. Naci:\na)Masu tela.\nb)Ubrzanje tela.\nc)Silu kojom se deluje na telo.\nd)Koeficijent trenja podloge.\n");
+}
+
+void infoSH1FO()
+{
+char u[2],str1[]="M",str2[]="A",str3[]="F",str4[]="MI",str5[]="NZ";
+int i1,i2,i3,i4,i5;
+a:
+printf("Unesite 'M' za formule izracunavanja mase tela.\nUnesite 'A' za formule izracunavanja ubrzanja tela.\nUnesite 'F' za formule izracunavanja sile tela.\nUnesite 'MI' za formule izracunavanja koeficijenta trenja tela.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s", &u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoSH1FOM();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoSH1FOA();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoSH1FOF();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+infoSH1FOMI();
+}
+i5=strcmp(u,str5);
+if(i5==0)
+{
+infoSH1();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0)
+{
+    printf("Greska u unosu parametra, ponovite unos.\n");
+    goto a;
+}
+}
+
+void infoSH1FOM()
+{
+printf("m*a=F-Ftr1\nm*a=F-mi*m*g\nm*a+mi*m*g=F\nm*(a+mi*g)=F\nm=F/(a+mi*g)\n");
+}
+
+void infoSH1FOA()
+{
+printf("m*a=F-Ftr1\nm*a=F-mi*m*g\na=(F-mi*m*g)/m\n");
+}
+
+void infoSH1FOF()
+{
+printf("m*a=F-Ftr1\nm*a=F-mi*m*g\nF=m*a+mi*m*g\nF=m*(a+mi*g)\n");
+}
+
+void infoSH1FOMI()
+{
+printf("m*a=F-Ftr1\nm*a=F-mi*m*g\nmi*m*g=F-m*a\nmi=(F-m*a)/(m*g)\n");
+}
+
+void infoSH1PR()
+{
+printf("Primer:\nMasa:3 kg\nUbrzanje: 3 m/s^2\nSila: 18 N\nKoeficijent trenja: 0.30581\n");
+}
+
+void infoSH2()
+{
+char u[2],str1[]="DA",str2[]="NE",str3[]="NZ";
+int i1,i2,i3;
+a:
+printf("Unesite 'DA' ako su mase svih tela jednake.\nUnesite 'NE' ako su mase tela razlicite.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s", u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoSH21();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoSH22();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoSH();
+}
+if(i1!=0&&i2!=0&&i3!=0)
+{
+    printf("Greska u unosu parametra, ponovite unos.\n");
+    goto a;
+}
+}
+void infoSH21()
+{
+char u[2],str1[]="TZ",str2[]="FO",str3[]="PR",str4[]="NZ";
+int i1,i2,i3,i4;
+a:
+printf("Unesite 'TZ' za ispis teksta zadatka.\nUnesite 'FO' za ispis formula koje se koriste u zadatku.\nUnesite 'PR' za primere promenjivih.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s",u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoSH21TZ();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoSH21FO();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoSH21PR();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+infoSH2();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
+{
+    printf("Greska u unosu parametra, ponovite unos.\n");
+    goto a;
+}
+}
+
+void infoSH21TZ()
+{
+
+}
+
+void infoSH21FO()
+{
+
+}
+
+void infoSH21PR()
+{
+
+}
+
+void infoSH22()
+{
+char u[2],str1[]="TZ",str2[]="FO",str3[]="PR",str4[]="NZ";
+int i1,i2,i3,i4;
+a:
+printf("Unesite 'TZ' za ispis teksta zadatka.\nUnesite 'FO' za ispis formula koje se koriste u zadatku.\nUnesite 'PR' za primere promenjivih.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s",u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoSH22TZ();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoSH22FO();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoSH22PR();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+infoSH2();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
+{
+    printf("Greska u unosu parametra, ponovite unos.\n");
+    goto a;
+}
+}
+
+void infoSH22TZ()
+{
+
+}
+
+void infoSH22FO()
+{
+
+}
+
+void infoSH22PR()
+{
+
+}
+
+void infoSH3()
+{
+char u[2],str1[]="DA",str2[]="NE",str3[]="NZ";
+int i1,i2,i3;
+a:
+printf("Unesite 'DA' ako su mase svih tela jednake.\nUnesite 'NE' ako su mase tela razlicite.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s", u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoSH31();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoSH32();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoSH();
+}
+if(i1!=0&&i2!=0&&i3!=0)
+{
+    printf("Greska u unosu parametra, ponovite unos.\n");
+    goto a;
+}
+}
+
+void infoSH31()
+{
+char u[2],str1[]="TZ",str2[]="FO",str3[]="PR",str4[]="NZ";
+int i1,i2,i3,i4;
+a:
+printf("Unesite 'TZ' za ispis teksta zadatka.\nUnesite 'FO' za ispis formula koje se koriste u zadatku.\nUnesite 'PR' za primere promenjivih.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s",u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoSH31TZ();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoSH31FO();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoSH31PR();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+infoSH3();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
+{
+    printf("Greska u unosu parametra, ponovite unos.\n");
+    goto a;
+}
+}
+
+void infoSH31TZ()
+{
+
+}
+
+void infoSH31FO()
+{
+
+}
+
+void infoSH31PR()
+{
+
+}
+
+void infoSH32()
+{
+char u[2],str1[]="TZ",str2[]="FO",str3[]="PR",str4[]="NZ";
+int i1,i2,i3,i4;
+a:
+printf("Unesite 'TZ' za ispis teksta zadatka.\nUnesite 'FO' za ispis formula koje se koriste u zadatku.\nUnesite 'PR' za primere promenjivih.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s",u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoSH32TZ();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoSH32FO();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoSH32PR();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+infoSH3();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
+{
+    printf("Greska u unosu parametra, ponovite unos.\n");
+    goto a;
+}    
+}
+
+void infoSH32TZ()
+{
+
+}
+
+void infoSH32FO()
+{
+
+}
+
+void infoSH32PR()
+{
+
+}
+
+void infoSH4()
+{
+char u[2],str1[]="DA",str2[]="NE",str3[]="NZ";
+int i1,i2,i3;
+a:
+printf("Unesite 'DA' ako su mase svih tela jednake.\nUnesite 'NE' ako su mase tela razlicite.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s", u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoSH41();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoSH42();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoSH();
+}
+if(i1!=0&&i2!=0&&i3!=0)
+{
+    printf("Greska u unosu parametra, ponovite unos.\n");
+    goto a;
+}
+}
+
+void infoSH41()
+{
+char u[2],str1[]="TZ",str2[]="FO",str3[]="PR",str4[]="NZ";
+int i1,i2,i3,i4;
+a:
+printf("Unesite 'TZ' za ispis teksta zadatka.\nUnesite 'FO' za ispis formula koje se koriste u zadatku.\nUnesite 'PR' za primere promenjivih.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s",u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoSH41TZ();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoSH41FO();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoSH41PR();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+infoSH4();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
+{
+    printf("Greska u unosu parametra, ponovite unos.\n");
+    goto a;
+}
+}
+
+void infoSH41TZ()
+{
+
+}
+
+void infoSH41FO()
+{
+
+}
+
+void infoSH41PR()
+{
+
+}
+
+void infoSH42()
+{
+char u[2],str1[]="TZ",str2[]="FO",str3[]="PR",str4[]="NZ";
+int i1,i2,i3,i4;
+a:
+printf("Unesite 'TZ' za ispis teksta zadatka.\nUnesite 'FO' za ispis formula koje se koriste u zadatku.\nUnesite 'PR' za primere promenjivih.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s",u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoSH42TZ();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoSH42FO();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoSH42PR();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+infoSH4();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
+{
+    printf("Greska u unosu parametra, ponovite unos.\n");
+    goto a;
+}    
+}
+
+void infoSH42TZ()
+{
+
+}
+
+void infoSH42FO()
+{
+
+}
+
+void infoSH42PR()
+{
 
 }
 
@@ -200,7 +752,7 @@ void infoDE()
 
 void infoCR()
 {
-
+printf("Kodirao program i proracunao podatke za zadatke: Dusan Gvozdenovic 1/4.\nMentor: Dalibor Rajkovic.\n");
 }
 void VIP()
 {
