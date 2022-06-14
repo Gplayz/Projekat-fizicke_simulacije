@@ -30,3 +30,6 @@ Patch 7.0 (13.6)
 -Prosirena struktura odeljka info.
 -Dodate funkcije 'primer','formule' i 'tekst zadatka'.
 -5946 linija koda.
+Patch 8.0 (14.6)
+-Popunjen znacajan deo strukture infoSH.
+-Bez promene linija koda.
