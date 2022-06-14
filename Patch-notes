@@ -26,3 +26,7 @@ Patch 5.0 (8.6)
 Patch 6.0 (12.6)
 -Dodata mogucnost 'povratka koraka'.
 -5394 linija koda.
+Patch 7.0 (13.6)
+-Prosirena struktura odeljka info.
+-Dodate funkcije 'primer','formule' i 'tekst zadatka'.
+-5946 linija koda.
