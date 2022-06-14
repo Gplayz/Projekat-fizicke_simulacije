@@ -429,7 +429,7 @@ if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
 
 void infoSH21TZ()
 {
-
+printf("Silom F se deluje na dva tela koja se nalaze na horizontalnoj podlozi i koja su povezana su neistegljivom niti. Naci:\na)Masu tela i silu zatezanja.\nb)Ubrzanje tela i silu zatezanja.\nc)Silu kojom se deluje na tela i silu zatezanja.\nd)Koeficijent trenja podloge i silu zatezanja.\ne)Silu zatezanja niti");
 }
 
 void infoSH21FO()
@@ -478,7 +478,7 @@ if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
 
 void infoSH22TZ()
 {
-
+printf("Silom F se deluje na dva tela koja se nalaze na horizontalnoj podlozi i koja su povezana su neistegljivom niti. Naci:\na)Masu prvog tela i silu zatezanja.\nb)Masu drugog tela i silu zatezanja.\nc)Ubrzanje tela i silu zatezanja.\nd)Silu kojom se deluje na tela i silu zatezanja.\ne)Koeficijent trenja podloge i silu zatezanja.\nf)Silu zatezanja niti");
 }
 
 void infoSH22FO()
@@ -488,7 +488,7 @@ void infoSH22FO()
 
 void infoSH22PR()
 {
-
+printf("Primer:\nMasa prvog tela:2 kg\nMasa drugog tela:1 kg\nUbrzanje: 3 m/s^2\nSila: 18 N\nKoeficijent trenja: 0.30581\nSila zatezanja:6 N\n");
 }
 
 void infoSH3()
@@ -556,7 +556,7 @@ if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
 
 void infoSH31TZ()
 {
-
+printf("Silom F se deluje na tri tela koja se nalaze na horizontalnoj podlozi i koja su povezana su neistegljivom niti. Naci:\na)Masu tela i sile zatezanja.\nb)Ubrzanje tela i sile zatezanja.\nc)Silu kojom se deluje na tela i sile zatezanja.\nd)Koeficijent trenja podloge i sile zatezanja.\ne)Sile zatezanja niti");
 }
 
 void infoSH31FO()
@@ -566,7 +566,7 @@ void infoSH31FO()
 
 void infoSH31PR()
 {
-
+printf("Primer:\nMasa tela:2 kg\nUbrzanje: 3 m/s^2\nSila: 36 N\nKoeficijent trenja: 0.30581\nSila zatezanja T1:24 N\nSila zatezanja T2:12 N\n");
 }
 
 void infoSH32()
@@ -605,7 +605,7 @@ if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
 
 void infoSH32TZ()
 {
-
+printf("Silom F se deluje na tri tela koja se nalaze na horizontalnoj podlozi i koja su povezana su neistegljivom niti. Naci:\na)Masu prvog tela i sile zatezanje.\nb)Masu drugog tela i sile zatezanja.\nc)Masu treceg tela i sile zatezanja.\nd)Ubrzanje tela i sile zatezanja.\ne)Silu kojom se deluje na tela i sile zatezanja.\nf)Koeficijent trenja podloge i sile zatezanja.\ng)Sile zatezanja niti");
 }
 
 void infoSH32FO()
@@ -615,7 +615,7 @@ void infoSH32FO()
 
 void infoSH32PR()
 {
-
+printf("Primer:\nMasa prvog tela:3 kg\nMasa drugog tela:2 kg\nMasa treceg tela:1 kg\nUbrzanje: 3 m/s^2\nSila: 36 N\nKoeficijent trenja: 0.30581\nSila zatezanja T1:18 N\nSila zatezanja T2:6 N\n");
 }
 
 void infoSH4()
@@ -683,7 +683,7 @@ if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
 
 void infoSH41TZ()
 {
-
+printf("Silom F se deluje na cetiri tela koja se nalaze na horizontalnoj podlozi i koja su povezana su neistegljivom niti. Naci:\na)Masu tela i sile zatezanja.\nb)Ubrzanje tela i sile zatezanja.\nc)Silu kojom se deluje na tela i sile zatezanja.\nd)Koeficijent trenja podloge i sile zatezanja.\ne)Sile zatezanja niti");
 }
 
 void infoSH41FO()
@@ -693,7 +693,7 @@ void infoSH41FO()
 
 void infoSH41PR()
 {
-
+printf("Primer:\nMasa tela:1.5 kg\nUbrzanje: 3 m/s^2\nSila: 36 N\nKoeficijent trenja: 0.30581\nSila zatezanja T1:27 N\nSila zatezanja T2:18 N\nSila zatezanja T3:9 N\n");
 }
 
 void infoSH42()
@@ -732,7 +732,7 @@ if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
 
 void infoSH42TZ()
 {
-
+printf("Silom F se deluje na cetiri tela koja se nalaze na horizontalnoj podlozi i koja su povezana su neistegljivom niti. Naci:\na)Masu prvog tela i sile zatezanje.\nb)Masu drugog tela i sile zatezanja.\nc)Masu treceg tela i sile zatezanja.\nd)Masu cetvrtog tela i sile zatezanja.\ne)Ubrzanje tela i sile zatezanja.\nf)Silu kojom se deluje na tela i sile zatezanja.\ng)Koeficijent trenja podloge i sile zatezanja.\nh)Sile zatezanja niti");
 }
 
 void infoSH42FO()
@@ -742,7 +742,7 @@ void infoSH42FO()
 
 void infoSH42PR()
 {
-
+printf("Primer:\nMasa prvog tela:2.25 kg\nMasa drugog tela:1.75 kg\nMasa treceg tela:1.25 kg\nMasa cetvrtog tela:0.75 kg\nUbrzanje: 3 m/s^2\nSila: 36 N\nKoeficijent trenja: 0.30581\nSila zatezanja T1:22.5 N\nSila zatezanja T2:12 N\nSila zatezanja T3:7.5 N\n");
 }
 
 void infoDE()
