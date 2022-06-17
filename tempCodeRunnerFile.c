@@ -19,28 +19,70 @@ void infoSH2();
 void infoSH21();
 void infoSH21TZ();
 void infoSH21FO();
+void infoSH21FOM();
+void infoSH21FOA();
+void infoSH21FOF();
+void infoSH21FOMI();
+void infoSH21FOT();
 void infoSH21PR();
 void infoSH22();
 void infoSH22TZ();
 void infoSH22FO();
+void infoSH22FOM1();
+void infoSH22FOM2();
+void infoSH22FOA();
+void infoSH22FOF();
+void infoSH22FOMI();
+void infoSH22FOT();
 void infoSH22PR();
 void infoSH3();
 void infoSH31();
 void infoSH31TZ();
 void infoSH31FO();
+void infoSH31FOM();
+void infoSH31FOA();
+void infoSH31FOF();
+void infoSH31FOMI();
+void infoSH31FOT1();
+void infoSH31FOT2();
 void infoSH31PR();
 void infoSH32();
 void infoSH32TZ();
 void infoSH32FO();
+void infoSH32FOM1();
+void infoSH32FOM2();
+void infoSH32FOM3();
+void infoSH32FOA();
+void infoSH32FOF();
+void infoSH32FOMI();
+void infoSH32FOT1();
+void infoSH32FOT2();
 void infoSH32PR();
 void infoSH4();
 void infoSH41();
 void infoSH41TZ();
 void infoSH41FO();
+void infoSH41FOM();
+void infoSH41FOA();
+void infoSH41FOF();
+void infoSH41FOMI();
+void infoSH41FOT1();
+void infoSH41FOT2();
+void infoSH41FOT3();
 void infoSH41PR();
 void infoSH42();
 void infoSH42TZ();
 void infoSH42FO();
+void infoSH42FOM1();
+void infoSH42FOM2();
+void infoSH42FOM3();
+void infoSH42FOM4();
+void infoSH42FOA();
+void infoSH42FOF();
+void infoSH42FOMI();
+void infoSH42FOT1();
+void infoSH42FOT2();
+void infoSH42FOT3();
 void infoSH42PR();
 void infoDE();
 void infoCR();
@@ -112,15 +154,26 @@ void predjeni_putSHSR(float a);
 void vremeSHSR(float a);
 void brzinaSHSR(float a);
 void unosDE();
+void unosKO();
+void KOM1();
+void KOM1M1();
+void KOM1M2();
+void KOM1A();
+void KOM1T();
+void KOM2();
+void KOM2M1();
+void KOM2M2();
+void KOM2A();
+void KOM2T();
 void main()
 {
-char u[4],r,str1[]="SR",str2[]="MK",str3[]="SH",str4[]="DE",str5[]="INFO",strg[]="DA",strgg[]="NE";
-int i1,i2,i3,i4,i5,g1,g2;
+char u[4],r,str1[]="SR",str2[]="MK",str3[]="SH",str4[]="DE",str5[]="INFO",strg[]="DA",strgg[]="NE",str6[]="KO";
+int i1,i2,i3,i4,i5,g1,g2,i6;
 float g=0;
 do
 {
 a:
-printf("Za strmu ravan unesite 'SR'.\nZa matematicko klatno unesite 'MK'.\nZa delovanje sile na telo na horizontalnoj podlozi unesite 'SH'.\nZa doplerov efekat unesite 'DE'.\nZa vise informacija unesite 'INFO'.\n");
+printf("Za strmu ravan unesite 'SR'.\nZa matematicko klatno unesite 'MK'.\nZa delovanje sile na telo na horizontalnoj podlozi unesite 'SH'.\nZa doplerov efekat unesite 'DE'.\nZa vise informacija unesite 'INFO'.\nZa kretanje tela oko kotura unesite 'KO'.\n");
 scanf("%s",&u);
 i1=strcmp(u,str1);
 if(i1==0)
@@ -147,7 +200,12 @@ if(i5==0)
 {
 info();
 }
-if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0)
+i6=strcmp(u,str6);
+if(i6==0)
+{
+unosKO();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0&&i6!=0)
 {
     printf("Greska u unosu parametra, ponovite unos.\n");
     goto a;
@@ -434,12 +492,76 @@ printf("Silom F se deluje na dva tela koja se nalaze na horizontalnoj podlozi i 
 
 void infoSH21FO()
 {
+char u[2],str1[]="M",str2[]="A",str3[]="F",str4[]="MI",str5[]="NZ",str6[]="T";
+int i1,i2,i3,i4,i5,i6;
+a:
+printf("Unesite 'M' za formule izracunavanja mase tela.\nUnesite 'A' za formule izracunavanja ubrzanja tela.\nUnesite 'F' za formule izracunavanja sile tela.\nUnesite 'MI' za formule izracunavanja koeficijenta trenja tela.\nUnesite 'T' za izracunavanja sile zatezanja tela.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s", &u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoSH21FOM();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoSH21FOA();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoSH21FOF();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+infoSH21FOMI();
+}
+i5=strcmp(u,str5);
+if(i5==0)
+{
+infoSH21();
+}
+i6=strcmp(u,str6);
+if(i6==0)
+{
+infoSH21FOT();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0&&i6!=0)
+{
+    printf("Greska u unosu parametra, ponovite unos.\n");
+    goto a;
+}
+}
 
+void infoSH21FOM()
+{
+printf("m*a=F-T-Ftr | m*a=T-Ftr (sabiramo jednacine)\n2*m*a=F-2*Ftr\n2*m*a+2*m*mi*g=F\nm*(2*a+2*mi*g)=F\nm=F/(2*a+2*mi*g)\n");
+}
+
+void infoSH21FOA()
+{
+printf("m*a=F-T-Ftr | m*a=T-Ftr (sabiramo jednacine)\n2*m*a=F-2*Ftr\na=(F-2*mi*m*g)/(2*m)\n");
+}
+
+void infoSH21FOF()
+{
+printf("m*a=F-T-Ftr | m*a=T-Ftr (sabiramo jednacine)\n2*m*a=F-2*Ftr\n2*m*a+2*mi*m*g=F\n2*m*(a+mi*g)=F\nF=2*m*(a+mi*g)\n");
+}
+
+void infoSH21FOMI()
+{
+printf("m*a=F-T-Ftr | m*a=T-Ftr (sabiramo jednacine)\n2*m*a=F-2*Ftr\n2*mi*m*g=F-2*m*a\nmi=(F-2*m*a)/(2*m*g)\n");
+}
+
+void infoSH21FOT()
+{
+printf("m*a=F-Ftr-T\nT=F-m*a-mi*m*g\nT=F-m*(a+mi*g)\n");
 }
 
 void infoSH21PR()
 {
-
+printf("Primer:\nMasa tela:1.5 kg\nUbrzanje: 3 m/s^2\nSila: 18 N\nKoeficijent trenja: 0.30581\nSila zatezanja T1:9 N\n");
 }
 
 void infoSH22()
@@ -482,6 +604,80 @@ printf("Silom F se deluje na dva tela koja se nalaze na horizontalnoj podlozi i 
 }
 
 void infoSH22FO()
+{
+char u[2],str1[]="M1",str2[]="A",str3[]="F",str4[]="MI",str5[]="NZ",str6[]="T",str7[]="M2";
+int i1,i2,i3,i4,i5,i6,i7;
+a:
+printf("Unesite 'M1' za formule izracunavanja mase prvog tela.\nUnesite 'M2' za formule izracunavanja mase drugog tela.\nUnesite 'A' za formule izracunavanja ubrzanja tela.\nUnesite 'F' za formule izracunavanja sile tela.\nUnesite 'MI' za formule izracunavanja koeficijenta trenja tela.\nUnesite 'T' za izracunavanja sile zatezanja tela.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s", &u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoSH22FOM1();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoSH22FOA();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoSH22FOF();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+infoSH22FOMI();
+}
+i5=strcmp(u,str5);
+if(i5==0)
+{
+infoSH22();
+}
+i6=strcmp(u,str6);
+if(i6==0)
+{
+infoSH22FOT();
+}
+i7=strcmp(u,str7);
+if(i7==0)
+{
+infoSH22FOM2();    
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0&&i6!=0&&i7!=0)
+{
+    printf("Greska u unosu parametra, ponovite unos.\n");
+    goto a;
+}
+}
+
+void infoSH22FOM1()
+{
+
+}
+
+void infoSH22FOM2()
+{
+
+}
+
+void infoSH22FOA()
+{
+
+}
+
+void infoSH22FOF()
+{
+
+}
+
+void infoSH22FOMI()
+{
+
+}
+
+void infoSH22FOT()
 {
 
 }
@@ -561,6 +757,80 @@ printf("Silom F se deluje na tri tela koja se nalaze na horizontalnoj podlozi i 
 
 void infoSH31FO()
 {
+char u[2],str1[]="M",str2[]="A",str3[]="F",str4[]="MI",str5[]="NZ",str6[]="T1",str7[]="T2";
+int i1,i2,i3,i4,i5,i6,i7;
+a:
+printf("Unesite 'M' za formule izracunavanja mase tela.\nUnesite 'A' za formule izracunavanja ubrzanja tela.\nUnesite 'F' za formule izracunavanja sile tela.\nUnesite 'MI' za formule izracunavanja koeficijenta trenja tela.\nUnesite 'T1' za izracunavanja prve sile zatezanja tela.\nUnesite 'T2' za izracunavanja druge sile zatezanja tela.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s", &u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoSH31FOM();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoSH31FOA();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoSH31FOF();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+infoSH31FOMI();
+}
+i5=strcmp(u,str5);
+if(i5==0)
+{
+infoSH31();
+}
+i6=strcmp(u,str6);
+if(i6==0)
+{
+infoSH31FOT1();
+}
+i7=strcmp(u,str7);
+if(i7==0)
+{
+infoSH31FOT2();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0&&i6!=0&&i7!=0)
+{
+    printf("Greska u unosu parametra, ponovite unos.\n");
+    goto a;
+}
+}
+
+void infoSH31FOM()
+{
+
+}
+
+void infoSH31FOA()
+{
+
+}
+
+void infoSH31FOF()
+{
+
+}
+
+void infoSH31FOMI()
+{
+
+}
+
+void infoSH31FOT1()
+{
+
+}
+
+void infoSH31FOT2()
+{
 
 }
 
@@ -609,6 +879,100 @@ printf("Silom F se deluje na tri tela koja se nalaze na horizontalnoj podlozi i 
 }
 
 void infoSH32FO()
+{
+char u[2],str1[]="M1",str2[]="A",str3[]="F",str4[]="MI",str5[]="NZ",str6[]="T1",str7[]="M2",str8[]="T2",str9[]="M3";
+int i1,i2,i3,i4,i5,i6,i7,i8,i9;
+a:
+printf("Unesite 'M1' za formule izracunavanja mase prvog tela.\nUnesite 'M2' za formule izracunavanja mase drugog tela.\nUnesite 'M3' za formule izracunavanja mase treceg tela.\nUnesite 'A' za formule izracunavanja ubrzanja tela.\nUnesite 'F' za formule izracunavanja sile tela.\nUnesite 'MI' za formule izracunavanja koeficijenta trenja tela.\nUnesite 'T1' za izracunavanja sile zatezanja prvog tela.\nUnesite 'T2' za izracunavanja sile zatezanja drugog tela.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s", &u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoSH32FOM1();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoSH32FOA();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoSH32FOF();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+infoSH32FOMI();
+}
+i5=strcmp(u,str5);
+if(i5==0)
+{
+infoSH32();
+}
+i6=strcmp(u,str6);
+if(i6==0)
+{
+infoSH32FOT1();
+}
+i7=strcmp(u,str7);
+if(i7==0)
+{
+infoSH32FOM2();    
+}
+i8=strcmp(u,str8);
+if(i8==0)
+{
+infoSH32FOT2();
+}
+i9=strcmp(u,str9);
+if(i9==0)
+{
+infoSH32FOM3();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0&&i6!=0&&i7!=0&&i8!=0&&i9!=0)
+{
+    printf("Greska u unosu parametra, ponovite unos.\n");
+    goto a;
+}
+}
+
+void infoSH32FOM1()
+{
+
+}
+
+void infoSH32FOM2()
+{
+
+}
+
+void infoSH32FOM3()
+{
+
+}
+
+void infoSH32FOA()
+{
+
+}
+
+void infoSH32FOF()
+{
+
+}
+
+void infoSH32FOMI()
+{
+
+}
+
+void infoSH32FOT1()
+{
+
+}
+
+void infoSH32FOT2()
 {
 
 }
@@ -688,6 +1052,90 @@ printf("Silom F se deluje na cetiri tela koja se nalaze na horizontalnoj podlozi
 
 void infoSH41FO()
 {
+char u[2],str1[]="M",str2[]="A",str3[]="F",str4[]="MI",str5[]="NZ",str6[]="T1",str7[]="T2",str8[]="T3";
+int i1,i2,i3,i4,i5,i6,i7,i8;
+a:
+printf("Unesite 'M' za formule izracunavanja mase tela.\nUnesite 'A' za formule izracunavanja ubrzanja tela.\nUnesite 'F' za formule izracunavanja sile tela.\nUnesite 'MI' za formule izracunavanja koeficijenta trenja tela.\nUnesite 'T1' za izracunavanja prve sile zatezanja tela.\nUnesite 'T2' za izracunavanja druge sile zatezanja tela.\nUnesite 'T3' za izracunavanja trece sile zatezanja tela.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s", &u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoSH41FOM();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoSH41FOA();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoSH41FOF();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+infoSH41FOMI();
+}
+i5=strcmp(u,str5);
+if(i5==0)
+{
+infoSH41();
+}
+i6=strcmp(u,str6);
+if(i6==0)
+{
+infoSH41FOT1();
+}
+i7=strcmp(u,str7);
+if(i7==0)
+{
+infoSH41FOT2();
+}
+i8=strcmp(u,str8);
+if(i8==0)
+{
+infoSH41FOT3();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0&&i6!=0&&i7!=0&&i8!=0)
+{
+    printf("Greska u unosu parametra, ponovite unos.\n");
+    goto a;
+}
+}
+
+void infoSH41FOM()
+{
+
+}
+
+void infoSH41FOA()
+{
+
+}
+
+void infoSH41FOF()
+{
+
+}
+
+void infoSH41FOMI()
+{
+
+}
+
+void infoSH41FOT1()
+{
+
+}
+
+void infoSH41FOT2()
+{
+
+}
+
+void infoSH41FOT3()
+{
 
 }
 
@@ -736,6 +1184,120 @@ printf("Silom F se deluje na cetiri tela koja se nalaze na horizontalnoj podlozi
 }
 
 void infoSH42FO()
+{
+char u[2],str1[]="M1",str2[]="A",str3[]="F",str4[]="MI",str5[]="NZ",str6[]="T1",str7[]="M2",str8[]="T2",str9[]="M3",str10[]="M4",str11[]="T3";
+int i1,i2,i3,i4,i5,i6,i7,i8,i9,i10,i11;
+a:
+printf("Unesite 'M1' za formule izracunavanja mase prvog tela.\nUnesite 'M2' za formule izracunavanja mase drugog tela.\nUnesite 'M3' za formule izracunavanja mase treceg tela.\nUnesite 'M4' za formule izracunavanja mase cetvrtog tela.\nUnesite 'A' za formule izracunavanja ubrzanja tela.\nUnesite 'F' za formule izracunavanja sile tela.\nUnesite 'MI' za formule izracunavanja koeficijenta trenja tela.\nUnesite 'T1' za izracunavanja sile zatezanja prvog tela.\nUnesite 'T2' za izracunavanja sile zatezanja drugog tela.\nUnesite 'T3' za izracunavanja sile zatezanja treceg tela.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s", &u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoSH42FOM1();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoSH42FOA();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoSH42FOF();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+infoSH42FOMI();
+}
+i5=strcmp(u,str5);
+if(i5==0)
+{
+infoSH42();
+}
+i6=strcmp(u,str6);
+if(i6==0)
+{
+infoSH42FOT1();
+}
+i7=strcmp(u,str7);
+if(i7==0)
+{
+infoSH42FOM2();    
+}
+i8=strcmp(u,str8);
+if(i8==0)
+{
+infoSH42FOT2();
+}
+i9=strcmp(u,str9);
+if(i9==0)
+{
+infoSH42FOM3();
+}
+i10=strcmp(u,str10);
+if(i10==0)
+{
+infoSH42FOM4();
+}
+i11=strcmp(u,str11);
+if(i11=0)
+{
+infoSH42FOT3();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0&&i6!=0&&i7!=0&&i8!=0&&i9!=0&&i10!=0&&i11!=0)
+{
+    printf("Greska u unosu parametra, ponovite unos.\n");
+    goto a;
+}
+}
+
+void infoSH42FOM1()
+{
+
+}
+
+void infoSH42FOM2()
+{
+
+}
+
+void infoSH42FOM3()
+{
+
+}
+
+void infoSH42FOM4()
+{
+
+}
+
+void infoSH42FOA()
+{
+
+}
+
+void infoSH42FOF()
+{
+
+}
+
+void infoSH42FOMI()
+{
+
+}
+
+void infoSH42FOT1()
+{
+
+}
+
+void infoSH42FOT2()
+{
+
+}
+
+void infoSH42FOT3()
 {
 
 }
@@ -5941,6 +6503,153 @@ if(v<0)
 }
 
 void unosDE()
+{
+
+}
+
+void unosKO()
+{
+char u[2],str1[]="M1",str2[]="M2",str3[]="NZ";
+int i1,i2,i3;
+a:
+printf("Ako je masa prvog tela(levo) veca od mase drugog tela(desno) unesite 'M1'\nAko je masa drugog tela(desno) veca od mase prvog tela(levo) unesite 'M2'\nUkoliko su mase tela jednake nema kretanja, odnosno tela su u ravnotezi.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s", &u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+KOM1();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+KOM2();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+main();
+}
+if(i1!=0&&i2!=0&&i3!=0)
+{
+printf("Greska u unosu, ponovite unos.\n");
+goto a;
+}
+}
+
+void KOM1()
+{
+char u[2],str1[]="M1",str2[]="M2",str3[]="A",str4[]="T",str5[]="NZ";
+int i1,i2,i3,i4,i5;
+a:
+printf("Ako Vam je potrebna masa prvog tela(levo-vece) i sila zatezanja unesite 'M1'.\nAko Vam je potrebna masa drugog tela(desno-manje) i sila zatezanja unesite 'M2'.\nAko Vam je potrebno ubrzanje tela i sila zatezanja unesite 'A'.\nAko Vam je potrebna samo sila zatezanja unesite 'T'.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+KOM1M1();    
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+KOM1M2();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+KOM1A();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+KOM1T();
+}
+i5=strcmp(u,str5);
+if(i5==0)
+{
+unosKO();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto a;
+}
+}
+
+void KOM1M1()
+{
+
+}
+
+void KOM1M2()
+{
+
+}
+
+void KOM1A()
+{
+
+}
+
+void KOM1T()
+{
+
+}
+
+void KOM2()
+{
+char u[2],str1[]="M1",str2[]="M2",str3[]="A",str4[]="T",str5[]="NZ";
+int i1,i2,i3,i4,i5;
+a:
+printf("Ako Vam je potrebna masa prvog tela(desno-vece) i sila zatezanja unesite 'M1'.\nAko Vam je potrebna masa drugog tela(levo-manje) i sila zatezanja unesite 'M2'.\nAko Vam je potrebno ubrzanje tela i sila zatezanja unesite 'A'.\nAko Vam je potrebna samo sila zatezanja unesite 'T'.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+KOM2M1();    
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+KOM2M2();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+KOM2A();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+KOM2T();
+}
+i5=strcmp(u,str5);
+if(i5==0)
+{
+unosKO();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto a;
+}
+}
+
+void KOM2M1()
+{
+
+}
+
+void KOM2M2()
+{
+
+}
+
+void KOM2A()
+{
+
+}
+
+void  KOM2T()
 {
 
 }
