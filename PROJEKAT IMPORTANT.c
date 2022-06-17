@@ -85,6 +85,7 @@ void infoSH42FOT2();
 void infoSH42FOT3();
 void infoSH42PR();
 void infoDE();
+void infoKO();
 void infoCR();
 void VIP();
 void VIPSH();
@@ -105,6 +106,8 @@ void ugao_ravniSRFP();
 void ugao_ravniSRN();
 void koeficijent_trenjaSR();
 void unosMK();
+void MKNI();
+void MKT();
 void unosSH();
 void unosSH1();
 void masaSH();
@@ -224,10 +227,10 @@ goto y;
 }
 void info()
 {
-char u[3],str1[]="SR",str2[]="MK",str3[]="SH",str4[]="DE",str5[]="CR",str6[]="VIP",str7[]="NZ";
-int i1,i2,i3,i4,i5,i6,i7;
+char u[3],str1[]="SR",str2[]="MK",str3[]="SH",str4[]="DE",str5[]="CR",str6[]="VIP",str7[]="NZ",str8[]="KO";
+int i1,i2,i3,i4,i5,i6,i7,i8;
 a:
-printf("Unesite 'SR' za podatke o strmoj ravni.\nUnesite 'MK' za podatke o matematickom klatnu.\nUnesite 'SH' za podatke o delovanju sile na telo na horizontalnoj podlozi.\nUnesite 'DE' za podatke o doplerovom efektu.\nUnesite 'CR' za podatke o autoru programa.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+printf("Unesite 'SR' za podatke o strmoj ravni.\nUnesite 'MK' za podatke o matematickom klatnu.\nUnesite 'SH' za podatke o delovanju sile na telo na horizontalnoj podlozi.\nUnesite 'DE' za podatke o doplerovom efektu.\nUnesite 'KO' za informacije o telima na koturu.\nUnesite 'CR' za podatke o autoru programa.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
 scanf("%s", &u);
 i1=strcmp(u,str1);
 if(i1==0)
@@ -264,7 +267,12 @@ if(i7==0)
 {
 main();
 }
-if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0&&i6!=0&&i7!=0)
+i8=strcmp(u,str8);
+if(i8==0)
+{
+infoKO();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0&&i6!=0&&i7!=0&&i8!=0)
 {
     printf("Greska u unosu parametra, ponovite unos.\n");
     goto a;
@@ -1312,6 +1320,11 @@ void infoDE()
 
 }
 
+void infoKO()
+{
+
+}
+
 void infoCR()
 {
 printf("Kodirao program i proracunao podatke za zadatke: Dusan Gvozdenovic 1/4.\nMentor: Dalibor Rajkovic.\n");
@@ -2118,7 +2131,130 @@ brzinaSHSR(a);
 }
 void unosMK()
 {
+char u[2],str1[]="NI",str2[]="T",str3[]="NZ";
+int i1,i2,i3;
+a:
+printf("Ako imate frenkvenciju oscilovanja i potrebna Vam je duzina matematickog klatna unesite 'NI'.\nAko imate period oscilovanja i potrebna Vam je duzina matematickog klatna unesite 'T'.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s", &u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+MKNI();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+MKT();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+main();
+}
+if(i1!=0&&i2!=0&&i3!=0)
+{
+printf("Greska u unosu parametara, ponovite unos.\n");
+goto a;
+}
+}
 
+void MKNI()
+{
+char u[2],str1[]="DA",str2[]="NE";
+float ni,t,x,l,i1,i2;
+a:
+printf("Unesite frenkvenciju oscilovanja matematickog klatna.\n");
+scanf("%f", &ni);
+if(ni<=0)
+{
+printf("Frenkvencija oscilovanja ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto a;
+}
+t=1/ni;
+printf("Period oscilovanja matematickog klatna iznosi:%f\n",t);
+if(t<=0)
+{
+printf("Greska u unosu parametra, ponovite unos.\n");
+goto a;
+}
+l=pow((t/(2*pi)),2)*g;
+printf("Duzina matematickog klatna u metrima iznosi:%f, a u centimetrima iznosi:%f\n",l,l*100);
+if(l<=0)
+{
+printf("Greska u unosu parametra, ponovite unos.\n");
+goto a;
+}
+d:
+printf("Ako zelite da vidite koliko se amplituda moze izvrsiti u datoj frenkvenciji matematickog klatna unesite 'DA', u suprotnom 'NE'\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu, ponovite unos.\n");
+goto d;
+}
+if(i1==0)
+{
+x=ni*4;
+printf("Za vreme jedne sekunde se moze preci %f amplituda.\n",x);
+}
+}
+
+void MKT()
+{
+char u[2],str1[]="DA",str2[]="NE";
+float t,x,ni,l,i1,i2;
+a:
+printf("Unesite period oscilovanja matematickog klatna.\n");
+scanf("%f",&t);
+if(t<=0)
+{
+printf("Greska u unosu, period oscilovanja matematickog klatna ne moze biti negativan ili ravan nuli, ponovite unos.\n");
+goto a;
+}
+l=pow((t/(2*pi)),2)*g;
+printf("Duzina matematickog klatna u metrima iznosi:%f, a u centimetrima iznosi:%f\n",l,l*100);
+if(l<=0)
+{
+printf("Greska u unosu parametra, ponovite unos.\n");
+goto a;
+}
+b:
+printf("Ako zelite da vidite frenkvenciju ovog matematickog klatna unesite 'DA', a u suprotnom 'NE'\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu, ponovite unos.\n");
+goto b;
+}
+if(i1==0)
+{
+ni=1/t;
+printf("Frenkvencija matematickog klatna iznosi:%f.\n",ni);
+if(ni<=0)
+{
+    printf("Frenkvencija ne moze biti negativna ili ravna nuli, ponovite unos.\n");
+    goto a;
+}
+d:
+printf("Ako zelite da vidite koliko se amplituda moze izvrsiti u datoj frenkvenciji matematickog klatna unesite 'DA', u suprotnom 'NE'\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu, ponovite unos.\n");
+goto d;
+}
+if(i1==0)
+{
+x=ni*4;
+printf("Za vreme jedne sekunde se moze preci %f amplituda.\n",x);
+}
+}
 }
 
 void unosSH()
@@ -6577,22 +6713,143 @@ goto a;
 
 void KOM1M1()
 {
-
+float m1,m2,a,t;
+a:
+printf("Unesite masu drugog tela.\n");
+scanf("%f",&m2);
+if(m2<=0)
+{
+printf("Masa tela ne moze biti negativna, ponovite unos.\n");
+goto a;
+}
+b:
+printf("Unesite ubrzanje tela.\n");
+scanf("%f", &a);
+if(a<=0)
+{
+printf("Ubrzanje ne moze biti negativno ili ravno nuli u ovom slucaju, ponovite unos.\n");
+goto b;
+}
+m1=(-m2*(a+g))/(a-g);
+printf("Masa prvog tela iznosi:%f\n",m1);
+if(m1<=0)
+{
+printf("Masa prvog tela ne moze biti negativna ili ravna nuli, ponovite unos.\n");
+goto a;
+}
+t=m2*(a+g);
+printf("Sila zatezanja iznosi:%f\n",t);
+if(t<=0)
+{
+printf("Sila zatezanja ne moze biti negativna ili jednaka nuli, ponovite unos.\n");
+goto a;
+}
 }
 
 void KOM1M2()
 {
-
+float m1,m2,a,t;
+a:
+printf("Unesite masu prvog tela.\n");
+scanf("%f",&m1);
+if(m1<=0)
+{
+printf("Masa tela ne moze biti negativna, ponovite unos.\n");
+goto a;
+}
+b:
+printf("Unesite ubrzanje tela.\n");
+scanf("%f", &a);
+if(a<=0)
+{
+printf("Ubrzanje ne moze biti negativno ili ravno nuli u ovom slucaju, ponovite unos.\n");
+goto b;
+}
+m2=(m1*(g-a))/(a+g);
+printf("Masa drugog tela iznosi:%f\n",m2);
+if(m2<=0)
+{
+printf("Masa drugog tela ne moze biti negativna ili ravna nuli, ponovite unos.\n");
+goto a;
+}
+t=m2*(a+g);
+printf("Sila zatezanja iznosi:%f\n",t);
+if(t<=0)
+{
+printf("Sila zatezanja ne moze biti negativna ili jednaka nuli, ponovite unos.\n");
+goto a;
+}
 }
 
 void KOM1A()
 {
-
+float m1,m2,a,t;
+a:
+printf("Unesite masu prvog tela.\n");
+scanf("%f",&m1);
+if(m1<=0)
+{
+printf("Masa tela ne moze biti negativna, ponovite unos.\n");
+goto a;
+}
+b:
+printf("Unesite masu drugog tela.\n");
+scanf("%f", &m2);
+if(m2<=0)
+{
+printf("Masa tela ne moze biti negativna, ponovite unos.\n");
+goto b;
+}
+a=(g*(m1-m2))/(m1+m2);
+printf("Ubrzanje tela iznosi:%f\n",a);
+if(a<=0)
+{
+printf("Ubrzanje ne moze biti negativno ili ravno nuli u ovom slucaju, ponovite unos.\n");
+goto a;
+}
+t=m2*(a+g);
+printf("Sila zatezanja iznosi:%f\n",t);
+if(t<=0)
+{
+printf("Sila zatezanja ne moze biti negativna ili jednaka nuli, ponovite unos.\n");
+goto a;
+}
 }
 
 void KOM1T()
 {
-
+float m1,m2,a,t;
+a:
+printf("Unesite masu prvog tela.\n");
+scanf("%f",&m1);
+if(m1<=0)
+{
+printf("Masa tela ne moze biti negativna, ponovite unos.\n");
+goto a;
+}
+b:
+printf("Unesite masu drugog tela.\n");
+scanf("%f", &m2);
+if(m2<=0)
+{
+printf("Masa tela ne moze biti negativna, ponovite unos.\n");
+goto b;
+}
+c:
+printf("Unesite ubrzanje tela.\n");
+scanf("%f", &a);
+if(a<=0)
+{
+printf("Ubrzanje ne moze biti negativno ili ravno nuli u ovom slucaju, ponovite unos.\n");
+goto c;
+}
+t=m2*(a+g);
+printf("Sila zatezanja iznosi:%f\n",t);
+if(t<=0)
+{
+printf("Sila zatezanja ne moze biti negativna ili jednaka nuli, ponovite unos.\n");
+goto a;
+}
 }
 
 void KOM2()
@@ -6636,20 +6893,141 @@ goto a;
 
 void KOM2M1()
 {
-
+float m1,m2,a,t;
+a:
+printf("Unesite masu drugog tela.\n");
+scanf("%f",&m2);
+if(m2<=0)
+{
+printf("Masa tela ne moze biti negativna, ponovite unos.\n");
+goto a;
+}
+b:
+printf("Unesite ubrzanje tela.\n");
+scanf("%f", &a);
+if(a<=0)
+{
+printf("Ubrzanje ne moze biti negativno ili ravno nuli u ovom slucaju, ponovite unos.\n");
+goto b;
+}
+m1=(m2*(g-a))/(a+g);
+printf("Masa prvog tela iznosi:%f\n",m1);
+if(m1<=0)
+{
+printf("Masa prvog tela ne moze biti negativna ili ravna nuli, ponovite unos.\n");
+goto a;
+}
+t=m1*(a+g);
+printf("Sila zatezanja iznosi:%f\n",t);
+if(t<=0)
+{
+printf("Sila zatezanja ne moze biti negativna ili jednaka nuli, ponovite unos.\n");
+goto a;
+}
 }
 
 void KOM2M2()
 {
-
+float m1,m2,a,t;
+a:
+printf("Unesite masu prvog tela.\n");
+scanf("%f",&m1);
+if(m1<=0)
+{
+printf("Masa tela ne moze biti negativna, ponovite unos.\n");
+goto a;
+}
+b:
+printf("Unesite ubrzanje tela.\n");
+scanf("%f", &a);
+if(a<=0)
+{
+printf("Ubrzanje ne moze biti negativno ili ravno nuli u ovom slucaju, ponovite unos.\n");
+goto b;
+}
+m2=(-m1*(a+g))/(a-g);
+printf("Masa drugog tela iznosi:%f\n",m2);
+if(m2<=0)
+{
+printf("Masa drugog tela ne moze biti negativna ili ravna nuli, ponovite unos.\n");
+goto a;
+}
+t=m1*(a+g);
+printf("Sila zatezanja iznosi:%f\n",t);
+if(t<=0)
+{
+printf("Sila zatezanja ne moze biti negativna ili jednaka nuli, ponovite unos.\n");
+goto a;
+}
 }
 
 void KOM2A()
 {
-
+float m1,m2,a,t;
+a:
+printf("Unesite masu prvog tela.\n");
+scanf("%f",&m1);
+if(m1<=0)
+{
+printf("Masa tela ne moze biti negativna, ponovite unos.\n");
+goto a;
+}
+b:
+printf("Unesite masu drugog tela.\n");
+scanf("%f", &m2);
+if(m2<=0)
+{
+printf("Masa tela ne moze biti negativna, ponovite unos.\n");
+goto b;
+}
+a=(g*(m2-m1))/(m1+m2);
+printf("Ubrzanje tela iznosi:%f\n",a);
+if(a<=0)
+{
+printf("Ubrzanje ne moze biti negativno ili ravno nuli u ovom slucaju, ponovite unos.\n");
+goto a;
+}
+t=m1*(a+g);
+printf("Sila zatezanja iznosi:%f\n",t);
+if(t<=0)
+{
+printf("Sila zatezanja ne moze biti negativna ili jednaka nuli, ponovite unos.\n");
+goto a;
+}
 }
 
 void  KOM2T()
 {
-
+float m1,m2,a,t;
+a:
+printf("Unesite masu prvog tela.\n");
+scanf("%f",&m1);
+if(m1<=0)
+{
+printf("Masa tela ne moze biti negativna, ponovite unos.\n");
+goto a;
+}
+b:
+printf("Unesite masu drugog tela.\n");
+scanf("%f", &m2);
+if(m2<=0)
+{
+printf("Masa tela ne moze biti negativna, ponovite unos.\n");
+goto b;
+}
+c:
+printf("Unesite ubrzanje tela.\n");
+scanf("%f", &a);
+if(a<=0)
+{
+printf("Ubrzanje ne moze biti negativno ili ravno nuli u ovom slucaju, ponovite unos.\n");
+goto c;
+}
+t=m1*(a+g);
+printf("Sila zatezanja iznosi:%f\n",t);
+if(t<=0)
+{
+printf("Sila zatezanja ne moze biti negativna ili jednaka nuli, ponovite unos.\n");
+goto a;
+}
 }
