@@ -157,6 +157,19 @@ void predjeni_putSHSR(float a);
 void vremeSHSR(float a);
 void brzinaSHSR(float a);
 void unosDE();
+void DEVP();
+void DEVPNII();
+void DEVPNIP();
+void DEVPVI();
+void DEVI();
+void DEVINII();
+void DEVINIP();
+void DEVIVP();
+void DEIP();
+void DEIPNII();
+void DEIPNIP();
+void DEIPVI();
+void DEIPVP();
 void unosKO();
 void KOM1();
 void KOM1M1();
@@ -170,8 +183,8 @@ void KOM2A();
 void KOM2T();
 void main()
 {
-char u[4],r,str1[]="SR",str2[]="MK",str3[]="SH",str4[]="DE",str5[]="INFO",strg[]="DA",strgg[]="NE",str6[]="KO";
-int i1,i2,i3,i4,i5,g1,g2,i6;
+char u[4],r,str1[]="SR",str2[]="MK",str3[]="SH",str4[]="DE",str5[]="INFO",strg[]="DA",strgg[]="NE",str6[]="KO",strg1[]="DA",strgg1[]="NE";
+int i1,i2,i3,i4,i5,g1,g2,i6,g11,g22;
 float g=0;
 do
 {
@@ -222,6 +235,23 @@ if(g1!=0&&g2!=0)
 {
 printf("Greska u unosu, ponovite unos.\n");
 goto y;
+}
+if(g1==0)
+{
+k:
+printf("Ako zelite da ocistite ekran od prosle interakcije unesite 'DA', u suprotnom 'NE'.\n");
+scanf("%s",&u);
+g11=strcmp(u,strg1);
+g22=strcmp(u,strgg1);
+if(g11!=0&&g22!=0)
+{
+printf("Greska u unosu, ponovite unos.\n");
+goto k;
+}
+if(g11==0)
+{
+system("cls");    
+}
 }
 }while(g1==0);
 }
@@ -2171,7 +2201,7 @@ printf("Frenkvencija oscilovanja ne moze biti manja ili jednaka nuli, ponovite u
 goto a;
 }
 t=1/ni;
-printf("Period oscilovanja matematickog klatna iznosi:%f",t);
+printf("Period oscilovanja matematickog klatna iznosi:%f\n",t);
 if(t<=0)
 {
 printf("Greska u unosu parametra, ponovite unos.\n");
@@ -6640,7 +6670,870 @@ if(v<0)
 
 void unosDE()
 {
+char u[2],str1[]="VP",str2[]="VI",str3[]="IP",str4[]="NZ";
+int i1,i2,i3,i4;
+a:
+printf("Unesite 'VP' ako prijemnik miruje, dok se izvor krece.\nUnesite 'VI' ako izvor miruje, dok se prijemnik krece.\nUnesite 'IP' ako se i prijemnik i izvor krecu.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+DEVP();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+DEVI();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+DEIP();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+main();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu, ponovite unos.\n");
+goto a;
+}
+}
 
+void DEVP()
+{
+char u[3],str1[]="NII",str2[]="NIP",str3[]="VI",str4[]="NZ";
+int i1,i2,i3,i4;
+a:
+printf("Ako Vam je potrebna frenkvencija izvora unesite 'NII'.\nAko Vam je potrebna frenkvenicja prijemnika unesite 'NIP'.\nAko Vam je potrebna brzina izvora unesite 'VI'.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+DEVPNII();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+DEVPNIP();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+DEVPVI();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+unosDE();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu, ponovite unos.\n");
+goto a;
+}
+}
+
+void DEVPNII()
+{
+char u[2],str1[]="DA",str2[]="NE";
+float nii,nip,vi,vz=330,i1,i2;
+a:
+printf("Ako zelite da promenite brzinu zvuka sa 330 metara u sekundi unesite 'DA', u suprotnom 'NE'.\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto a;
+}
+if(i1==0)
+{
+b:
+printf("Unesite novu brzinu zvuka.\n");
+scanf("%f",&vz);
+if(vz<=0)
+{
+printf("Brzina zvuka ne moze biti manja ili jednaka nuli, ponovitte unos.\n");
+goto b;
+}
+}
+c:
+printf("Unesite frenkvenciju prijemnika.\n");
+scanf("%f",&nip);
+if(nip<=0)
+{
+printf("Frenkvencija prijemnika ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto c;
+}
+d:
+printf("Unesite brzinu izvora.\n");
+scanf("%f", &vi);
+if(vi<=0)
+{
+printf("Brzina izvora ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto d;
+}
+l:
+printf("Unesite 'DA' ako se izvor frenkvencije priblizava prijemniku, a u slucaju da  se odaljava unesite 'NE'\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto l;    
+}
+if(i1==0)
+{
+nii=nip/(vz/(vz-vi));
+}
+else
+{
+nii=nip/(vz/(vz+vi));
+}
+printf("Frenkvencija izvora iznosi:%f\n",nii);
+if(nii<=0)
+{
+printf("Frenkvencija izvora ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto a;
+}
+}
+
+void DEVPNIP()
+{
+char u[2],str1[]="DA",str2[]="NE";
+float nii,nip,vi,vz=330,i1,i2;
+a:
+printf("Ako zelite da promenite brzinu zvuka sa 330 metara u sekundi unesite 'DA', u suprotnom 'NE'.\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto a;
+}
+if(i1==0)
+{
+b:
+printf("Unesite novu brzinu zvuka.\n");
+scanf("%f",&vz);
+if(vz<=0)
+{
+printf("Brzina zvuka ne moze biti manja ili jednaka nuli, ponovitte unos.\n");
+goto b;
+}
+}
+c:
+printf("Unesite frenkvenciju izvora.\n");
+scanf("%f",&nii);
+if(nii<=0)
+{
+printf("Frenkvencija izvora ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto c;
+}
+d:
+printf("Unesite brzinu izvora.\n");
+scanf("%f", &vi);
+if(vi<=0)
+{
+printf("Brzina izvora ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto d;
+}
+l:
+printf("Unesite 'DA' ako se izvor frenkvencije priblizava prijemniku, a u slucaju da  se odaljava unesite 'NE'\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto l;    
+}
+if(i1==0)
+{
+nip=(vz/(vz-vi))*nii;
+}
+else
+{
+nip=(vz/(vz+vi))*nii;
+}
+printf("Frenkvencija prijemnika iznosi:%f\n",nip);
+if(nip<=0)
+{
+printf("Frenkvencija prijemnika ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto a;
+}
+}
+
+void DEVPVI()
+{
+char u[2],str1[]="DA",str2[]="NE";
+float nii,nip,vi,vz=330,i1,i2;
+a:
+printf("Ako zelite da promenite brzinu zvuka sa 330 metara u sekundi unesite 'DA', u suprotnom 'NE'.\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto a;
+}
+if(i1==0)
+{
+b:
+printf("Unesite novu brzinu zvuka.\n");
+scanf("%f",&vz);
+if(vz<=0)
+{
+printf("Brzina zvuka ne moze biti manja ili jednaka nuli, ponovitte unos.\n");
+goto b;
+}
+}
+c:
+printf("Unesite frenkvenciju izvora.\n");
+scanf("%f",&nii);
+if(nii<=0)
+{
+printf("Frenkvencija izvora ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto c;
+}
+d:
+printf("Unesite frenkvenicju prijemnika.\n");
+scanf("%f", &nip);
+if(nip<=0)
+{
+printf("Frenkvencija prijemnika ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto d;
+}
+l:
+printf("Unesite 'DA' ako se izvor frenkvencije priblizava prijemniku, a u slucaju da  se odaljava unesite 'NE'\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto l;    
+}
+if(i1==0)
+{
+vi=vz-(vz/(nip/nii));
+}
+else
+{
+vi=(vz/(nii/nip))-vz;
+}
+printf("Brzina izvora iznosi:%f\n",vi);
+if(vi<=0)
+{
+printf("Brzina izvora ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto a;
+}
+}
+
+void DEVI()
+{
+char u[3],str1[]="NII",str2[]="NIP",str3[]="VP",str4[]="NZ";
+int i1,i2,i3,i4;
+a:
+printf("Ako Vam je potrebna frenkvencija izvora unesite 'NII'.\nAko Vam je potrebna frenkvenicja prijemnika unesite 'NIP'.\nAko Vam je potrebna brzina prijemnika unesite 'VP'.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+DEVINII();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+DEVINIP();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+DEVIVP();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+unosDE();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto a;
+}
+}
+
+void DEVINII()
+{
+char u[2],str1[]="DA",str2[]="NE";
+float nii,nip,vp,vz=330,i1,i2;
+a:
+printf("Ako zelite da promenite brzinu zvuka sa 330 metara u sekundi unesite 'DA', u suprotnom 'NE'.\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto a;
+}
+if(i1==0)
+{
+b:
+printf("Unesite novu brzinu zvuka.\n");
+scanf("%f",&vz);
+if(vz<=0)
+{
+printf("Brzina zvuka ne moze biti manja ili jednaka nuli, ponovitte unos.\n");
+goto b;
+}
+}
+c:
+printf("Unesite frenkvenciju prijemnika.\n");
+scanf("%f",&nip);
+if(nip<=0)
+{
+printf("Frenkvencija prijemnika ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto c;
+}
+d:
+printf("Unesite brzinu prijemnika.\n");
+scanf("%f", &vp);
+if(vp<=0)
+{
+printf("Brzina prijemnika ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto d;
+}
+l:
+printf("Unesite 'DA' ako se izvor frenkvencije priblizava prijemniku, a u slucaju da  se odaljava unesite 'NE'\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto l;    
+}
+if(i1==0)
+{
+nii=nip/((vz+vp)/vz);
+}
+else
+{
+nii=nip/((vz-vp)/vz);
+}
+printf("Frenkvencija izvora iznosi:%f\n",nii);
+if(nii<=0)
+{
+printf("Frenkvencija izvora ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto a;
+}
+}
+
+void DEVINIP()
+{
+char u[2],str1[]="DA",str2[]="NE";
+float nii,nip,vp,vz=330,i1,i2;
+a:
+printf("Ako zelite da promenite brzinu zvuka sa 330 metara u sekundi unesite 'DA', u suprotnom 'NE'.\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu parametram ponovite unos.\n");
+goto a;
+}
+if(i1==0)
+{
+b:
+printf("Unesite novu brzinu zvuka.\n");
+scanf("%f",&vz);
+if(vz<=0)
+{
+printf("Brzina zvuka ne moze biti manja ili jednaka nuli, ponovitte unos.\n");
+goto b;
+}
+}
+c:
+printf("Unesite frenkvenciju izvora.\n");
+scanf("%f",&nii);
+if(nii<=0)
+{
+printf("Frenkvencija izvora ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto c;
+}
+d:
+printf("Unesite brzinu prijemnika.\n");
+scanf("%f", &vp);
+if(vp<=0)
+{
+printf("Brzina prijemnika ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto d;
+}
+l:
+printf("Unesite 'DA' ako se izvor frenkvencije priblizava prijemniku, a u slucaju da  se odaljava unesite 'NE'\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto l;    
+}
+if(i1==0)
+{
+nip=((vz+vp)/vz)*nii;
+}
+else
+{
+nip=((vz-vp)/vz)*nii;
+}
+printf("Frenkvencija prijemnika iznosi:%f\n",nip);
+if(nip<=0)
+{
+printf("Frenkvencija prijemnika ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto a;
+}
+}
+
+void DEVIVP()
+{
+char u[2],str1[]="DA",str2[]="NE";
+float nii,nip,vp,vz=330,i1,i2;
+a:
+printf("Ako zelite da promenite brzinu zvuka sa 330 metara u sekundi unesite 'DA', u suprotnom 'NE'.\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto a;
+}
+if(i1==0)
+{
+b:
+printf("Unesite novu brzinu zvuka.\n");
+scanf("%f",&vz);
+if(vz<=0)
+{
+printf("Brzina zvuka ne moze biti manja ili jednaka nuli, ponovitte unos.\n");
+goto b;
+}
+}
+c:
+printf("Unesite frenkvenciju izvora.\n");
+scanf("%f",&nii);
+if(nii<=0)
+{
+printf("Frenkvencija izvora ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto c;
+}
+d:
+printf("Unesite frenkvenicju prijemnika.\n");
+scanf("%f", &nip);
+if(nip<=0)
+{
+printf("Frenkvencija prijemnika ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto d;
+}
+l:
+printf("Unesite 'DA' ako se izvor frenkvencije priblizava prijemniku, a u slucaju da  se odaljava unesite 'NE'\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto l;    
+}
+if(i1==0)
+{
+vp=(nip/nii)*vz-vz;
+}
+else
+{
+vp=vz-((nip/nii)*vz);
+}
+printf("Brzina prijemnika iznosi:%f\n",vp);
+if(vp<=0)
+{
+printf("Brzina prijemnika ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto a;
+}
+
+}
+
+void DEIP()
+{
+char u[3],str1[]="NII",str2[]="NIP",str3[]="VP",str4[]="NZ",str5[]="VI";
+int i1,i2,i3,i4,i5;
+a:
+printf("Ako Vam je potrebna frenkvencija izvora unesite 'NII'.\nAko Vam je potrebna frenkvenicja prijemnika unesite 'NIP'.\nAko Vam je potrebna brzina izvora unesite 'VI'.\nAko Vam je potrebna brzina prijemnika unesite 'VP'.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+DEIPNII();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+DEIPNIP();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+DEIPVP();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+unosDE();
+}
+i5=strcmp(u,str5);
+if(i5==0)
+{
+DEIPVI();    
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto a;
+}
+}
+
+void DEIPNII()
+{
+char u[2],str1[]="DA",str2[]="NE";
+float nii,nip,vp,vz=330,i1,i2,vi,q;
+a:
+printf("Ako zelite da promenite brzinu zvuka sa 330 metara u sekundi unesite 'DA', u suprotnom 'NE'.\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu parametram ponovite unos.\n");
+goto a;
+}
+if(i1==0)
+{
+b:
+printf("Unesite novu brzinu zvuka.\n");
+scanf("%f",&vz);
+if(vz<=0)
+{
+printf("Brzina zvuka ne moze biti manja ili jednaka nuli, ponovitte unos.\n");
+goto b;
+}
+}
+c:
+printf("Unesite frenkvenciju prijemnika.\n");
+scanf("%f",&nip);
+if(nip<=0)
+{
+printf("Frenkvencija prijemnika ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto c;
+}
+d:
+printf("Unesite brzinu prijemnika.\n");
+scanf("%f", &vp);
+if(vp<=0)
+{
+printf("Brzina prijemnika ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto d;
+}
+g:
+printf("Unesite brzinu izvora.\n");
+scanf("%f", &vi);
+if(vi<=0)
+{
+printf("Brzina izvora ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto d;
+}
+l:
+printf("Unesite '1' ako se i izvor i prijemnik frenkvencije priblizavaju.\nUnesite '2' ako se i izvor i prijemnik frenkvencije udaljavaju.\nUnesite '3' ako se izvor priblizava, a prijemnik udaljava.\nUnesite '4' ako se izvor udaljava, a prijemnik priblizava.\n");
+scanf("%f",&q);
+if(q!=1&&q!=2&&q!=3&&q!=4)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto l;    
+}
+if(q==1)
+{
+nii=nip/((vz+vp)/(vz-vi));
+}
+if(q==2)
+{
+nii=nip/((vz-vp)/(vz+vi));
+}
+if(q==3)
+{
+nii=nip/((vz-vp)/(vz-vi));
+}
+if(q==4)
+{
+nii=nip/((vz+vp)/(vz+vi));
+}
+printf("Frenkvencija izvora iznosi:%f\n",nii);
+if(nii<=0)
+{
+printf("Frenkvencija izvora ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto a;
+}
+}
+
+void DEIPNIP()
+{
+char u[2],str1[]="DA",str2[]="NE";
+float nii,nip,vp,vz=330,i1,i2,vi,q;
+a:
+printf("Ako zelite da promenite brzinu zvuka sa 330 metara u sekundi unesite 'DA', u suprotnom 'NE'.\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu parametram ponovite unos.\n");
+goto a;
+}
+if(i1==0)
+{
+b:
+printf("Unesite novu brzinu zvuka.\n");
+scanf("%f",&vz);
+if(vz<=0)
+{
+printf("Brzina zvuka ne moze biti manja ili jednaka nuli, ponovitte unos.\n");
+goto b;
+}
+}
+c:
+printf("Unesite frenkvenciju izvora.\n");
+scanf("%f",&nii);
+if(nii<=0)
+{
+printf("Frenkvencija izvora ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto c;
+}
+d:
+printf("Unesite brzinu prijemnika.\n");
+scanf("%f", &vp);
+if(vp<=0)
+{
+printf("Brzina prijemnika ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto d;
+}
+g:
+printf("Unesite brzinu izvora.\n");
+scanf("%f", &vi);
+if(vi<=0)
+{
+printf("Brzina izvora ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto d;
+}
+l:
+printf("Unesite '1' ako se i izvor i prijemnik frenkvencije priblizavaju.\nUnesite '2' ako se i izvor i prijemnik frenkvencije udaljavaju.\nUnesite '3' ako se izvor priblizava, a prijemnik udaljava.\nUnesite '4' ako se izvor udaljava, a prijemnik priblizava.\n");
+scanf("%f",&q);
+if(q!=1&&q!=2&&q!=3&&q!=4)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto l;    
+}
+if(q==1)
+{
+nip=((vz+vp)/(vz-vi))*nii;
+}
+if(q==2)
+{
+nip=((vz-vp)/(vz+vi))*nii;
+}
+if(q==3)
+{
+nip=((vz-vp)/(vz-vi))*nii;
+}
+if(q==4)
+{
+nip=((vz+vp)/(vz+vi))*nii;
+}
+printf("Frenkvencija prijemnika iznosi:%f\n",nip);
+if(nip<=0)
+{
+printf("Frenkvencija prijemnika ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto a;
+}
+}
+
+void DEIPVI()
+{
+char u[2],str1[]="DA",str2[]="NE";
+float nii,nip,vp,vz=330,i1,i2,vi,q;
+a:
+printf("Ako zelite da promenite brzinu zvuka sa 330 metara u sekundi unesite 'DA', u suprotnom 'NE'.\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu parametram ponovite unos.\n");
+goto a;
+}
+if(i1==0)
+{
+b:
+printf("Unesite novu brzinu zvuka.\n");
+scanf("%f",&vz);
+if(vz<=0)
+{
+printf("Brzina zvuka ne moze biti manja ili jednaka nuli, ponovitte unos.\n");
+goto b;
+}
+}
+c:
+printf("Unesite frenkvenciju izvora.\n");
+scanf("%f",&nii);
+if(nii<=0)
+{
+printf("Frenkvencija izvora ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto c;
+}
+d:
+printf("Unesite brzinu prijemnika.\n");
+scanf("%f", &vp);
+if(vp<=0)
+{
+printf("Brzina prijemnika ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto d;
+}
+g:
+printf("Unesite frenkvenciju prijemnika.\n");
+scanf("%f", &nip);
+if(nip<=0)
+{
+printf("Frenkvencija prijemnika ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto d;
+}
+l:
+printf("Unesite '1' ako se i izvor i prijemnik frenkvencije priblizavaju.\nUnesite '2' ako se i izvor i prijemnik frenkvencije udaljavaju.\nUnesite '3' ako se izvor priblizava, a prijemnik udaljava.\nUnesite '4' ako se izvor udaljava, a prijemnik priblizava.\n");
+scanf("%f",&q);
+if(q!=1&&q!=2&&q!=3&&q!=4)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto l;    
+}
+if(q==1)
+{
+vi=vz-((vz+vp)/(nip/nii));
+}
+if(q==2)
+{
+vi=((vz-vp)/(nip/nii))-vz;
+}
+if(q==3)
+{
+vi=vz-((vz-vp)/(nip/nii));
+}
+if(q==4)
+{
+vi=((vz+vp)/(nip/nii))-vz;
+}
+printf("Brzina izvora iznosi:%f\n",vi);
+if(vi<=0)
+{
+printf("Brzina izvora ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto a;
+}
+}
+
+void DEIPVP()
+{
+char u[2],str1[]="DA",str2[]="NE";
+float nii,nip,vp,vz=330,i1,i2,vi,q;
+a:
+printf("Ako zelite da promenite brzinu zvuka sa 330 metara u sekundi unesite 'DA', u suprotnom 'NE'.\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu parametram ponovite unos.\n");
+goto a;
+}
+if(i1==0)
+{
+b:
+printf("Unesite novu brzinu zvuka.\n");
+scanf("%f",&vz);
+if(vz<=0)
+{
+printf("Brzina zvuka ne moze biti manja ili jednaka nuli, ponovitte unos.\n");
+goto b;
+}
+}
+c:
+printf("Unesite frenkvenciju izvora.\n");
+scanf("%f",&nii);
+if(nii<=0)
+{
+printf("Frenkvencija izvora ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto c;
+}
+d:
+printf("Unesite brzinu izvora.\n");
+scanf("%f", &vi);
+if(vi<=0)
+{
+printf("Brzina izvora ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto d;
+}
+g:
+printf("Unesite frenkvenciju prijemnika.\n");
+scanf("%f", &nip);
+if(nip<=0)
+{
+printf("Frenkvencija prijemnika ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto d;
+}
+l:
+printf("Unesite '1' ako se i izvor i prijemnik frenkvencije priblizavaju.\nUnesite '2' ako se i izvor i prijemnik frenkvencije udaljavaju.\nUnesite '3' ako se izvor priblizava, a prijemnik udaljava.\nUnesite '4' ako se izvor udaljava, a prijemnik priblizava.\n");
+scanf("%f",&q);
+if(q!=1&&q!=2&&q!=3&&q!=4)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto l;    
+}
+if(q==1)
+{
+vp=((nip/nii)*(vz-vi))-vz;
+}
+if(q==2)
+{
+vp=vz-((nip/nii)*(vz+vi));
+}
+if(q==3)
+{
+vp=vz-((nip/nii)*(vz-vi));
+}
+if(q==4)
+{
+vp=((nip/nii)*(vz+vi))-vz;;
+}
+printf("Brzina prijemnika iznosi:%f\n",vp);
+if(vp<=0)
+{
+printf("Brzina izvora ne moze biti manja ili jednaka nuli, ponovite unos.\n");
+goto a;
+}
 }
 
 void unosKO()
