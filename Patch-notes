@@ -38,3 +38,8 @@ Patch 9.0 (17.6)
 -Dodata funkcija "Kotur", odnosno napravljena struktura funkcija i dodat sav kod.
 -Popunjena funkcija "Matematicko klatno", strukturama funkcije kao i celim zamisljenim kodom.
 -7033 linije koda.
+Patch 10.0 (18.6)
+-Popunjena funkcija "Doplerov efekat", podeljena na strukture i zavrsena zamisljenim kodom.
+-Dodat manji deo postupka formula u infoSH.
+-Dodata opcija brisanja ispisa posle zavrsetka programa.
+-7927 linija koda.
