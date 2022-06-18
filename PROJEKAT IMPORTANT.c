@@ -692,31 +692,32 @@ if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0&&i6!=0&&i7!=0)
 
 void infoSH22FOM1()
 {
-
+printf("m1*a=F-T-Ftr1 | m2*a=T-Ftr2(sabiramo jednacine)\nm1*a+m2*a=F-Ftr1-Ftr2\nm1*a+Ftr1=F-Ftr2-m2*a\nm1*(a+mi*g)=F-m2*(mi*g+a)\nm1=(F-m2*(mi*g+a))/(a+mi*g)\n");
 }
 
 void infoSH22FOM2()
 {
-
+printf("m1*a=F-T-Ftr1 | m2*a=T-Ftr2(sabiramo jednacine)\nm1*a+m2*a=F-Ftr1-Ftr2\nm2*a+Ftr2=F-Ftr1-m1*a\nm2*(a+mi*g)=F-m1*(mi*g+a)\nm2=(F-m1*(a+mi*g))/(a*mi*g)\n");
 }
 
 void infoSH22FOA()
 {
-
+printf("m1*a=F-T-Ftr1 | m2*a=T-Ftr2(sabiramo jednacine)\nm1*a+m2*a=F-Ftr1-Ftr2\nm2*a+Ftr2=F-Ftr1-m1*a\nm2*(a+mi*g)=F-m1*(mi*g+a)\nm2=(F-m1*(a+mi*g))/(a*mi*g)\n");
 }
 
 void infoSH22FOF()
 {
-
+printf("m1*a=F-T-Ftr1 | m2*a=T-Ftr2(sabiramo jednacine)\nm1*a+m2*a=F-Ftr1-Ftr2\na*(m1+m2)=F-mi*g*(m1+m2)\na=(F-mi*g*(m1+m2))/(m1+m2)");
 }
 
 void infoSH22FOMI()
 {
-
+printf("m1*a=F-T-Ftr1 | m2*a=T-Ftr2(sabiramo jednacine)\nm1*a+m2*a=F-Ftr1-Ftr2\nFtr1+Ftr2=F-m1*a-m2*a\nmi*(m1*g+m2*g)=F-a*(m1+m2)\nmi=(F-a*(m1+m2))/(g*m1+g*m2)\nmi=(F-a*(m1+m2))/(g*(m1+m2))\n");
 }
 
 void infoSH22FOT()
 {
+printf("m2*a=T-Ftr2\nm2*a+Ftr2=T\nT=m2*a+m2*mi*g\nT=m2*(a+mi*g)\n");
 
 }
 
