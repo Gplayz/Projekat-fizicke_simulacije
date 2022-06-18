@@ -33,3 +33,8 @@ Patch 7.0 (13.6)
 Patch 8.0 (14.6)
 -Popunjen znacajan deo strukture infoSH.
 -Bez promene linija koda.
+Patch 9.0 (17.6)
+-Zavrsena struktura podela odeljka infoSH i takodje vecinski popunjena.
+-Dodata funkcija "Kotur", odnosno napravljena struktura funkcija i dodat sav kod.
+-Popunjena funkcija "Matematicko klatno", strukturama funkcije kao i celim zamisljenim kodom.
+-7033 linije koda.
