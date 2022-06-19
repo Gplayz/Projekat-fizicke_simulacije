@@ -43,3 +43,12 @@ Patch 10.0 (18.6)
 -Dodat manji deo postupka formula u infoSH.
 -Dodata opcija brisanja ispisa posle zavrsetka programa.
 -7927 linija koda.
+Patch 11.0 (19.6)
+-Popunjena funkcija infoSH do kraja sa svim svojim podgranama.
+-Popunjena funkcija infoDE.
+-Popunjena funkcija infoMK.
+-Popunjena funkcija infoKO.
+-Popunjena funkcija infoSR.
+-Manji bug fix u SR-u.
+-Ispravljena greska u SH4 i bolje optimizovanje funcije.
+-8928 linija koda.
