@@ -5,7 +5,20 @@
 float radian=57.32,pi=3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342117067982148086513282306647093844,g=9.81;
 void info();
 void infoSR();
+void infoSRTZ();
+void infoSRFO();
+void infoSRMAX();
+void infoSRFTR();
+void infoSRFP();
+void infoSRA();
+void infoSRAFP();
+void infoSRAN();
+void infoSRKT();
+void infoSRPR();
 void infoMK();
+void infoMKTZ();
+void infoMKFO();
+void infoMKPR();
 void infoSH();
 void infoSH1();
 void infoSH1TZ();
@@ -108,6 +121,13 @@ void infoDEIPVI();
 void infoDEIPVP();
 void infoDEIPPR();
 void infoKO();
+void infoKOTZ();
+void infoKOFO();
+void infoKOFOM1();
+void infoKOFOM2();
+void infoKOFOA();
+void infoKOFOT();
+void infoKOPR();
 void infoCR();
 void VIP();
 void VIPSH();
@@ -333,12 +353,220 @@ if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0&&i6!=0&&i7!=0&&i8!=0)
 
 void infoSR()
 {
+char u[2],str1[]="TZ",str2[]="FO",str3[]="PR",str4[]="NZ";
+int i1,i2,i3,i4;
+a:
+printf("Unesite 'TZ' za ispis teksta zadatka.\nUnesite 'FO' za ispis formula koje se koriste u zadatku.\nUnesite 'PR' za primere promenjivih.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s",u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoSRTZ();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoSRFO();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoSRPR();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+info();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
+{
+    printf("Greska u unosu parametra, ponovite unos.\n");
+    goto a;
+}
+}
 
+void infoSRTZ()
+{
+printf("Telo klizi niz strmu ravan. Naci:\na)Masu tela preko m*ax\nb)Masu tela preko sile trenja\nc)Masu tela preko paralelne sile\nd)Ubrzanje tela\ne)Ugao ravni preko paralelne sile\nf)Ugao ravni preko sile reakcije podloge\ng)Koeficijent trenja\n*Napomena:Opcija 'predjeni put' predstavlja duzinu strme ravni*\n");
+}
+
+void infoSRFO()
+{
+char u[2],str1[]="MAX",str2[]="FTR",str3[]="FP",str4[]="A",str5[]="AFP",str6[]="AN",str7[]="KT",str8[]="NZ";
+int i1,i2,i3,i4,i5,i6,i7,i8;
+a:
+printf("Unesite 'MAX' za formule izracunavanja mase tela preko m*ax.\nUnesite 'FTR' za formule izracunavanja mase tela preko sile trenja.\nUnesite 'FP' za formule izracunavanja mase tela preko paralelne sile.\nUnesite 'A' za formule izracunavanja ubrzanja tela.\nUnesite 'AFP' za formule izracunavanja ugla ravni preko paralelne sile.\nUnesite 'AN' za formule izracunavanja ugla ravni preko sile reakcije podloge.\nUnesite 'KT' za formule izracunavanja koeficijenta trenja.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s", &u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoSRMAX();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoSRFTR();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoSRFP();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+infoSRA();
+}
+i5=strcmp(u,str5);
+if(i5==0)
+{
+infoSRAFP();
+}
+i6=strcmp(u,str6);
+if(i6==0)
+{
+infoSRAN();
+}
+i7=strcmp(u,str7);
+if(i7==0)
+{
+infoSRKT();
+}
+i8=strcmp(u,str8);
+if(i8==0)
+{
+infoSR();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0&&i6!=0&&i7!=0&&i8!=0)
+{
+    printf("Greska u unosu parametra, ponovite unos.\n");
+    goto a;
+}
+}
+
+void infoSRMAX()
+{
+printf("m=max/ax\n");
+}
+
+void infoSRFTR()
+{
+printf("Ftr=mi*m*g*cos(alfa)\nFtr/(mi*g*cos(alfa))=m\nm=Ftr/(mi*g*cos(alfa))\n");
+}
+
+void infoSRFP()
+{
+printf("Fp=m*g*sin(alfa)\nFp/(g*sin(alfa))=m\nm=Fp/(g*sin(alfa))\n");
+}
+
+void infoSRA()
+{
+printf("m*a=Fp-Ftr\nm*a=m*g*sin(alfa)-mi*m*g*cos(alfa)\nm*a=m*g*(sin(alfa)-mi*cos(alfa))\na=(m*g*(sin(alfa)-mi*cos(alfa))/m(mase se krate)\na=g*(sin(alfa)-mi*cos(alfa))\n");
+}
+
+void infoSRAFP()
+{
+printf("Fp=m*g*sin(alfa)\nFp/(m*g)=sin(alfa)\nsin(alfa)=Fp/(m*g)\nalfa=sin^-1*(Fp/(m*g))\n");
+}
+
+void infoSRAN()
+{
+printf("N=m*g*cos(alfa)\nN/(m*g)=cos(alfa)\ncos(alfa)=N/(m*g)\nalfa=cos^-1*(N/(m*g))\n");
+}
+
+void infoSRKT()
+{
+printf("m*a=Fp-Ftr\nm*a=m*g*sin(alfa)-mi*m*g*cos(alfa)\nmi*m*g*cos(alfa)=m*g*sin(alfa)-m*a\nmi*m*g*cos(alfa)=m*(g*sin(alfa)-a)\nmi=(m*(g*sin(alfa)-a))/(m*g*cos(alfa))(krate se mase)\nmi=(g*sin(alfa)-a)/(g*cos(alfa))\n");
+}
+
+void infoSRPR()
+{
+printf("Primer:\nmasa:2 kg\nm*ax:9.7 N\nSila trenja:4.16 N\nParalelna sila:13.87 N\nUbrzanje:4,85 m/s\nUgao ravni 45\nSila reakcije podloge: 13.87 N\nKoeficijent trenja:0.3\n");
 }
 
 void infoMK()
 {
+char u[2],str1[]="TZ",str2[]="FO",str3[]="PR",str4[]="NZ";
+int i1,i2,i3,i4;
+a:
+printf("Unesite 'TZ' za ispis teksta zadatka.\nUnesite 'FO' za ispis formula koje se koriste u zadatku.\nUnesite 'PR' za primere promenjivih.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s",u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoMKTZ();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoMKFO();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoMKPR();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+info();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
+{
+    printf("Greska u unosu parametra, ponovite unos.\n");
+    goto a;
+}
+}
 
+void infoMKTZ()
+{
+char u[2],str1[]="NI",str2[]="T";
+float i1,i2;
+y:
+printf("Ako imate frenkvenciju oscilovanja unesite 'NI' za tekst zadatka.\nAko imate period oscilovanja unesite 'T' za tekst zadatka.\n");
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu parametra, ponovite unos.\n");
+goto y;
+}
+if(i1==0)
+{
+printf("Matematicko klatno osciluje frenkvencijom od x herca. Naci duzinu klatna, kao i udaljenost u amplitudama koje predje za jednu sekundu.\n");
+}
+if(i2==0)
+{
+printf("Matematicko klatno za x sekundi periodom oscilovanja predje jednu oscilaciju. Naci duzinu klatna, kao i udaljenost u amplitudama koje predje za jednu sekundu.\n");    
+}
+}
+
+void infoMKFO()
+{
+char u[2],str1[]="NI",str2[]="T";
+float i1,i2;
+y:
+printf("Ako imate frenkvenciju oscilovanja unesite 'NI' za formule izracunavanja.\nAko imate period oscilovanja unesite 'T' za formule izracunavanja.\n");
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu parametra, ponovite unos.\n");
+goto y;
+}
+if(i1==0)
+{
+printf("NI=1/T ==> T=2*pi*(sqrt(l/g)) ==> l=((t/(2*pi))^2*g ==> nx0=NI*4\n");
+}
+if(i2==0)
+{    
+printf("T=2*pi*(sqrt(l/g)) ==> l=((t/(2*pi))^2*g ==> nx0=NI*4\n");
+}
+}
+
+void infoMKPR()
+{
+printf("Primer:\nFrenkvencija oscilovanja:4 Hz\nPeriod oscilovanja:0.25 s\nDuzina matematickog klatna:0.015531 metara.\nBroj predjenih amplituda za jednu sekundu:16");
 }
 
 void infoSH()
@@ -2027,7 +2255,105 @@ printf("Primer:\nBrzina zvuka:330 m/s\nFrenkvencija prijemnika:875 Hz\nFrenkvenc
 
 void infoKO()
 {
+char u[2],str1[]="TZ",str2[]="FO",str3[]="PR",str4[]="NZ";
+int i1,i2,i3,i4;
+a:
+printf("Unesite 'TZ' za ispis teksta zadatka.\nUnesite 'FO' za ispis formula koje se koriste u zadatku.\nUnesite 'PR' za primere promenjivih.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n*Glavna razlika izmedju 'M1' i 'M2' podele u funkciji 'kotur' je na kojoj strani se nalazi teg vece mase zato sada nece biti posebne podele formula,teksta zadatka i promenjivih izmedju njih.*\n");
+scanf("%s",u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoKOTZ();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoKOFO();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoKOPR();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+info();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
+{
+    printf("Greska u unosu parametra, ponovite unos.\n");
+    goto a;
+}
+}
 
+void infoKOTZ()
+{
+printf("Dva tega mase x i y povezana su neistegljivom niti zanemarljive mase preko kotura takodje zanemarljive mase. Naci:\na)Masu prvog tela\nb)Masu drugog tela\nc)Ubrzanje tela\nd)Silu zatezanja niti\n");
+}
+
+void infoKOFO()
+{
+char u[2],str1[]="M1",str2[]="M2",str3[]="A",str4[]="NZ",str5[]="T";
+int i1,i2,i3,i4,i5;
+a:
+printf("Unesite 'M1' za formule izracunavanja mase prvog tela.\nUnesite 'M2' za formule izracunavanja mase drugog tela.\nUnesite 'A' za formule izracunavanja ubrzanja tela.\nUnesite 'T' za formule izracunavanja sile zatezanja.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n*Napomena pri slucaju da je m2>m1 samo zameniti indekse masa.*\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoKOFOM1();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoKOFOM2();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoKOFOA();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+infoKO();
+}
+i5=strcmp(u,str5);
+if(i5==0)
+{
+infoKOFOT();    
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto a;
+}
+}
+
+void infoKOFOM1()
+{
+printf("m1*a=m1*g-T | m2*a=T-m2*g(sabiramo jednacine)\nm1*a+m2*a=m1*g-T+T-m2*g\nm1*a+m2*a=m1*g-m2*g\nm1*a-m1*g=-m2*g-m2*a\nm1*(a-g)=-m2*(a+g)\nm1=(-m2*(a+g))/(a-g)\n");
+}
+
+void infoKOFOM2()
+{
+printf("m1*a=m1*g-T | m2*a=T-m2*g(sabiramo jednacine)\nm1*a+m2*a=m1*g-T+T-m2*g\nm1*a+m2*a=m1*g-m2*g\nm2*a+m2*g=m1*g-m1*a\nm2*(a+g)=m1*(g-a)\nm2=(m1*(g-a))/(a+g)\n");
+}
+
+void infoKOFOA()
+{
+printf("m1*a=m1*g-T | m2*a=T-m2*g(sabiramo jednacine)\nm1*a+m2*a=m1*g-T+T-m2*g\nm1*a+m2*a=m1*g-m2*g\na*(m1+m2)=g*(m1-m2)\na=(g*(m1-m2))/(m1+m2)\n");
+}
+
+void infoKOFOT()
+{
+printf("m2*a=T-m2*g\nm2*a+m2*g=T\nm2*(a+g)=T\nT=m2*(a+g)\n");
+}
+
+void infoKOPR()
+{
+printf("Primer:\nMasa prvog tela: 1.4 kg ili 1 kg(zavisno od toga da li je m1>m2 ili m1<m2)\nMasa drugog tela: 1kg ili 1.4kg(zavisno od toga da li je m2>m1 ili m2<m1)\nUbrzanje:1.635m/s\nSila zatezanja:11.445001N");
 }
 
 void infoCR()
@@ -2253,15 +2579,16 @@ goto c;
 d:
 printf("Unesite ugao ravni.\n");
 scanf("%f", &alfa);
-if(alfa<0||alfa>89)
+if(alfa<1||alfa>89)
 {
-    printf("Neispravan unos nekog parametra ponovite unos.\n");
-    goto d;
-}
 if(alfa==0)
 {
     printf("Zamolio bih vas da koristite SH za izracunjavanja bez ugla ravni.\n");
 }
+    printf("Neispravan unos nekog parametra ponovite unos.\n");
+    goto d;
+}
+
 alfa=alfa/radian;
 m=ma/a;
 printf("Masa iznosi: %f\n", m);
@@ -2339,14 +2666,14 @@ goto c;
 d:
 printf("Unesite ugao ravni.\n");
 scanf("%f", &alfa);
-if(alfa<0||alfa>89)
+if(alfa<1||alfa>89)
 {
-    printf("Neispravan unos nekog parametra ponovite unos.\n");
-    goto d;
-}
-if(alfa==0)
+    if(alfa==0)
 {
     printf("Zamolio bih vas da koristite SH za izracunjavanja bez ugla ravni.\n");
+}
+    printf("Neispravan unos nekog parametra ponovite unos.\n");
+    goto d;
 }
 alfa=alfa/radian;
 m=fp/(g*sin(alfa));
@@ -2425,14 +2752,14 @@ goto c;
 d:
 printf("Unesite ugao ravni.\n");
 scanf("%f", &alfa);
-if(alfa<0||alfa>89)
+if(alfa<1||alfa>89)
 {
-    printf("Neispravan unos nekog parametra ponovite unos.\n");
-    goto d;
-}
-if(alfa==0)
+    if(alfa==0)
 {
     printf("Zamolio bih vas da koristite SH za izracunjavanja bez ugla ravni.\n");
+}
+    printf("Neispravan unos nekog parametra ponovite unos.\n");
+    goto d;
 }
 alfa=alfa/radian;
 m=ftr/(mi*g*cos(alfa));
@@ -2503,18 +2830,18 @@ goto c;
 d:
 printf("Unesite ugao ravni.\n");
 scanf("%f", &alfa);
-if(alfa<0||alfa>89)
+if(alfa<1||alfa>89)
 {
-    printf("Neispravan unos nekog parametra ponovite unos.\n");
-    goto d;
-}
-if(alfa==0)
+    if(alfa==0)
 {
     printf("Zamolio bih vas da koristite SH za izracunjavanja bez ugla ravni.\n");
 }
+    printf("Neispravan unos nekog parametra ponovite unos.\n");
+    goto d;
+}
 alfa=alfa/radian;
 a=g*(sin(alfa)-mi*cos(alfa));
-printf("Ubraznje iznosi: %f\n", a);
+printf("Ubrzanje iznosi: %f\n", a);
 if(a<0)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
@@ -2623,14 +2950,14 @@ goto l;
 sin=fp/(m*g);
 alfa=asin(sin)*radian;
 printf("Ugao ravni iznosi: %f\n", alfa);
-if(alfa<0||alfa>89)
+if(alfa<1||alfa>89)
 {
-    printf("Neispravan unos nekog parametra ponovite unos.\n");
-    goto b;
-}
-if(alfa==0)
+    if(alfa==0)
 {
     printf("Zamolio bih vas da koristite SH za izracunjavanja bez ugla ravni.\n");
+}
+    printf("Neispravan unos nekog parametra ponovite unos.\n");
+    goto b;
 }
 q:
 printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
@@ -2710,14 +3037,14 @@ goto l;
 cos=n/(m*g);
 alfa=acos(cos)*radian;
 printf("Ugao ravni iznosi: %f\n", alfa);
-if(alfa<0||alfa>89)
+if(alfa<1||alfa>89)
 {
-    printf("Neispravan unos nekog parametra ponovite unos.\n");
-    goto b;
-}
-if(alfa==0)
+    if(alfa==0)
 {
     printf("Zamolio bih vas da koristite SH za izracunjavanja bez ugla ravni.\n");
+}
+    printf("Neispravan unos nekog parametra ponovite unos.\n");
+    goto b;
 }
 q:
 printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
@@ -2780,14 +3107,14 @@ goto c;
 d:
 printf("Unesite ugao ravni.\n");
 scanf("%f", &alfa);
-if(alfa<0||alfa>89)
+if(alfa<1||alfa>89)
 {
-    printf("Neispravan unos nekog parametra ponovite unos.\n");
-    goto d;
-}
-if(alfa==0)
+    if(alfa==0)
 {
     printf("Zamolio bih vas da koristite SH za izracunjavanja bez ugla ravni.\n");
+}
+    printf("Neispravan unos nekog parametra ponovite unos.\n");
+    goto d;
 }
 alfa=alfa/radian;
 mi=(g*sin(alfa)-a)/(g*cos(alfa));
@@ -3070,7 +3397,7 @@ if(f<0)
     goto d;
 }
 m=f/(a+mi*g);
-printf("Masa iznosi: %f", m);
+printf("Masa iznosi: %f\n", m);
 if(m<0)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
@@ -3144,7 +3471,7 @@ if(f<0)
     goto d;
 }
 a=(f-mi*m*g)/m;
-printf("Ubraznje iznosi: %f", a);
+printf("Ubraznje iznosi: %f\n", a);
 if(a<0)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
@@ -3218,7 +3545,7 @@ if(a<0)
     goto d;
 }
 f=m*(a+mi*g);
-printf("Sila iznosi: %f", f);
+printf("Sila iznosi: %f\n", f);
 if(f<0)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
@@ -3292,7 +3619,7 @@ if(a<0)
     goto d;
 }
 mi=(f-m*a)/(m*g);
-printf("Koeficijent trenja iznosi: %f", mi);
+printf("Koeficijent trenja iznosi: %f\n", mi);
 if(mi<0||mi>1)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
@@ -8425,7 +8752,7 @@ void KOM2()
 char u[2],str1[]="M1",str2[]="M2",str3[]="A",str4[]="T",str5[]="NZ";
 int i1,i2,i3,i4,i5;
 a:
-printf("Ako Vam je potrebna masa prvog tela(desno-vece) i sila zatezanja unesite 'M1'.\nAko Vam je potrebna masa drugog tela(levo-manje) i sila zatezanja unesite 'M2'.\nAko Vam je potrebno ubrzanje tela i sila zatezanja unesite 'A'.\nAko Vam je potrebna samo sila zatezanja unesite 'T'.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+printf("Ako Vam je potrebna masa prvog tela(levo-manje) i sila zatezanja unesite 'M1'.\nAko Vam je potrebna masa drugog tela(desno-vece) i sila zatezanja unesite 'M2'.\nAko Vam je potrebno ubrzanje tela i sila zatezanja unesite 'A'.\nAko Vam je potrebna samo sila zatezanja unesite 'T'.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
 scanf("%s",&u);
 i1=strcmp(u,str1);
 if(i1==0)
@@ -8513,7 +8840,7 @@ if(a<=0)
 printf("Ubrzanje ne moze biti negativno ili ravno nuli u ovom slucaju, ponovite unos.\n");
 goto b;
 }
-m2=(-m1*(a+g))/(a-g);
+m2=(m1*(a+g))/(g-a);
 printf("Masa drugog tela iznosi:%f\n",m2);
 if(m2<=0)
 {
