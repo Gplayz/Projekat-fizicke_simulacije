@@ -231,7 +231,7 @@ float g=0;
 do
 {
 a:
-printf("Za strmu ravan unesite 'SR'.\nZa matematicko klatno unesite 'MK'.\nZa delovanje sile na telo na horizontalnoj podlozi unesite 'SH'.\nZa doplerov efekat unesite 'DE'.\nZa vise informacija unesite 'INFO'.\nZa kretanje tela oko kotura unesite 'KO'.\n");
+printf("Za strmu ravan unesite 'SR'.\nZa matematicko klatno unesite 'MK'.\nZa delovanje sile na telo na horizontalnoj podlozi unesite 'SH'.\nZa doplerov efekat unesite 'DE'.\nZa kretanje tela oko kotura unesite 'KO'.\nZa vise informacija unesite 'INFO'.\n");
 scanf("%s",&u);
 i1=strcmp(u,str1);
 if(i1==0)
@@ -2579,15 +2579,16 @@ goto c;
 d:
 printf("Unesite ugao ravni.\n");
 scanf("%f", &alfa);
-if(alfa<0||alfa>89)
+if(alfa<1||alfa>89)
 {
-    printf("Neispravan unos nekog parametra ponovite unos.\n");
-    goto d;
-}
 if(alfa==0)
 {
     printf("Zamolio bih vas da koristite SH za izracunjavanja bez ugla ravni.\n");
 }
+    printf("Neispravan unos nekog parametra ponovite unos.\n");
+    goto d;
+}
+
 alfa=alfa/radian;
 m=ma/a;
 printf("Masa iznosi: %f\n", m);
@@ -2665,14 +2666,14 @@ goto c;
 d:
 printf("Unesite ugao ravni.\n");
 scanf("%f", &alfa);
-if(alfa<0||alfa>89)
+if(alfa<1||alfa>89)
 {
-    printf("Neispravan unos nekog parametra ponovite unos.\n");
-    goto d;
-}
-if(alfa==0)
+    if(alfa==0)
 {
     printf("Zamolio bih vas da koristite SH za izracunjavanja bez ugla ravni.\n");
+}
+    printf("Neispravan unos nekog parametra ponovite unos.\n");
+    goto d;
 }
 alfa=alfa/radian;
 m=fp/(g*sin(alfa));
@@ -2751,14 +2752,14 @@ goto c;
 d:
 printf("Unesite ugao ravni.\n");
 scanf("%f", &alfa);
-if(alfa<0||alfa>89)
+if(alfa<1||alfa>89)
 {
-    printf("Neispravan unos nekog parametra ponovite unos.\n");
-    goto d;
-}
-if(alfa==0)
+    if(alfa==0)
 {
     printf("Zamolio bih vas da koristite SH za izracunjavanja bez ugla ravni.\n");
+}
+    printf("Neispravan unos nekog parametra ponovite unos.\n");
+    goto d;
 }
 alfa=alfa/radian;
 m=ftr/(mi*g*cos(alfa));
@@ -2829,14 +2830,14 @@ goto c;
 d:
 printf("Unesite ugao ravni.\n");
 scanf("%f", &alfa);
-if(alfa<0||alfa>89)
+if(alfa<1||alfa>89)
 {
-    printf("Neispravan unos nekog parametra ponovite unos.\n");
-    goto d;
-}
-if(alfa==0)
+    if(alfa==0)
 {
     printf("Zamolio bih vas da koristite SH za izracunjavanja bez ugla ravni.\n");
+}
+    printf("Neispravan unos nekog parametra ponovite unos.\n");
+    goto d;
 }
 alfa=alfa/radian;
 a=g*(sin(alfa)-mi*cos(alfa));
@@ -2949,14 +2950,14 @@ goto l;
 sin=fp/(m*g);
 alfa=asin(sin)*radian;
 printf("Ugao ravni iznosi: %f\n", alfa);
-if(alfa<0||alfa>89)
+if(alfa<1||alfa>89)
 {
-    printf("Neispravan unos nekog parametra ponovite unos.\n");
-    goto b;
-}
-if(alfa==0)
+    if(alfa==0)
 {
     printf("Zamolio bih vas da koristite SH za izracunjavanja bez ugla ravni.\n");
+}
+    printf("Neispravan unos nekog parametra ponovite unos.\n");
+    goto b;
 }
 q:
 printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
@@ -3036,14 +3037,14 @@ goto l;
 cos=n/(m*g);
 alfa=acos(cos)*radian;
 printf("Ugao ravni iznosi: %f\n", alfa);
-if(alfa<0||alfa>89)
+if(alfa<1||alfa>89)
 {
-    printf("Neispravan unos nekog parametra ponovite unos.\n");
-    goto b;
-}
-if(alfa==0)
+    if(alfa==0)
 {
     printf("Zamolio bih vas da koristite SH za izracunjavanja bez ugla ravni.\n");
+}
+    printf("Neispravan unos nekog parametra ponovite unos.\n");
+    goto b;
 }
 q:
 printf("Ako zelite izracunati predjeni put/vreme/brzinu kretanja tela unesite 'DA' u suprotnom 'NE'.\n");
@@ -3106,14 +3107,14 @@ goto c;
 d:
 printf("Unesite ugao ravni.\n");
 scanf("%f", &alfa);
-if(alfa<0||alfa>89)
+if(alfa<1||alfa>89)
 {
-    printf("Neispravan unos nekog parametra ponovite unos.\n");
-    goto d;
-}
-if(alfa==0)
+    if(alfa==0)
 {
     printf("Zamolio bih vas da koristite SH za izracunjavanja bez ugla ravni.\n");
+}
+    printf("Neispravan unos nekog parametra ponovite unos.\n");
+    goto d;
 }
 alfa=alfa/radian;
 mi=(g*sin(alfa)-a)/(g*cos(alfa));
@@ -3396,7 +3397,7 @@ if(f<0)
     goto d;
 }
 m=f/(a+mi*g);
-printf("Masa iznosi: %f", m);
+printf("Masa iznosi: %f\n", m);
 if(m<0)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
@@ -3470,7 +3471,7 @@ if(f<0)
     goto d;
 }
 a=(f-mi*m*g)/m;
-printf("Ubraznje iznosi: %f", a);
+printf("Ubraznje iznosi: %f\n", a);
 if(a<0)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
@@ -3544,7 +3545,7 @@ if(a<0)
     goto d;
 }
 f=m*(a+mi*g);
-printf("Sila iznosi: %f", f);
+printf("Sila iznosi: %f\n", f);
 if(f<0)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
@@ -3618,7 +3619,7 @@ if(a<0)
     goto d;
 }
 mi=(f-m*a)/(m*g);
-printf("Koeficijent trenja iznosi: %f", mi);
+printf("Koeficijent trenja iznosi: %f\n", mi);
 if(mi<0||mi>1)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
