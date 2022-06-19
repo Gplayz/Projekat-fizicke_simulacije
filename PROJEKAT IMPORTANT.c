@@ -85,6 +85,28 @@ void infoSH42FOT2();
 void infoSH42FOT3();
 void infoSH42PR();
 void infoDE();
+void infoDEVP();
+void infoDEVPTZ();
+void infoDEVPFO();
+void infoDEVPNII();
+void infoDEVPNIP();
+void infoDEVPVI();
+void infoDEVPPR();
+void infoDEVI();
+void infoDEVITZ();
+void infoDEVIFO();
+void infoDEVINII();
+void infoDEVINIP();
+void infoDEVIVP();
+void infoDEVIPR();
+void infoDEIP();
+void infoDEIPTZ();
+void infoDEIPFO();
+void infoDEIPNII();
+void infoDEIPNIP();
+void infoDEIPVI();
+void infoDEIPVP();
+void infoDEIPPR();
 void infoKO();
 void infoCR();
 void VIP();
@@ -845,32 +867,32 @@ if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0&&i6!=0&&i7!=0)
 
 void infoSH31FOM()
 {
-
+printf("m*a=F-T1-Ftr | m*a=T1-Ftr-T2 | m*a=T2-Ftr(sabiramo jednacine)\nm*a+m*a+m*a=F-T1-Ftr+T1-Ftr-T2+T2-Ftr\n3*m*a=F-3Ftr\n3*m*a+3*Ftr=F\n3*m*a+3*mi*m*g=F\nm*(3*a+3*mi*g)=F\nm=F/(3*a+3*mi*g)\n");
 }
 
 void infoSH31FOA()
 {
-
+printf("m*a=F-T1-Ftr | m*a=T1-Ftr-T2 | m*a=T2-Ftr(sabiramo jednacine)\nm*a+m*a+m*a=F-T1-Ftr+T1-Ftr-T2+T2-Ftr\n3*m*a=F-3Ftr\na=(F-3*mi*m*g)/(3*m)\n");
 }
 
 void infoSH31FOF()
 {
-
+printf("m*a=F-T1-Ftr | m*a=T1-Ftr-T2 | m*a=T2-Ftr(sabiramo jednacine)\nm*a+m*a+m*a=F-T1-Ftr+T1-Ftr-T2+T2-Ftr\n3*m*a=F-3Ftr\n3*m*a+3*Ftr=F\n3*m*a+3*mi*m*g=F\n3*m*(a+mi*g)=F\nF=3*m*(a+mi*g)\n");
 }
 
 void infoSH31FOMI()
 {
-
+printf("m*a=F-T1-Ftr | m*a=T1-Ftr-T2 | m*a=T2-Ftr(sabiramo jednacine)\nm*a+m*a+m*a=F-T1-Ftr+T1-Ftr-T2+T2-Ftr\n3*m*a=F-3Ftr\n3*Ftr=F-3*m*a\n3*mi*m*g=F-3*m*a\nmi=(F-3*m*a)/(3*m*g)\n");
 }
 
 void infoSH31FOT1()
 {
-
+printf("m*a=F-T1-Ftr\nT1=F-m*a-Ftr\nT1=F-m*a-mi*m*g\nT1=F-m*(a+mi*g)\n");
 }
 
 void infoSH31FOT2()
 {
-
+printf("m*a=T1-Ftr-T2\nT2=T1-m*a-Ftr\nT2=T1-m*a-mi*m*g\nT2=T1-m*(a+mi*g)\n");
 }
 
 void infoSH31PR()
@@ -978,42 +1000,42 @@ if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0&&i6!=0&&i7!=0&&i8!=0&&i9!=0)
 
 void infoSH32FOM1()
 {
-
+printf("m1*a=F-T1-Ftr1 | m2*a=T1-Ftr2-T2 | m3*a=T2-Ftr3(sabiramo jednacine)\nm1*a+m2*a+m3*a=F-T1-Ftr1+T1-Ftr2-T2+T2-Ftr3\nm1*a+m2*a+m3*a=F-Ftr1-Ftr2-Ftr3\nm1*a+Ftr1=F-Ftr2-Ftr3-m2*a-m3*a\nm1*a+mi*m1*g=F-mi*m2*g-mi*m3*g-m2*a-m3*a\nm1*(a+mi*g)=F-mi*g*(m2+m3)-a*(m2+m3)\nm1*(a+mi*g)=F-(mi*g+a)*(m2+m3)\nm1=(F-(mi*g+a)*(m2+m3))/(a+mi*g)\n");
 }
 
 void infoSH32FOM2()
 {
-
+printf("m1*a=F-T1-Ftr1 | m2*a=T1-Ftr2-T2 | m3*a=T2-Ftr3(sabiramo jednacine)\nm1*a+m2*a+m3*a=F-T1-Ftr1+T1-Ftr2-T2+T2-Ftr3\nm1*a+m2*a+m3*a=F-Ftr1-Ftr2-Ftr3\nm2*a+Ftr2=F-Ftr1-Ftr3-m1*a-m3*a\nm2*a+mi*m2*g=F-mi*m1*g-mi*m3*g-m1*a-m3*a\nm2*(a+mi*g)=F-mi*g*(m1+m3)-a*(m1+m3)\nm2*(a+mi*g)=F-(mi*g+a)*(m1+m3)\nm2=(F-(mi*g+a)*(m1+m3))/(a+mi*g)\n");
 }
 
 void infoSH32FOM3()
 {
-
+printf("m1*a=F-T1-Ftr1 | m2*a=T1-Ftr2-T2 | m3*a=T2-Ftr3(sabiramo jednacine)\nm1*a+m2*a+m3*a=F-T1-Ftr1+T1-Ftr2-T2+T2-Ftr3\nm1*a+m2*a+m3*a=F-Ftr1-Ftr2-Ftr3\nm3*a+Ftr3=F-Ftr1-Ftr2-m1*a-m2*a\nm3*a+mi*m3*g=F-mi*m1*g-mi*m2*g-m1*a-m2*a\nm3*(a+mi*g)=F-mi*g*(m1+m2)-a*(m1+m2)\nm3*(a+mi*g)=F-(mi*g+a)*(m1+m2)\nm3=(F-(mi*g+a)*(m1+m2))/(a+mi*g)\n");
 }
 
 void infoSH32FOA()
 {
-
+printf("m1*a=F-T1-Ftr1 | m2*a=T1-Ftr2-T2 | m3*a=T2-Ftr3(sabiramo jednacine)\nm1*a+m2*a+m3*a=F-T1-Ftr1+T1-Ftr2-T2+T2-Ftr3\nm1*a+m2*a+m3*a=F-Ftr1-Ftr2-Ftr3\na*(m1+m2+m3)=F-mi*m1*g-mi*m2*g-mi*m3*g\na*(m1+m2+m3)=F-mi*g*(m1+m2+m3)\na=(F-mi*g*(m1+m2+m3))/(m1+m2+m3)\n");
 }
 
 void infoSH32FOF()
 {
-
+printf("m1*a=F-T1-Ftr1 | m2*a=T1-Ftr2-T2 | m3*a=T2-Ftr3(sabiramo jednacine)\nm1*a+m2*a+m3*a=F-T1-Ftr1+T1-Ftr2-T2+T2-Ftr3\nm1*a+m2*a+m3*a=F-Ftr1-Ftr2-Ftr3\na*(m1+m2+m3)+Ftr1+Ftr2+Ftr3=F\na*(m1+m2+m3)+mi*m1*g+mi*m2*g+mi*m3*g=F\na*(m1+m2+m3)+mi*g*(m1+m2+m3)=F\n(a+mi*g)*(m1+m2+m3)=F\nF=(a+mi*g)*(m1+m2+m3)\n");
 }
 
 void infoSH32FOMI()
 {
-
+printf("m1*a=F-T1-Ftr1 | m2*a=T1-Ftr2-T2 | m3*a=T2-Ftr3(sabiramo jednacine)\nm1*a+m2*a+m3*a=F-T1-Ftr1+T1-Ftr2-T2+T2-Ftr3\nm1*a+m2*a+m3*a=F-Ftr1-Ftr2-Ftr3\nFtr1+Ftr2+Ftr3=F-m1*a-m2*a-m3*a\nmi*m1*g+mi*m2*g+mi*m3*g=F-a(m1+m2+m3)\nmi*(m1*g+m2*g+m3*g)=F-a*(m1+m2+m3)\nmi=(F-a*(m1+m2+m3))/(m1*g+m2*g+m3*g)\nmi=(F-a*(m1+m2+m3))/(g*(m1+m2+m3))\n");
 }
 
 void infoSH32FOT1()
 {
-
+printf("m1*a=F-T1-Ftr1\nT1=F-Ftr1-m1*a\nT1=F-mi*m1*g-m1*a\nT1=F-m1*(mi*g+a)\n");
 }
 
 void infoSH32FOT2()
 {
-
+printf("m3*a=T2-Ftr3\nm3*a+Ftr3=T2\nm3*a+mi*m3*g=T2\nm3*(a+mi*g)=T2\nT2=m3*(a+mi*g)\n");
 }
 
 void infoSH32PR()
@@ -1145,37 +1167,37 @@ if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0&&i6!=0&&i7!=0&&i8!=0)
 
 void infoSH41FOM()
 {
-
+printf("m*a=F-T1-Ftr | m*a=T1-Ftr-T2 | m*a=T2-Ftr-T3 | m*a=T3-Ftr\nm*a+m*a+m*a+m*a=F-T1-Ftr+T1-Ftr-T2+T2-Ftr-T3+T3-Ftr\n4*m*a=F-4*Ftr\n4*m*a=F-4*mi*m*g\n4*m*a+4*mi*m*g=F\nm*(4*a+4*mi*g)=F\nm=F/(4*a+4*mi*g)\n");
 }
 
 void infoSH41FOA()
 {
-
+printf("m*a=F-T1-Ftr | m*a=T1-Ftr-T2 | m*a=T2-Ftr-T3 | m*a=T3-Ftr\nm*a+m*a+m*a+m*a=F-T1-Ftr+T1-Ftr-T2+T2-Ftr-T3+T3-Ftr\n4*m*a=F-4*Ftr\n4*m*a=F-4*mi*m*g\na=(F-4*mi*g)/(4*m)\n");
 }
 
 void infoSH41FOF()
 {
-
+printf("m*a=F-T1-Ftr | m*a=T1-Ftr-T2 | m*a=T2-Ftr-T3 | m*a=T3-Ftr\nm*a+m*a+m*a+m*a=F-T1-Ftr+T1-Ftr-T2+T2-Ftr-T3+T3-Ftr\n4*m*a=F-4*Ftr\n4*m*a=F-4*mi*m*g\n4*m*a+4*mi*m*g=F\n4*m*(a+mi*g)=F\nF=4*m*(a+mi*g)\n");
 }
 
 void infoSH41FOMI()
 {
-
+printf("m*a=F-T1-Ftr | m*a=T1-Ftr-T2 | m*a=T2-Ftr-T3 | m*a=T3-Ftr\nm*a+m*a+m*a+m*a=F-T1-Ftr+T1-Ftr-T2+T2-Ftr-T3+T3-Ftr\n4*m*a=F-4*Ftr\n4*m*a=F-4*mi*m*g\n4*mi*m*g=F-4*m*a\nmi=(F-4*m*a)/(4*m*g)\n");
 }
 
 void infoSH41FOT1()
 {
-
+printf("m*a=F-T1-Ftr\nT1=F-m*a-Ftr\nT1=F-m*a-mi*m*g\nT1=F-m*(a+mi*g)\n");
 }
 
 void infoSH41FOT2()
 {
-
+printf("m*a=T1-Ftr-T2\nT2=T1-m*a-Ftr\nT2=T1-m*a-mi*m*g\nT2=T1-m*(a+mi*g)\n");
 }
 
 void infoSH41FOT3()
 {
-
+printf("m*a=T3-Ftr\nm*a+Ftr=T3\nm*a+mi*m*g=T3\nm*(a+mi*g)=T3\nT3=m*(a+mi*g)\n");
 }
 
 void infoSH41PR()
@@ -1293,62 +1315,714 @@ if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0&&i6!=0&&i7!=0&&i8!=0&&i9!=0&&i10!=0&&i11!=0
 
 void infoSH42FOM1()
 {
-
+printf("m1*a=F-Ftr1-T1 | m2*a=T1-Ftr2-T2 | m3*a=T2-Ftr3-T3 | m4*a=T3-Ftr4\nm1*a+m2*a+m3*a+m4*a=F-Ftr1-T1+T1-Ftr2-T2+T2-Ftr3-T3+T3-Ftr4\nm1*a+m2*a+m3*a+m4*a=F-Ftr1-Ftr2-Ftr3-Ftr4\nm1*a+Ftr1=F-Ftr2-Ftr3-Ftr4-m2*a-m3*a-m4*a\nm1*a+mi*m1*g=F-mi*m2*g-mi*m3*g-mi*m4*g-m2*a-m3*a-m4*a\nm1*(a+mi*g)=F-mi*g*(m2+m3+m4)-a*(m2+m3+m4)\nm1*(a+mi*g)=F-(mi*g+a)*(m2+m3+m4)\nm1=(F-(mi*g+a)*(m2+m3+m4))/(a+mi*g)\n");
 }
 
 void infoSH42FOM2()
 {
-
+printf("m1*a=F-Ftr1-T1 | m2*a=T1-Ftr2-T2 | m3*a=T2-Ftr3-T3 | m4*a=T3-Ftr4\nm1*a+m2*a+m3*a+m4*a=F-Ftr1-T1+T1-Ftr2-T2+T2-Ftr3-T3+T3-Ftr4\nm1*a+m2*a+m3*a+m4*a=F-Ftr1-Ftr2-Ftr3-Ftr4\nm2*a+Ftr2=F-Ftr1-Ftr3-Ftr4-m1*a-m3*a-m4*a\nm2*a+mi*m2*g=F-mi*m1*g-mi*m3*g-mi*m4*g-m1*a-m3*a-m4*a\nm2*(a+mi*g)=F-mi*g*(m1+m3+m4)-a*(m1+m3+m4)\nm2*(a+mi*g)=F-(mi*g+a)*(m1+m3+m4)\nm2=(F-(mi*g+a)*(m1+m3+m4))/(a+mi*g)\n");
 }
 
 void infoSH42FOM3()
 {
-
+printf("m1*a=F-Ftr1-T1 | m2*a=T1-Ftr2-T2 | m3*a=T2-Ftr3-T3 | m4*a=T3-Ftr4\nm1*a+m2*a+m3*a+m4*a=F-Ftr1-T1+T1-Ftr2-T2+T2-Ftr3-T3+T3-Ftr4\nm1*a+m2*a+m3*a+m4*a=F-Ftr1-Ftr2-Ftr3-Ftr4\nm3*a+Ftr3=F-Ftr2-Ftr1-Ftr4-m2*a-m1*a-m4*a\nm3*a+mi*m3*g=F-mi*m2*g-mi*m1*g-mi*m4*g-m2*a-m1*a-m4*a\nm3*(a+mi*g)=F-mi*g*(m2+m1+m4)-a*(m2+m1+m4)\nm3*(a+mi*g)=F-(mi*g+a)*(m2+m1+m4)\nm3=(F-(mi*g+a)*(m2+m1+m4))/(a+mi*g)\n");
 }
 
 void infoSH42FOM4()
 {
-
+printf("m1*a=F-Ftr1-T1 | m2*a=T1-Ftr2-T2 | m3*a=T2-Ftr3-T3 | m4*a=T3-Ftr4\nm1*a+m2*a+m3*a+m4*a=F-Ftr1-T1+T1-Ftr2-T2+T2-Ftr3-T3+T3-Ftr4\nm1*a+m2*a+m3*a+m4*a=F-Ftr1-Ftr2-Ftr3-Ftr4\nm4*a+Ftr4=F-Ftr2-Ftr3-Ftr1-m2*a-m3*a-m1*a\nm4*a+mi*m4*g=F-mi*m2*g-mi*m3*g-mi*m1*g-m2*a-m3*a-m1*a\nm4*(a+mi*g)=F-mi*g*(m2+m3+m1)-a*(m2+m3+m1)\nm4*(a+mi*g)=F-(mi*g+a)*(m2+m3+m1)\nm4=(F-(mi*g+a)*(m2+m3+m1))/(a+mi*g)\n");
 }
 
 void infoSH42FOA()
 {
-
+printf("m1*a=F-Ftr1-T1 | m2*a=T1-Ftr2-T2 | m3*a=T2-Ftr3-T3 | m4*a=T3-Ftr4\nm1*a+m2*a+m3*a+m4*a=F-Ftr1-T1+T1-Ftr2-T2+T2-Ftr3-T3+T3-Ftr4\nm1*a+m2*a+m3*a+m4*a=F-Ftr1-Ftr2-Ftr3-Ftr4\na*(m1+m2+m3+m4)=F-mi*m1*g-mi*m2*mg-mi*m3*g-mi*m4*g\na*(m1+m2+m3+m4)=F-mi*g(m1+m2+m3+m4)\na=(F-mi*g*(m1+m2+m3+m4))/(m1+m2+m3+m4)\n");
 }
 
 void infoSH42FOF()
 {
-
+printf("m1*a=F-Ftr1-T1 | m2*a=T1-Ftr2-T2 | m3*a=T2-Ftr3-T3 | m4*a=T3-Ftr4\nm1*a+m2*a+m3*a+m4*a=F-Ftr1-T1+T1-Ftr2-T2+T2-Ftr3-T3+T3-Ftr4\nm1*a+m2*a+m3*a+m4*a=F-Ftr1-Ftr2-Ftr3-Ftr4\nm1*a+m2*a+m3*a+m4*a+Ftr1+Ftr2+Ftr3+Ftr4=F\nm1*a+m2*a+m3*a+m4*a+mi*m1*g+mi*m2*g+mi*m3*g+mi*m4*g=F\na*(m1+m2+m3+m4)+mi*g*(m1+m2+m3+m4)=F\n(a+mi*g)*(m1+m2+m3+m4)=F\nF=(a+mi*g)*(m1+m2+m3+m4)\n");
 }
 
 void infoSH42FOMI()
 {
-
+printf("m1*a=F-Ftr1-T1 | m2*a=T1-Ftr2-T2 | m3*a=T2-Ftr3-T3 | m4*a=T3-Ftr4\nm1*a+m2*a+m3*a+m4*a=F-Ftr1-T1+T1-Ftr2-T2+T2-Ftr3-T3+T3-Ftr4\nm1*a+m2*a+m3*a+m4*a=F-Ftr1-Ftr2-Ftr3-Ftr4\nFtr1+Ftr2+Ftr3+Ftr4=F-m1*a-m2*a-m3*a-m4*a\nmi*m1*g+mi*m2*g+mi*m3*g+mi*m4*g=F-a*(m1+m2+m3+m4)\nmi*(m1*g+m2*g+m3*g+m4*g)=F-a*(m1+m2+m3+m4)\nmi=(F-a*(m1+m2+m3+m4))/(m1*g+m2*g+m3*g+m4*g)\nmi=(F-a*(m1+m2+m3+m4))/(g(m1+m2+m3+m4))\n");
 }
 
 void infoSH42FOT1()
 {
-
+printf("m1*a=F-Ftr1-T1\nT1=F-mi*m1*g-m1*a\nT1=F-m1*(mi*g+a)\n");
 }
 
 void infoSH42FOT2()
 {
-
+printf("m2*a=T1-Ftr2-T2\nT2=T1-mi*m2*g-m2*a\nT2=T1-m2*(mi*g+a)\n");
 }
 
 void infoSH42FOT3()
 {
-
+printf("m4*a=T3-Ftr4\nm4*a-Ftr4=T3\nm4*a-mi*m4*g=T3\nm4*(a+mi*g)=T3\nT3=m4*(a+mi*g)\n");
 }
 
 void infoSH42PR()
 {
-printf("Primer:\nMasa prvog tela:2.25 kg\nMasa drugog tela:1.75 kg\nMasa treceg tela:1.25 kg\nMasa cetvrtog tela:0.75 kg\nUbrzanje: 3 m/s^2\nSila: 36 N\nKoeficijent trenja: 0.30581\nSila zatezanja T1:22.5 N\nSila zatezanja T2:12 N\nSila zatezanja T3:7.5 N\n");
+printf("Primer:\nMasa prvog tela:2.25 kg\nMasa drugog tela:1.75 kg\nMasa treceg tela:1.25 kg\nMasa cetvrtog tela:0.75 kg\nUbrzanje: 3 m/s^2\nSila: 36 N\nKoeficijent trenja: 0.30581\nSila zatezanja T1:22.5 N\nSila zatezanja T2:12 N\nSila zatezanja T3:4.5 N\n");
 }
 
 void infoDE()
 {
+char u[2],str1[]="VP",str2[]="VI",str3[]="IP",str4[]="NZ";
+int i1,i2,i3,i4;
+a:
+printf("Unesite 'VP' za informacije ako prijemnik miruje, dok se izvor krece.\nUnesite 'VI' za informacije ako izvor miruje, dok se prijemnik krece.\nUnesite 'IP' za informacije ako se i prijemnik i izvor krecu.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoDEVP();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoDEVI();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoDEIP();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+info();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu, ponovite unos.\n");
+goto a;
+}
+}
 
+void infoDEVP()
+{
+char u[2],str1[]="TZ",str2[]="FO",str3[]="PR",str4[]="NZ";
+int i1,i2,i3,i4;
+a:
+printf("Unesite 'TZ' za ispis teksta zadatka.\nUnesite 'FO' za ispis formula koje se koriste u zadatku.\nUnesite 'PR' za primere promenjivih.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s",u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoDEVPTZ();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoDEVPFO();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoDEVPPR();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+infoDE();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
+{
+    printf("Greska u unosu parametra, ponovite unos.\n");
+    goto a;
+}
+}
+
+void infoDEVPTZ()
+{
+char u[2],str1[]="DA",str2[]="NE";
+float i1,i2;
+l:
+printf("Unesite 'DA' ako se izvor frenkvencije priblizava prijemniku, a u slucaju da  se odaljava unesite 'NE'\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto l;    
+}
+if(i1==0)
+{
+printf("Telo se krece ka nekom nepokretnom telu i pritom emituje zvuk frenkvencije x, koje nepokretno telo cuje kao frenkvenciju y.Naci:\na)Frenkvenciju izvora\nb)Frenkvenciju prijemnika\nc)Brzinu izvora\n");
+}
+else
+{
+printf("Telo se krece od nekog nepokretnog tela i pritom emituje zvuk frenkvencije x, koje nepokretno telo cuje kao frenkvenciju y.Naci:\na)Frenkvenciju izvora\nb)Frenkvenciju prijemnika\nc)Brzinu izvora\n");
+}
+}
+
+void infoDEVPFO()
+{
+char u[3],str1[]="NII",str2[]="NIP",str3[]="VI",str4[]="NZ";
+int i1,i2,i3,i4;
+a:
+printf("Unesite 'NII' za formule izracunavanja frenkvencije izvora.\nUnesite 'NIP' za formule izracunavanja frenkvencije prijemnika.\nUnesite 'VI' za formule izracunavanja brzine izvora.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoDEVPNII();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoDEVPNIP();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoDEVPVI();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+infoDEVP();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu, ponovite unos.\n");
+goto a;
+}
+}
+
+void infoDEVPNII()
+{
+char u[2],str1[]="DA",str2[]="NE";
+float i1,i2;
+l:
+printf("Unesite 'DA' ako se izvor frenkvencije priblizava prijemniku, a u slucaju da  se odaljava unesite 'NE'\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto l;    
+}
+if(i1==0)
+{
+printf("nip=(vz/(vz-vi))*nii ==> nii=nip/(vz/(vz-vi)\n");
+}
+else
+{
+printf("nip=(vz/(vz+vi))*nii ==> nii=nip/(vz/(vz+vi))\n");
+}
+}
+
+void infoDEVPNIP()
+{
+char u[2],str1[]="DA",str2[]="NE";
+float i1,i2;
+l:
+printf("Unesite 'DA' ako se izvor frenkvencije priblizava prijemniku, a u slucaju da  se odaljava unesite 'NE'\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto l;    
+}
+if(i1==0)
+{
+printf("nip=(vz/(vz-vi))*nii\n");
+}
+else
+{
+printf("nip=(vz/(vz+vi))*nii\n");
+}
+}
+
+void infoDEVPVI()
+{
+char u[2],str1[]="DA",str2[]="NE";
+float i1,i2;
+l:
+printf("Unesite 'DA' ako se izvor frenkvencije priblizava prijemniku, a u slucaju da  se odaljava unesite 'NE'\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto l;    
+}
+if(i1==0)
+{
+printf("nip=(vz/(vz-vi))*nii ==> vi=vz-(vz/(nip/nii))\n");
+}
+else
+{
+printf("nip=(vz/(vz+vi))*nii ==> vi=(vz/(nii/nip))-vz\n");
+}
+}
+
+void infoDEVPPR()
+{
+char u[2],str1[]="DA",str2[]="NE";
+float i1,i2;
+l:
+printf("Unesite 'DA' ako se izvor frenkvencije priblizava prijemniku, a u slucaju da  se odaljava unesite 'NE'\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto l;    
+}
+if(i1==0)
+{
+printf("Primer:\nBrzina zvuka:330 m/s\nFrenkvencija prijemnika:515.6 Hz\nFrenkvencija izvora:500 Hz\nBrzina izvora:10 m/s\n");
+}
+else
+{
+printf("Primer:\nBrzina zvuka:330 m/s\nFrenkvencija prijemnika:600 Hz\nFrenkvencija izvora:627.3 Hz\nBrzina izvora:15 m/s\n");
+}
+}
+
+void infoDEVI()
+{
+char u[2],str1[]="TZ",str2[]="FO",str3[]="PR",str4[]="NZ";
+int i1,i2,i3,i4;
+a:
+printf("Unesite 'TZ' za ispis teksta zadatka.\nUnesite 'FO' za ispis formula koje se koriste u zadatku.\nUnesite 'PR' za primere promenjivih.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s",u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoDEVITZ();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoDEVIFO();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoDEVIPR();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+infoDE();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
+{
+    printf("Greska u unosu parametra, ponovite unos.\n");
+    goto a;
+}
+}
+
+void infoDEVITZ()
+{
+char u[2],str1[]="DA",str2[]="NE";
+float i1,i2;
+l:
+printf("Unesite 'DA' ako se prijemnik frenkvencije priblizava izvoru, a u slucaju da  se odaljava unesite 'NE'\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto l;    
+}
+if(i1==0)
+{
+printf("Telo se krece ka nekom nepokretnom telu koje pritom emituje zvuk frenkvencije x, koje telo cuje kao frenkvenciju y.Naci:\na)Frenkvenciju izvora\nb)Frenkvenciju prijemnika\nc)Brzinu prijemnika\n");
+}
+else
+{
+printf("Telo se krece od nekog nepokretnog tela koje pritom emituje zvuk frenkvencije x, koje telo cuje kao frenkvenciju y.Naci:\na)Frenkvenciju izvora\nb)Frenkvenciju prijemnika\nc)Brzinu prijemnika\n");
+}
+}
+
+void infoDEVIFO()
+{
+char u[3],str1[]="NII",str2[]="NIP",str3[]="VP",str4[]="NZ";
+int i1,i2,i3,i4;
+a:
+printf("Unesite 'NII' za formule izracunavanja frenkvencije izvora.\nUnesite 'NIP' za formule izracunavanja frenkvencije prijemnika.\nUnesite 'VP' za formule izracunavanja brzine prijemnika.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoDEVINII();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoDEVINIP();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoDEVIVP();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+infoDEVI();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
+{
+printf("Greska u unosu, ponovite unos.\n");
+goto a;
+}
+}
+
+void infoDEVINII()
+{
+char u[2],str1[]="DA",str2[]="NE";
+float i1,i2;
+l:
+printf("Unesite 'DA' ako se prijemnik frenkvencije priblizava izvoru, a u slucaju da  se odaljava unesite 'NE'\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto l;    
+}
+if(i1==0)
+{
+printf("nip=((vz+vp)/vz)*nii ==> nii=nip/((vz+vp)/vz)\n");
+}
+else
+{
+printf("nip=((vz-vp)/vz)*nii ==> nii=nip/((vz-vp)/vz)\n");
+}
+}
+
+void infoDEVINIP()
+{
+char u[2],str1[]="DA",str2[]="NE";
+float i1,i2;
+l:
+printf("Unesite 'DA' ako se prijemnik frenkvencije priblizava izvoru, a u slucaju da  se odaljava unesite 'NE'\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto l;    
+}
+if(i1==0)
+{
+printf("nip=((vz+vp)/vz)*nii\n");
+}
+else
+{
+printf("nip=((vz-vp)/vz)*nii\n");
+}
+}
+
+void infoDEVIVP()
+{
+char u[2],str1[]="DA",str2[]="NE";
+float i1,i2;
+l:
+printf("Unesite 'DA' ako se prijemnik frenkvencije priblizava izvoru, a u slucaju da  se odaljava unesite 'NE'\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto l;    
+}
+if(i1==0)
+{
+printf("nip=((vz+vp)/vz)*nii ==> vp=(nip/nii)*vz-vz\n");
+}
+else
+{
+printf("nip=((vz-vp)/vz)*nii ==> vp=vz-((nip/nii)*vz)\n");
+}
+}
+
+void infoDEVIPR()
+{
+char u[2],str1[]="DA",str2[]="NE";
+float i1,i2;
+l:
+printf("Unesite 'DA' ako se prijemnik frenkvencije priblizava izvoru, a u slucaju da  se odaljava unesite 'NE'\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+i2=strcmp(u,str2);
+if(i1!=0&&i2!=0)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto l;    
+}
+if(i1==0)
+{
+printf("Primer:\nBrzina zvuka:330 m/s\nFrenkvencija prijemnika:1200 Hz\nFrenkvencija izvora:1100 Hz\nBrzina prijemnika:30 m/s\n");
+}
+else
+{
+printf("Primer:\nBrzina zvuka:330 m/s\nFrenkvencija prijemnika:1200 Hz\nFrenkvencija izvora:1100 Hz\nBrzina prijemnika:30 m/s\n");
+}
+}
+
+void infoDEIP()
+{
+char u[2],str1[]="TZ",str2[]="FO",str3[]="PR",str4[]="NZ";
+int i1,i2,i3,i4;
+a:
+printf("Unesite 'TZ' za ispis teksta zadatka.\nUnesite 'FO' za ispis formula koje se koriste u zadatku.\nUnesite 'PR' za primere promenjivih.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s",u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoDEIPTZ();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoDEIPFO();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoDEIPPR();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+infoDE();
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
+{
+    printf("Greska u unosu parametra, ponovite unos.\n");
+    goto a;
+}
+}
+
+void infoDEIPTZ()
+{
+float q;
+l:
+printf("Unesite '1' ako se i izvor i prijemnik frenkvencije priblizavaju.\nUnesite '2' ako se i izvor i prijemnik frenkvencije udaljavaju.\nUnesite '3' ako se izvor priblizava, a prijemnik udaljava.\nUnesite '4' ako se izvor udaljava, a prijemnik priblizava.\n");
+scanf("%f",&q);
+if(q!=1&&q!=2&&q!=3&&q!=4)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto l;    
+}
+if(q==1)
+{
+printf("Telo se krece ka nekom drugom telu koje se takodje krece prema njemu i pritom emituje zvuk frenkvencije x, koje drugo telo cuje kao frenkvenciju y.Naci:\na)Frenkvenciju izvora\nb)Frenkvenciju prijemnika\nc)Brzinu prijemnika\nd)Brzinu izvora\n");
+}
+if(q==2)
+{
+printf("Telo se krece dalje od nekog drugog tela koje se takodje krece dalje od njega i pritom emituje zvuk frenkvencije x, koje drugo telo cuje kao frenkvenciju y.Naci:\na)Frenkvenciju izvora\nb)Frenkvenciju prijemnika\nc)Brzinu prijemnika\nd)Brzinu izvora\n");
+}
+if(q==3)
+{
+printf("Telo se krece ka nekom drugom telu koje se odaljava od njega i pritom emituje zvuk frenkvencije x, koje drugo telo cuje kao frenkvenciju y.Naci:\na)Frenkvenciju izvora\nb)Frenkvenciju prijemnika\nc)Brzinu prijemnika\nd)Brzinu izvora\n");
+}
+if(q==4)
+{
+printf("Telo se krece dalje od nekog drugog tela koje se krece ka njemu i pritom emituje zvuk frenkvencije x, koje drugo telo cuje kao frenkvenciju y.Naci:\na)Frenkvenciju izvora\nb)Frenkvenciju prijemnika\nc)Brzinu prijemnika\nd)Brzinu izvora\n");
+}
+}
+
+void infoDEIPFO()
+{
+char u[3],str1[]="NII",str2[]="NIP",str3[]="VP",str4[]="NZ",str5[]="VI";
+int i1,i2,i3,i4,i5;
+a:
+printf("Unesite 'NII' za formule izracunavanja frenkvencije izvora.\nUnesite 'NIP' za formule izracunavanja frenkvencije prijemnika.\nUnesite 'VI' za formule izracunavanja brzine izvora.\nUnesite 'VP' za formule izracunavanja brzine prijemnika.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+scanf("%s",&u);
+i1=strcmp(u,str1);
+if(i1==0)
+{
+infoDEIPNII();
+}
+i2=strcmp(u,str2);
+if(i2==0)
+{
+infoDEIPNIP();
+}
+i3=strcmp(u,str3);
+if(i3==0)
+{
+infoDEIPVP();
+}
+i4=strcmp(u,str4);
+if(i4==0)
+{
+infoDEIP();
+}
+i5=strcmp(u,str5);
+if(i5==0)
+{
+infoDEIPVI();    
+}
+if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0)
+{
+printf("Greska u unosu ponovite unos.\n");
+goto a;
+}
+}
+
+void infoDEIPNII()
+{
+float q;
+l:
+printf("Unesite '1' ako se i izvor i prijemnik frenkvencije priblizavaju.\nUnesite '2' ako se i izvor i prijemnik frenkvencije udaljavaju.\nUnesite '3' ako se izvor priblizava, a prijemnik udaljava.\nUnesite '4' ako se izvor udaljava, a prijemnik priblizava.\n");
+scanf("%f",&q);
+if(q!=1&&q!=2&&q!=3&&q!=4)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto l;    
+}
+if(q==1)
+{
+printf("nip=((vz+vp)/(vz-vi))*nii ==> nii=nip/((vz+vp)/(vz-vi))\n");
+}
+if(q==2)
+{
+printf("nip=((vz-vp)/(vz+vi))*nii ==> nii=nip/((vz-vp)/(vz+vi))\n");
+}
+if(q==3)
+{
+printf("nip=((vz-vp)/(vz-vi))*nii ==> nii=nip/((vz-vp)/(vz-vi))\n");
+}
+if(q==4)
+{
+printf("nip=((vz+vp)/(vz+vi))*nii ==> nii=nip/((vz+vp)/(vz+vi))\n");
+}
+}
+
+void infoDEIPNIP()
+{
+float q;
+l:
+printf("Unesite '1' ako se i izvor i prijemnik frenkvencije priblizavaju.\nUnesite '2' ako se i izvor i prijemnik frenkvencije udaljavaju.\nUnesite '3' ako se izvor priblizava, a prijemnik udaljava.\nUnesite '4' ako se izvor udaljava, a prijemnik priblizava.\n");
+scanf("%f",&q);
+if(q!=1&&q!=2&&q!=3&&q!=4)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto l;    
+}
+if(q==1)
+{
+printf("nip=((vz+vp)/(vz-vi))*nii\n");
+}
+if(q==2)
+{
+printf("nip=((vz-vp)/(vz+vi))*nii\n");
+}
+if(q==3)
+{
+printf("nip=((vz-vp)/(vz-vi))*nii\n");
+}
+if(q==4)
+{
+printf("nip=((vz+vp)/(vz+vi))*nii\n");
+}
+}
+
+void infoDEIPVI()
+{
+float q;
+l:
+printf("Unesite '1' ako se i izvor i prijemnik frenkvencije priblizavaju.\nUnesite '2' ako se i izvor i prijemnik frenkvencije udaljavaju.\nUnesite '3' ako se izvor priblizava, a prijemnik udaljava.\nUnesite '4' ako se izvor udaljava, a prijemnik priblizava.\n");
+scanf("%f",&q);
+if(q!=1&&q!=2&&q!=3&&q!=4)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto l;    
+}
+if(q==1)
+{
+printf("nip=((vz+vp)/(vz-vi))*nii ==> vi=vz-((vz+vp)/(nip/nii))\n");
+}
+if(q==2)
+{
+printf("nip=((vz-vp)/(vz+vi))*nii ==> vi=((vz-vp)/(nip/nii))-vz\n");
+}
+if(q==3)
+{
+printf("nip=((vz-vp)/(vz-vi))*nii ==> vi=vz-((vz-vp)/(nip/nii))\n");
+}
+if(q==4)
+{
+printf("nip=((vz+vp)/(vz+vi))*nii ==> vi=((vz+vp)/(nip/nii))-vz\n");
+}
+}
+
+void infoDEIPVP()
+{
+float q;
+l:
+printf("Unesite '1' ako se i izvor i prijemnik frenkvencije priblizavaju.\nUnesite '2' ako se i izvor i prijemnik frenkvencije udaljavaju.\nUnesite '3' ako se izvor priblizava, a prijemnik udaljava.\nUnesite '4' ako se izvor udaljava, a prijemnik priblizava.\n");
+scanf("%f",&q);
+if(q!=1&&q!=2&&q!=3&&q!=4)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto l;    
+}
+if(q==1)
+{
+printf("nip=((vz+vp)/(vz-vi))*nii ==> vp=((nip/nii)*(vz-vi))-vz\n");
+}
+if(q==2)
+{
+printf("nip=((vz-vp)/(vz+vi))*nii ==> vp=vz-((nip/nii)*(vz+vi))\n");
+}
+if(q==3)
+{
+printf("nip=((vz-vp)/(vz-vi))*nii ==> vp=vz-((nip/nii)*(vz-vi));\n");
+}
+if(q==4)
+{
+printf("nip=((vz+vp)/(vz+vi))*nii ==> vp=((nip/nii)*(vz+vi))-vz;\n");
+}
+}
+
+void infoDEIPPR()
+{
+float q;
+l:
+printf("Unesite '1' ako se i izvor i prijemnik frenkvencije priblizavaju.\nUnesite '2' ako se i izvor i prijemnik frenkvencije udaljavaju.\nUnesite '3' ako se izvor priblizava, a prijemnik udaljava.\nUnesite '4' ako se izvor udaljava, a prijemnik priblizava.\n");
+scanf("%f",&q);
+if(q!=1&&q!=2&&q!=3&&q!=4)
+{
+printf("Greska u unosu parametra ponovite unos.\n");
+goto l;    
+}
+if(q==1)
+{
+printf("Primer:\nBrzina zvuka:330 m/s\nFrenkvencija prijemnika:1050 Hz\nFrenkvencija izvora:900 Hz\nBrzina prijemnika:20 m/s\nBrzina izvora:30 m/s\n");
+}
+if(q==2)
+{
+printf("Primer:\nBrzina zvuka:330 m/s\nFrenkvencija prijemnika:775 Hz\nFrenkvencija izvora:900 Hz\nBrzina prijemnika:20 m/s\nBrzina izvora:30 m/s\n");
+}
+if(q==3)
+{
+printf("Primer:\nBrzina zvuka:330 m/s\nFrenkvencija prijemnika:930 Hz\nFrenkvencija izvora:900 Hz\nBrzina prijemnika:20 m/s\nBrzina izvora:30 m/s\n");
+}
+if(q==4)
+{
+printf("Primer:\nBrzina zvuka:330 m/s\nFrenkvencija prijemnika:875 Hz\nFrenkvencija izvora:900 Hz\nBrzina prijemnika:20 m/s\nBrzina izvora:30 m/s\n");
+}
 }
 
 void infoKO()
@@ -3781,7 +4455,7 @@ if(i1==0)
 else
 {
 c:
-printf("Ako vam je potrebna masa prvog tela i T1,T2 unesite 'M1'.\nAko vam je potrebna masa drugog tela i T1,T2 unesite 'M2'.\nAko vam je potrebno ubrzanje i T1,T2 unesite 'A'.\nAko vam je potrebna sila i T1,T2 unesite 'F'.\nAko vam je potreban koeficijent trenja i T1,T2 unesite 'MI'.\nAko su vam samo potrebne sile zatezanja unesite 'T'.\n");
+printf("Ako vam je potrebna masa prvog tela i T1,T2 unesite 'M1'.\nAko vam je potrebna masa drugog tela i T1,T2 unesite 'M2'.\nAko vam je potrebna masa drugog tela i T1,T2 unesite 'M3'\nAko vam je potrebno ubrzanje i T1,T2 unesite 'A'.\nAko vam je potrebna sila i T1,T2 unesite 'F'.\nAko vam je potreban koeficijent trenja i T1,T2 unesite 'MI'.\nAko su vam samo potrebne sile zatezanja unesite 'T'.\n");
 scanf("%s", &u);
 i1=strcmp(u,str6);
 if(i1==0)
@@ -4332,7 +5006,7 @@ if(f<0)
     printf("Sila ne moze biti negativna, ponovite uslov.\n");
     goto d;
 }
-m1=(f-mi*g*(m2+m3)-a*(m2+m3))/(a+mi*g);
+m1=(f-(mi*g+a)*(m2+m3))/(a+mi*g);
 printf("Masa prvog tela iznosi: %f\n", m1);
 if(m1<0)
 {
@@ -4438,7 +5112,7 @@ if(f<0)
     printf("Sila ne moze biti negativna, ponovite uslov.\n");
     goto d;
 }
-m2=(f-mi*g*(m1+m3)-a*(m1+m3))/(a+mi*g);
+m2=(f-(mi*g+a)*(m1+m3))/(a+mi*g);
 printf("Masa drugog tela iznosi: %f\n", m2);
 if(m2<0)
 {
@@ -4544,7 +5218,7 @@ if(f<0)
     printf("Sila ne moze biti negativna, ponovite uslov.\n");
     goto d;
 }
-m3=(f-mi*g*(m1+m2)-a*(m1+m2))/(a+mi*g);
+m3=(f-(mi*g+a)*(m1+m2))/(a+mi*g);
 printf("Masa treceg tela iznosi: %f\n", m3);
 if(m3<0)
 {
@@ -4756,7 +5430,7 @@ if(a<0)
     printf("Ubrzanje ne moze biti negativno, ponovite uslov.\n");
     goto d;
 }
-f=a*(m1+m2+m3)+mi*g*(m1+m2+m3);
+f=(a+mi*g)*(m1+m2+m3);
 printf("Sila koja deluje na tela iznosi: %f\n", f);
 if(f<0)
 {
@@ -5677,7 +6351,7 @@ if(f<0)
     printf("Sila ne moze biti negativna, ponovite uslov.\n");
     goto d;
 }
-m1=(f-mi*g*(m2+m3+m4)-a*(m2+m3+m4))/(a+mi*g);
+m1=(f-(mi*g+a)*(m2+m3+m4))/(a+mi*g);
 printf("Masa prvog tela iznosi: %f\n", m1);
 if(m1<0)
 {
@@ -5700,7 +6374,7 @@ if(T2<0)
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
 }
-T3=m3*(a+mi*g);
+T3=m4*(a+mi*g);
 printf("Sila zatezanja niti (T3) iznosi: %f\n", T3);
 if(T3<0)
 {
@@ -5798,7 +6472,7 @@ if(f<0)
     printf("Sila ne moze biti negativna, ponovite uslov.\n");
     goto d;
 }
-m2=(f-mi*g*(m1+m3+m4)-a*(m1+m3+m4))/(a+mi*g);
+m2=(f-(mi*g+a)*(m1+m3+m4))/(a+mi*g);
 printf("Masa drugog tela iznosi: %f\n", m2);
 if(m2<0)
 {
@@ -5821,7 +6495,7 @@ if(T2<0)
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
 }
-T3=m3*(a+mi*g);
+T3=m4*(a+mi*g);
 printf("Sila zatezanja niti (T3) iznosi: %f\n", T3);
 if(T3<0)
 {
@@ -5919,7 +6593,7 @@ if(f<0)
     printf("Sila ne moze biti negativna, ponovite uslov.\n");
     goto d;
 }
-m3=(f-mi*g*(m1+m2+m4)-a*(m1+m2+m4))/(a+mi*g);
+m3=(f-(mi*g+a)*(m1+m2+m4))/(a+mi*g);
 printf("Masa treceg tela iznosi: %f\n", m3);
 if(m3<0)
 {
@@ -5942,7 +6616,7 @@ if(T2<0)
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
 }
-T3=m3*(a+mi*g);
+T3=m4*(a+mi*g);
 printf("Sila zatezanja niti (T3) iznosi: %f\n", T3);
 if(T3<0)
 {
@@ -6040,7 +6714,7 @@ if(f<0)
     printf("Sila ne moze biti negativna, ponovite uslov.\n");
     goto d;
 }
-m4=(f-mi*g*(m1+m2+m3)-a*(m1+m2+m3))/(a+mi*g);
+m4=(f-(mi*g+a)*(m1+m2+m3))/(a+mi*g);
 printf("Masa cetvrtog tela iznosi: %f\n", m4);
 if(m4<0)
 {
@@ -6063,7 +6737,7 @@ if(T2<0)
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
 }
-T3=m3*(a+mi*g);
+T3=m4*(a+mi*g);
 printf("Sila zatezanja niti (T3) iznosi: %f\n", T3);
 if(T3<0)
 {
@@ -6184,7 +6858,7 @@ if(T2<0)
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
 }
-T3=m3*(a+mi*g);
+T3=m4*(a+mi*g);
 printf("Sila zatezanja niti (T3) iznosi: %f\n", T3);
 if(T3<0)
 {
@@ -6282,7 +6956,7 @@ if(a<0)
     printf("Ubrzanje ne moze biti negativno, ponovite uslov.\n");
     goto d;
 }
-f=a*(m1+m2+m3+m4)+mi*g*(m1+m2+m3+m4);
+f=(a+mi*g)*(m1+m2+m3+m4);
 printf("Sila koja deluje na tela iznosi: %f\n", f);
 if(f<0)
 {
@@ -6305,7 +6979,7 @@ if(T2<0)
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
 }
-T3=m3*(a+mi*g);
+T3=m4*(a+mi*g);
 printf("Sila zatezanja niti (T3) iznosi: %f\n", T3);
 if(T3<0)
 {
@@ -6426,7 +7100,7 @@ if(T2<0)
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
 }
-T3=m3*(a+mi*g);
+T3=m4*(a+mi*g);
 printf("Sila zatezanja niti (T3) iznosi: %f\n", T3);
 if(T3<0)
 {
@@ -6548,7 +7222,7 @@ if(T2<0)
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
 }
-T3=m3*(a+mi*g);
+T3=m4*(a+mi*g);
 printf("Sila zatezanja niti (T3) iznosi: %f\n", T3);
 if(T3<0)
 {
@@ -7014,7 +7688,7 @@ printf("Brzina prijemnika ne moze biti manja ili jednaka nuli, ponovite unos.\n"
 goto d;
 }
 l:
-printf("Unesite 'DA' ako se izvor frenkvencije priblizava prijemniku, a u slucaju da  se odaljava unesite 'NE'\n");
+printf("Unesite 'DA' ako se prijemnik frenkvencije priblizava izvoru, a u slucaju da  se odaljava unesite 'NE'\n");
 scanf("%s",&u);
 i1=strcmp(u,str1);
 i2=strcmp(u,str2);
@@ -7081,7 +7755,7 @@ printf("Brzina prijemnika ne moze biti manja ili jednaka nuli, ponovite unos.\n"
 goto d;
 }
 l:
-printf("Unesite 'DA' ako se izvor frenkvencije priblizava prijemniku, a u slucaju da  se odaljava unesite 'NE'\n");
+printf("Unesite 'DA' ako se prijemnik frenkvencije priblizava izvoru, a u slucaju da  se odaljava unesite 'NE'\n");
 scanf("%s",&u);
 i1=strcmp(u,str1);
 i2=strcmp(u,str2);
@@ -7148,7 +7822,7 @@ printf("Frenkvencija prijemnika ne moze biti manja ili jednaka nuli, ponovite un
 goto d;
 }
 l:
-printf("Unesite 'DA' ako se izvor frenkvencije priblizava prijemniku, a u slucaju da  se odaljava unesite 'NE'\n");
+printf("Unesite 'DA' ako se prijemnik frenkvencije priblizava izvoru, a u slucaju da se odaljava unesite 'NE'\n");
 scanf("%s",&u);
 i1=strcmp(u,str1);
 i2=strcmp(u,str2);
@@ -7527,7 +8201,7 @@ vp=vz-((nip/nii)*(vz-vi));
 }
 if(q==4)
 {
-vp=((nip/nii)*(vz+vi))-vz;;
+vp=((nip/nii)*(vz+vi))-vz;
 }
 printf("Brzina prijemnika iznosi:%f\n",vp);
 if(vp<=0)
