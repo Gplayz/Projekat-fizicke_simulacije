@@ -231,7 +231,7 @@ float g=0;
 do
 {
 a:
-printf("Za strmu ravan unesite 'SR'.\nZa matematicko klatno unesite 'MK'.\nZa delovanje sile na telo na horizontalnoj podlozi unesite 'SH'.\nZa doplerov efekat unesite 'DE'.\nZa vise informacija unesite 'INFO'.\nZa kretanje tela oko kotura unesite 'KO'.\n");
+printf("Za strmu ravan unesite 'SR'.\nZa matematicko klatno unesite 'MK'.\nZa delovanje sile na telo na horizontalnoj podlozi unesite 'SH'.\nZa doplerov efekat unesite 'DE'.\nZa kretanje tela oko kotura unesite 'KO'.\nZa vise informacija unesite 'INFO'.\n");
 scanf("%s",&u);
 i1=strcmp(u,str1);
 if(i1==0)
