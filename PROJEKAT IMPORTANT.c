@@ -446,7 +446,7 @@ if(i1!=0&&i2!=0&&i3!=0&&i4!=0&&i5!=0&&i6!=0&&i7!=0&&i8!=0)
 
 void infoSRMAX()
 {
-printf("m=max/ax\n");
+printf("m=m*ax/ax\n");
 }
 
 void infoSRFTR()
@@ -466,12 +466,12 @@ printf("m*a=Fp-Ftr\nm*a=m*g*sin(alfa)-mi*m*g*cos(alfa)\nm*a=m*g*(sin(alfa)-mi*co
 
 void infoSRAFP()
 {
-printf("Fp=m*g*sin(alfa)\nFp/(m*g)=sin(alfa)\nsin(alfa)=Fp/(m*g)\nalfa=sin^-1*(Fp/(m*g))\n");
+printf("Fp=m*g*sin(alfa)\nFp/(m*g)=sin(alfa)\nsin(alfa)=Fp/(m*g)\nalfa=sin^-1(Fp/(m*g))\n");
 }
 
 void infoSRAN()
 {
-printf("N=m*g*cos(alfa)\nN/(m*g)=cos(alfa)\ncos(alfa)=N/(m*g)\nalfa=cos^-1*(N/(m*g))\n");
+printf("N=m*g*cos(alfa)\nN/(m*g)=cos(alfa)\ncos(alfa)=N/(m*g)\nalfa=cos^-1(N/(m*g))\n");
 }
 
 void infoSRKT()
@@ -481,7 +481,7 @@ printf("m*a=Fp-Ftr\nm*a=m*g*sin(alfa)-mi*m*g*cos(alfa)\nmi*m*g*cos(alfa)=m*g*sin
 
 void infoSRPR()
 {
-printf("Primer:\nmasa:2 kg\nm*ax:9.7 N\nSila trenja:4.16 N\nParalelna sila:13.87 N\nUbrzanje:4,85 m/s\nUgao ravni 45\nSila reakcije podloge: 13.87 N\nKoeficijent trenja:0.3\n");
+printf("Primer:\nmasa:2 kg\nm*ax:9.7 N\nSila trenja:4.16 N\nParalelna sila:13.87 N\nUbrzanje:4,85 m/s\nUgao ravni: 45\nSila reakcije podloge: 13.87 N\nKoeficijent trenja:0.3\n");
 }
 
 void infoMK()
@@ -524,6 +524,7 @@ char u[2],str1[]="NI",str2[]="T";
 float i1,i2;
 y:
 printf("Ako imate frenkvenciju oscilovanja unesite 'NI' za tekst zadatka.\nAko imate period oscilovanja unesite 'T' za tekst zadatka.\n");
+scanf("%s",&u);
 i1=strcmp(u,str1);
 i2=strcmp(u,str2);
 if(i1!=0&&i2!=0)
@@ -537,7 +538,7 @@ printf("Matematicko klatno osciluje frenkvencijom od x herca. Naci duzinu klatna
 }
 if(i2==0)
 {
-printf("Matematicko klatno za x sekundi periodom oscilovanja predje jednu oscilaciju. Naci duzinu klatna, kao i udaljenost u amplitudama koje predje za jednu sekundu.\n");    
+printf("Matematicko klatno za x sekundi periodom oscilovanja predje jednu oscilaciju. Naci duzinu klatna, frenkvenciju oscilovanja, kao i udaljenost u amplitudama koje predje za jednu sekundu.\n");    
 }
 }
 
@@ -547,6 +548,7 @@ char u[2],str1[]="NI",str2[]="T";
 float i1,i2;
 y:
 printf("Ako imate frenkvenciju oscilovanja unesite 'NI' za formule izracunavanja.\nAko imate period oscilovanja unesite 'T' za formule izracunavanja.\n");
+scanf("%s",&u);
 i1=strcmp(u,str1);
 i2=strcmp(u,str2);
 if(i1!=0&&i2!=0)
@@ -556,7 +558,7 @@ goto y;
 }
 if(i1==0)
 {
-printf("NI=1/T ==> T=2*pi*(sqrt(l/g)) ==> l=((t/(2*pi))^2*g ==> nx0=NI*4\n");
+printf("NI=1/T ==> T=NI/1 ==> T=2*pi*(sqrt(l/g)) ==> l=((t/(2*pi))^2*g ==> nx0=NI*4\n");
 }
 if(i2==0)
 {    
@@ -566,7 +568,7 @@ printf("T=2*pi*(sqrt(l/g)) ==> l=((t/(2*pi))^2*g ==> nx0=NI*4\n");
 
 void infoMKPR()
 {
-printf("Primer:\nFrenkvencija oscilovanja:4 Hz\nPeriod oscilovanja:0.25 s\nDuzina matematickog klatna:0.015531 metara.\nBroj predjenih amplituda za jednu sekundu:16");
+printf("Primer:\nFrenkvencija oscilovanja:4 Hz\nPeriod oscilovanja:0.25 s\nDuzina matematickog klatna:0.015531 metara.\nBroj predjenih amplituda za jednu sekundu:16\n");
 }
 
 void infoSH()
@@ -775,7 +777,7 @@ if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
 
 void infoSH21TZ()
 {
-printf("Silom F se deluje na dva tela koja se nalaze na horizontalnoj podlozi i koja su povezana su neistegljivom niti. Naci:\na)Masu tela i silu zatezanja.\nb)Ubrzanje tela i silu zatezanja.\nc)Silu kojom se deluje na tela i silu zatezanja.\nd)Koeficijent trenja podloge i silu zatezanja.\ne)Silu zatezanja niti");
+printf("Silom F se deluje na dva tela koja se nalaze na horizontalnoj podlozi i koja su povezana su neistegljivom niti. Naci:\na)Masu tela i silu zatezanja.\nb)Ubrzanje tela i silu zatezanja.\nc)Silu kojom se deluje na tela i silu zatezanja.\nd)Koeficijent trenja podloge i silu zatezanja.\ne)Silu zatezanja niti\n");
 }
 
 void infoSH21FO()
@@ -888,7 +890,7 @@ if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
 
 void infoSH22TZ()
 {
-printf("Silom F se deluje na dva tela koja se nalaze na horizontalnoj podlozi i koja su povezana su neistegljivom niti. Naci:\na)Masu prvog tela i silu zatezanja.\nb)Masu drugog tela i silu zatezanja.\nc)Ubrzanje tela i silu zatezanja.\nd)Silu kojom se deluje na tela i silu zatezanja.\ne)Koeficijent trenja podloge i silu zatezanja.\nf)Silu zatezanja niti");
+printf("Silom F se deluje na dva tela koja se nalaze na horizontalnoj podlozi i koja su povezana su neistegljivom niti. Naci:\na)Masu prvog tela i silu zatezanja.\nb)Masu drugog tela i silu zatezanja.\nc)Ubrzanje tela i silu zatezanja.\nd)Silu kojom se deluje na tela i silu zatezanja.\ne)Koeficijent trenja podloge i silu zatezanja.\nf)Silu zatezanja niti\n");
 }
 
 void infoSH22FO()
@@ -952,12 +954,12 @@ printf("m1*a=F-T-Ftr1 | m2*a=T-Ftr2(sabiramo jednacine)\nm1*a+m2*a=F-Ftr1-Ftr2\n
 
 void infoSH22FOA()
 {
-printf("m1*a=F-T-Ftr1 | m2*a=T-Ftr2(sabiramo jednacine)\nm1*a+m2*a=F-Ftr1-Ftr2\nm2*a+Ftr2=F-Ftr1-m1*a\nm2*(a+mi*g)=F-m1*(mi*g+a)\nm2=(F-m1*(a+mi*g))/(a*mi*g)\n");
+printf("m1*a=F-T-Ftr1 | m2*a=T-Ftr2(sabiramo jednacine)\nm1*a+m2*a=F-Ftr1-Ftr2\na*(m1+m2)=F-mi*g*(m1+m2)\na=(F-mi*g*(m1+m2))/(m1+m2)\n");
 }
 
 void infoSH22FOF()
 {
-printf("m1*a=F-T-Ftr1 | m2*a=T-Ftr2(sabiramo jednacine)\nm1*a+m2*a=F-Ftr1-Ftr2\na*(m1+m2)=F-mi*g*(m1+m2)\na=(F-mi*g*(m1+m2))/(m1+m2)");
+printf("m1*a=F-T-Ftr1 | m2*a=T-Ftr2(sabiramo jednacine)\nm1*a+m2*a=F-Ftr1-Ftr2\nm1*a+m2*a+Ftr1+Ftr2=F\nm1*a+m2*a+mi*m1*g+mi*m2*g=F\na*(m1+m2)+mi*g*(m1+m2)=F\n(m1+m2)*(a+mi*g)=F\nF=(m1+m2)*(a+mi*g)\n");
 }
 
 void infoSH22FOMI()
@@ -1469,7 +1471,7 @@ if(i1!=0&&i2!=0&&i3!=0&&i4!=0)
 
 void infoSH42TZ()
 {
-printf("Silom F se deluje na cetiri tela koja se nalaze na horizontalnoj podlozi i koja su povezana su neistegljivom niti. Naci:\na)Masu prvog tela i sile zatezanje.\nb)Masu drugog tela i sile zatezanja.\nc)Masu treceg tela i sile zatezanja.\nd)Masu cetvrtog tela i sile zatezanja.\ne)Ubrzanje tela i sile zatezanja.\nf)Silu kojom se deluje na tela i sile zatezanja.\ng)Koeficijent trenja podloge i sile zatezanja.\nh)Sile zatezanja niti");
+printf("Silom F se deluje na cetiri tela koja se nalaze na horizontalnoj podlozi i koja su povezana su neistegljivom niti. Naci:\na)Masu prvog tela i sile zatezanje.\nb)Masu drugog tela i sile zatezanja.\nc)Masu treceg tela i sile zatezanja.\nd)Masu cetvrtog tela i sile zatezanja.\ne)Ubrzanje tela i sile zatezanja.\nf)Silu kojom se deluje na tela i sile zatezanja.\ng)Koeficijent trenja podloge i sile zatezanja.\nh)Sile zatezanja niti\n");
 }
 
 void infoSH42FO()
@@ -1530,7 +1532,7 @@ if(i10==0)
 infoSH42FOM4();
 }
 i11=strcmp(u,str11);
-if(i11=0)
+if(i11==0)
 {
 infoSH42FOT3();
 }
@@ -2434,7 +2436,7 @@ void VIPKPI()
 char u[2],str1[]="PR",str2[]="FO",str3[]="TZ",str4[]="NZ";
 int i1,i2,i3,i4;
 a:
-printf("Unesite 'PR' za primere podataka za kolonizovanje planeta.\nUnesite 'FO' za ispis formula potrebnih za izracunavanje gravitacije planete.\nUnesite 'TZ' za tekst zadatka.\nnUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
+printf("Unesite 'PR' za primere podataka za kolonizovanje planeta.\nUnesite 'FO' za ispis formula potrebnih za izracunavanje gravitacije planete.\nUnesite 'TZ' za tekst zadatka.\nUnesite 'NZ' da biste se vratili jedan korak nazad.\n");
 scanf("%s", &u);
 i1=strcmp(u,str1);
 if(i1==0)
@@ -2555,17 +2557,17 @@ float i,i1,i2,i3,i4;
 b:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
-if(0>a)
+if(0>=a)
 {
-printf("Ubrzanje ne moze biti negativno. Ponovite unos.\n");
+printf("Ubrzanje ne moze biti negativno ili ravno nuli. Ponovite unos.\n");
 goto b;
 }
 e:
 printf("Unesite m*ax tela.\n");
 scanf("%f",&ma);
-if(ma<0)
+if(ma<=0)
 {
-printf("m*ax ne moze biti negativno, ponovite unos.\n");
+printf("m*ax ne moze biti negativno ili ravno nuli, ponovite unos.\n");
 goto e;
 }
 c:
@@ -2642,17 +2644,17 @@ float i,i1,i2,i3,i4;
 b:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
-if(0>a)
+if(0>=a)
 {
-printf("Ubrzanje ne moze biti negativno. Ponovite unos.\n");
+printf("Ubrzanje ne moze biti negativno ili ravno nuli. Ponovite unos.\n");
 goto b;
 }
 e:
 printf("Unesite paralelnu silu tela.\n");
 scanf("%f",&fp);
-if(fp<0)
+if(fp<=0)
 {
-printf("FP ne moze biti negativno, ponovite unos.\n");
+printf("FP ne moze biti negativno ili ravno nuli, ponovite unos.\n");
 goto e;
 }
 c:
@@ -2728,23 +2730,23 @@ float i,i1,i2,i3,i4;
 b:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
-if(0>a)
+if(0>=a)
 {
-printf("Ubrzanje ne moze biti negativno. Ponovite unos.\n");
+printf("Ubrzanje ne moze biti negativno ili ravno nuli. Ponovite unos.\n");
 goto b;
 }
 e:
 printf("Unesite silu trenja.\n");
 scanf("%f",&ftr);
-if(ftr<0)
+if(ftr<=0)
 {
-printf("FP ne moze biti negativno, ponovite unos.\n");
+printf("Sila trenja ne moze biti negativna ili ravna nuli(u ovoj opciji), ponovite unos.\n");
 goto e;
 }
 c:
-printf("Unesite koeficijent trenja od 0 do 1(0 znaci da nema trenja).\n");
+printf("Unesite koeficijent trenja od 0 do 1(ne koristiti 0 u ovoj opciji).\n");
 scanf("%f", &mi);
-if(mi<0||mi>1)
+if(mi<=0||mi>1)
 {
     printf("Greska u unosu koeficijenta trenja, ponovite unos.\n");
 goto c;
@@ -2842,7 +2844,7 @@ if(alfa<1||alfa>89)
 alfa=alfa/radian;
 a=g*(sin(alfa)-mi*cos(alfa));
 printf("Ubrzanje iznosi: %f\n", a);
-if(a<0)
+if(a<=0)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
@@ -2934,7 +2936,7 @@ goto c;
 d:
 printf("Unesite ubrzanje.\n");
 scanf("%f", &a);
-if(a<0)
+if(a<=0)
 {
     printf("Greska u unosu ubrzanja, ponovite unos.\n");
 goto d;
@@ -2942,9 +2944,9 @@ goto d;
 l:
 printf("Unesite paralelnu silu.\n");
 scanf("%f", &fp);
-if(fp<0)
+if(fp<=0)
 {
-printf("Paralelna sila ne moze biti negativna, ponovite unos.\n");
+printf("Paralelna sila ne moze biti negativna ili ravna nuli, ponovite unos.\n");
 goto l;
 }
 sin=fp/(m*g);
@@ -3021,7 +3023,7 @@ goto c;
 d:
 printf("Unesite ubrzanje.\n");
 scanf("%f", &a);
-if(a<0)
+if(a<=0)
 {
     printf("Greska u unosu ubrzanja, ponovite unos.\n");
 goto d;
@@ -3375,9 +3377,9 @@ float i,i1,i2,i3,i4;
 b:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
-if(a<0)
+if(a<=0)
 {
-printf("Ubrzanje ne moze biti negativno. Ponovite unos.\n");
+printf("Ubrzanje ne moze biti negativno ili ravno nuli. Ponovite unos.\n");
 goto b;
 }
 c:
@@ -3472,7 +3474,7 @@ if(f<0)
 }
 a=(f-mi*m*g)/m;
 printf("Ubraznje iznosi: %f\n", a);
-if(a<0)
+if(a<=0)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
@@ -3539,9 +3541,9 @@ goto c;
 d:
 printf("Unesite ubrzanje kojim se telo krece.\n");
 scanf("%f",&a);
-if(a<0)
+if(a<=0)
 {
-    printf("Ubrzanje ne moze biti negativno, ponovite uslov.\n");
+    printf("Ubrzanje ne moze biti negativno ili ravno nuli, ponovite uslov.\n");
     goto d;
 }
 f=m*(a+mi*g);
@@ -3613,9 +3615,9 @@ goto c;
 d:
 printf("Unesite ubrzanje kojim se telo krece.\n");
 scanf("%f",&a);
-if(a<0)
+if(a<=0)
 {
-    printf("Ubrzanje ne moze biti negativno, ponovite uslov.\n");
+    printf("Ubrzanje ne moze biti negativno ili ravno nuli, ponovite uslov.\n");
     goto d;
 }
 mi=(f-m*a)/(m*g);
@@ -3769,9 +3771,9 @@ float i,i1,i2,i3,i4;
 b:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
-if(a<0)
+if(a<=0)
 {
-printf("Ubrzanje ne moze biti negativno. Ponovite unos.\n");
+printf("Ubrzanje ne moze biti negativno ili ravno nuli. Ponovite unos.\n");
 goto b;
 }
 c:
@@ -3875,7 +3877,7 @@ if(f<0)
 }
 a=(f-2*mi*m*g)/(2*m);
 printf("Ubrzanje iznosi: %f\n", a);
-if(a<0)
+if(a<=0)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
@@ -3951,9 +3953,9 @@ goto c;
 d:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f",&a);
-if(a<0)
+if(a<=0)
 {
-    printf("Ubrzanje ne moze biti negativno, ponovite uslov.\n");
+    printf("Ubrzanje ne moze biti negativno ili ravno nuli, ponovite uslov.\n");
     goto d;
 }
 f=2*m*(a+mi*g);
@@ -4026,9 +4028,9 @@ goto b;
 c:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
-if(a<0)
+if(a<=0)
 {
-    printf("Ubrzanje ne moze biti negativno, ponovite uslov.\n");
+    printf("Ubrzanje ne moze biti negativno ili ravno nuli, ponovite uslov.\n");
 goto c;
 }
 d:
@@ -4109,9 +4111,9 @@ goto b;
 c:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
-if(a<0)
+if(a<=0)
 {
-    printf("Ubrzanje ne moze biti negativno, ponovite uslov.\n");
+    printf("Ubrzanje ne moze biti negativno ili ravno nuli, ponovite uslov.\n");
 goto c;
 }
 d:
@@ -4201,9 +4203,9 @@ goto e;
 d:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f",&a);
-if(a<0)
+if(a<=0)
 {
-printf("Ubrzanje ne moze biti negativno, ponovite uslov.\n");
+printf("Ubrzanje ne moze biti negativno ili ravno nuli, ponovite uslov.\n");
 goto d;
 }
 f:
@@ -4292,9 +4294,9 @@ goto e;
 d:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f",&a);
-if(a<0)
+if(a<=0)
 {
-printf("Ubrzanje ne moze biti negativno, ponovite uslov.\n");
+printf("Ubrzanje ne moze biti negativno ili ravno nuli, ponovite uslov.\n");
 goto d;
 }
 f:
@@ -4398,7 +4400,7 @@ goto f;
 }
 a=(f-mi*g*(m1+m2))/(m1+m2);
 printf("Ubrzanje iznosi: %f\n", a);
-if(a<0)
+if(a<=0)
 {
 printf("Neispravan unos nekog parametra ponovite unos.\n");
 goto b;
@@ -4474,9 +4476,9 @@ goto e;
 d:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f",&a);
-if(a<0)
+if(a<=0)
 {
-printf("Ubrzanje ne moze biti negativno, ponovite uslov.\n");
+printf("Ubrzanje ne moze biti negativno ili ravno nuli, ponovite uslov.\n");
 goto d;
 }
 f:
@@ -4565,9 +4567,9 @@ goto e;
 d:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f",&a);
-if(a<0)
+if(a<=0)
 {
-printf("Ubrzanje ne moze biti negativno, ponovite uslov.\n");
+printf("Ubrzanje ne moze biti negativno ili ravno nuli, ponovite uslov.\n");
 goto d;
 }
 f:
@@ -4656,9 +4658,9 @@ goto e;
 d:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f",&a);
-if(a<0)
+if(a<=0)
 {
-printf("Ubrzanje ne moze biti negativno, ponovite uslov.\n");
+printf("Ubrzanje ne moze biti negativno ili ravno nuli, ponovite uslov.\n");
 goto d;
 }
 f:
@@ -4835,9 +4837,9 @@ float i,i1,i2,i3,i4;
 b:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
-if(a<0)
+if(a<=0)
 {
-printf("Ubrzanje ne moze biti negativno. Ponovite unos.\n");
+printf("Ubrzanje ne moze biti negativno ili ravno nuli. Ponovite unos.\n");
 goto b;
 }
 c:
@@ -4950,7 +4952,7 @@ if(f<0)
 }
 a=(f-3*mi*m*g)/(3*m);
 printf("Ubrzanje iznosi: %f\n", a);
-if(a<0)
+if(a<=0)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
@@ -5019,9 +5021,9 @@ float i,i1,i2,i3,i4;
 b:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
-if(a<0)
+if(a<=0)
 {
-printf("Ubrzanje ne moze biti negativno. Ponovite unos.\n");
+printf("Ubrzanje ne moze biti negativno ili ravno nuli. Ponovite unos.\n");
 goto b;
 }
 c:
@@ -5111,9 +5113,9 @@ float i,i1,i2,i3,i4;
 b:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
-if(a<0)
+if(a<=0)
 {
-printf("Ubrzanje ne moze biti negativno. Ponovite unos.\n");
+printf("Ubrzanje ne moze biti negativno ili ravno nuli. Ponovite unos.\n");
 goto b;
 }
 c:
@@ -5203,9 +5205,9 @@ float i,i1,i2,i3,i4;
 b:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
-if(a<0)
+if(a<=0)
 {
-printf("Ubrzanje ne moze biti negativno. Ponovite unos.\n");
+printf("Ubrzanje ne moze biti negativno ili ravno nuli. Ponovite unos.\n");
 goto b;
 }
 c:
@@ -5312,9 +5314,9 @@ if(m3<0)
 k:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
-if(a<0)
+if(a<=0)
 {
-printf("Ubrzanje ne moze biti negativno. Ponovite unos.\n");
+printf("Ubrzanje ne moze biti negativno ili ravno nuli. Ponovite unos.\n");
 goto k;
 }
 c:
@@ -5418,9 +5420,9 @@ if(m3<0)
 k:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
-if(a<0)
+if(a<=0)
 {
-printf("Ubrzanje ne moze biti negativno. Ponovite unos.\n");
+printf("Ubrzanje ne moze biti negativno ili ravno nuli. Ponovite unos.\n");
 goto k;
 }
 c:
@@ -5524,9 +5526,9 @@ if(m2<0)
 k:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
-if(a<0)
+if(a<=0)
 {
-printf("Ubrzanje ne moze biti negativno. Ponovite unos.\n");
+printf("Ubrzanje ne moze biti negativno ili ravno nuli. Ponovite unos.\n");
 goto k;
 }
 c:
@@ -5653,7 +5655,7 @@ if(f<0)
 }
 a=(f-mi*g*(m1+m2+m3))/(m1+m2+m3);
 printf("Ubrzanje tela iznosi: %f\n", a);
-if(a<0)
+if(a<=0)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
@@ -5752,9 +5754,9 @@ goto c;
 d:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f",&a);
-if(a<0)
+if(a<=0)
 {
-    printf("Ubrzanje ne moze biti negativno, ponovite uslov.\n");
+    printf("Ubrzanje ne moze biti negativno ili ravno nuli, ponovite uslov.\n");
     goto d;
 }
 f=(a+mi*g)*(m1+m2+m3);
@@ -5850,9 +5852,9 @@ goto x;
 c:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
-if(a<0)
+if(a<=0)
 {
-    printf("Ubrzanje ne moze biti negativno, ponovite unos.\n");
+    printf("Ubrzanje ne moze biti negativno ili ravno nuli, ponovite unos.\n");
 goto c;
 }
 d:
@@ -5956,9 +5958,9 @@ goto x;
 u:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
-if(a<0)
+if(a<=0)
 {
-printf("Ubrzanje ne moze biti negativno, ponovite unos.\n");
+printf("Ubrzanje ne moze biti negativno ili ravno nuli, ponovite unos.\n");
 goto u;
 }
 c:
@@ -6147,9 +6149,9 @@ float i,i1,i2,i3,i4;
 b:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
-if(a<0)
+if(a<=0)
 {
-printf("Ubrzanje ne moze biti negativno. Ponovite unos.\n");
+printf("Ubrzanje ne moze biti negativno ili ravno nuli. Ponovite unos.\n");
 goto b;
 }
 c:
@@ -6267,7 +6269,7 @@ if(f<0)
 }
 a=(f-4*mi*m*g)/(4*m);
 printf("Ubrzanje iznosi: %f\n", a);
-if(a<0)
+if(a<=0)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
@@ -6341,9 +6343,9 @@ float i,i1,i2,i3,i4;
 b:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
-if(a<0)
+if(a<=0)
 {
-printf("Ubrzanje ne moze biti negativno. Ponovite unos.\n");
+printf("Ubrzanje ne moze biti negativno ili ravno nuli. Ponovite unos.\n");
 goto b;
 }
 c:
@@ -6438,9 +6440,9 @@ float i,i1,i2,i3,i4;
 b:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
-if(a<0)
+if(a<=0)
 {
-printf("Ubrzanje ne moze biti negativno. Ponovite unos.\n");
+printf("Ubrzanje ne moze biti negativno ili ravno nuli. Ponovite unos.\n");
 goto b;
 }
 c:
@@ -6535,9 +6537,9 @@ float i,i1,i2,i3,i4;
 b:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
-if(a<0)
+if(a<=0)
 {
-printf("Ubrzanje ne moze biti negativno. Ponovite unos.\n");
+printf("Ubrzanje ne moze biti negativno ili ravno nuli. Ponovite unos.\n");
 goto b;
 }
 c:
@@ -6657,9 +6659,9 @@ if(m4<0)
 z:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
-if(a<0)
+if(a<=0)
 {
-printf("Ubrzanje ne moze biti negativno. Ponovite unos.\n");
+printf("Ubrzanje ne moze biti negativno ili ravno nuli. Ponovite unos.\n");
 goto z;
 }
 c:
@@ -6778,9 +6780,9 @@ if(m4<0)
 z:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
-if(a<0)
+if(a<=0)
 {
-printf("Ubrzanje ne moze biti negativno. Ponovite unos.\n");
+printf("Ubrzanje ne moze biti negativno ili ravno nuli. Ponovite unos.\n");
 goto z;
 }
 c:
@@ -6899,9 +6901,9 @@ if(m4<0)
 z:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
-if(a<0)
+if(a<=0)
 {
-printf("Ubrzanje ne moze biti negativno. Ponovite unos.\n");
+printf("Ubrzanje ne moze biti negativno ili ravno nuli. Ponovite unos.\n");
 goto z;
 }
 c:
@@ -7020,9 +7022,9 @@ if(m3<0)
 z:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
-if(a<0)
+if(a<=0)
 {
-printf("Ubrzanje ne moze biti negativno. Ponovite unos.\n");
+printf("Ubrzanje ne moze biti negativno ili ravno nuli. Ponovite unos.\n");
 goto z;
 }
 c:
@@ -7164,7 +7166,7 @@ if(f<0)
 }
 a=(f-mi*g*(m1+m2+m3+m4))/(m1+m2+m3+m4);
 printf("Ubrzanje tela iznosi: %f\n", a);
-if(a<0)
+if(a<=0)
 {
     printf("Neispravan unos nekog parametra ponovite unos.\n");
     goto b;
@@ -7278,9 +7280,9 @@ goto c;
 d:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f",&a);
-if(a<0)
+if(a<=0)
 {
-    printf("Ubrzanje ne moze biti negativno, ponovite uslov.\n");
+    printf("Ubrzanje ne moze biti negativno ili ravno nuli, ponovite uslov.\n");
     goto d;
 }
 f=(a+mi*g)*(m1+m2+m3+m4);
@@ -7391,9 +7393,9 @@ if(m4<0)
 c:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f", &a);
-if(a<0)
+if(a<=0)
 {
-    printf("Ubrzanje ne moze biti negativno, ponovite unos.\n");
+    printf("Ubrzanje ne moze biti negativno ili ravno nuli, ponovite unos.\n");
 goto c;
 }
 d:
@@ -7528,9 +7530,9 @@ if(f<0)
 j:
 printf("Unesite ubrzanje tela.\n");
 scanf("%f",&a);
-if(a<0)
+if(a<=0)
 {
-    printf("Ubrzanje ne moze biti negativno, ponovite unos.\n");
+    printf("Ubrzanje ne moze biti negativno ili ravno nuli, ponovite unos.\n");
     goto j;
 }
 T1=f-m1*(a+mi*g);
